@@ -135,6 +135,14 @@ def demo() -> None:
     typer.echo(f"report written to {path}")
 
 
+@app.command()
+def serve(host: str = "127.0.0.1", port: int = 8000, reload: bool = False) -> None:
+    """Run the API and search page (http://127.0.0.1:8000, docs at /docs)."""
+    import uvicorn
+
+    uvicorn.run("createto_info.api.app:app", host=host, port=port, reload=reload)
+
+
 @config_app.command("show")
 def config_show() -> None:
     """Print the resolved configuration (no secrets)."""

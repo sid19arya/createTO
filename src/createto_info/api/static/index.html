@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CreateTO Projects</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1d2422; --muted: #5f6b67; --line: #dfe3e0;
+    --accent: #17423a; --accent-soft: #e3eeea; --warn: #8a4b00; --warn-soft: #fbefdc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121615; --panel: #1b201f; --ink: #e8ecea; --muted: #9aa7a2; --line: #2c3432;
+      --accent: #7cc4b0; --accent-soft: #20302c; --warn: #f0b264; --warn-soft: #33281a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 20px 16px 8px; max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; }
+  form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  input, select, button { font: inherit; padding: 8px 10px; border: 1px solid var(--line);
+                          border-radius: 8px; background: var(--panel); color: var(--ink); }
+  input[name=q] { flex: 1 1 320px; }
+  button { background: var(--accent); color: var(--bg); border-color: var(--accent); cursor: pointer; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px;
+         max-width: 1200px; margin: 0 auto; padding: 8px 16px 40px; }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+          padding: 12px 14px; margin-bottom: 10px; cursor: pointer; }
+  .card:hover, .card.sel { border-color: var(--accent); }
+  .card h3 { margin: 0 0 4px; font-size: 15px; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .badge { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px;
+           background: var(--accent-soft); color: var(--accent); margin-right: 4px; }
+  .badge.warn { background: var(--warn-soft); color: var(--warn); }
+  #detail { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+            padding: 16px; position: sticky; top: 12px; max-height: calc(100vh - 24px);
+            overflow: auto; }
+  #detail h2 { margin: 0 0 6px; font-size: 18px; }
+  #detail h4 { margin: 18px 0 6px; font-size: 13px; text-transform: uppercase;
+               letter-spacing: .04em; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  td { border-top: 1px solid var(--line); padding: 5px 6px; vertical-align: top; }
+  td:first-child { color: var(--muted); white-space: nowrap; }
+  a { color: var(--accent); }
+  .cite { font-size: 12px; color: var(--muted); }
+  ul { padding-left: 18px; margin: 4px 0; }
+  .empty { color: var(--muted); padding: 20px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>CreateTO projects</h1>
+  <div class="sub" id="stats">Search Toronto real-estate projects by description, address, ward
+    or category. Every fact links back to its source.</div>
+  <form id="f">
+    <input name="q" placeholder="e.g. affordable housing near transit, 1313 Queen St W, Etobicoke"
+           autocomplete="off">
+    <select name="phase"><option value="">Any phase</option></select>
+    <input name="near" placeholder="near lat,lng" size="18">
+    <button>Search</button>
+  </form>
+</header>
+<main>
+  <section id="results"></section>
+  <aside id="detail"><div class="empty">Select a project to see its facts, timeline,
+    procurement signals, news and files.</div></aside>
+</main>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (v) => String(v ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const get = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+
+async function init() {
+  const [stats, facets] = await Promise.all([get("/stats"), get("/facets")]);
+  $("#stats").textContent = `${stats.projects} projects, ${stats.news} news items, ` +
+    `${stats.facts} cited facts, ${stats.open_procurement} open procurement signals ` +
+    `(crawl run ${stats.latest_run}).`;
+  for (const p of facets.phases) $("select[name=phase]").insertAdjacentHTML(
+    "beforeend", `<option value="${esc(p.key)}">${esc(p.label)}</option>`);
+  await search();
+  if (location.hash.length > 1) show(decodeURIComponent(location.hash.slice(1)));
+}
+
+async function search(ev) {
+  if (ev) ev.preventDefault();
+  const fd = new FormData($("#f"));
+  const params = new URLSearchParams({ limit: 30 });
+  for (const [k, v] of fd) if (v.trim()) params.set(k, v.trim());
+  let items;
+  try { items = await get("/projects?" + params); }
+  catch (e) { $("#results").innerHTML = `<div class="empty">Search failed (${esc(e.message)}).</div>`; return; }
+  $("#results").innerHTML = items.length ? items.map((p) => `
+    <div class="card" data-slug="${esc(p.slug)}">
+      <h3>${esc(p.name)}</h3>
+      <div class="meta">${esc(p.address || "")}${p.ward ? " · " + esc(p.ward) : ""}
+        ${p.distance_km != null ? " · " + p.distance_km + " km" : ""}</div>
+      <div style="margin-top:6px">
+        <span class="badge">${esc(p.phase_label || p.phase || "")}</span>
+        ${p.open_procurement ? `<span class="badge warn">${p.open_procurement} open procurement</span>` : ""}
+        ${p.kind === "block" ? `<span class="badge">sub-site</span>` : ""}
+      </div>
+      ${p.summary ? `<div class="meta" style="margin-top:6px">${esc(p.summary)}</div>` : ""}
+    </div>`).join("") : `<div class="empty">No projects match.</div>`;
+  document.querySelectorAll(".card").forEach((c) => c.onclick = () => show(c.dataset.slug, c));
+}
+
+function cites(evidence) {
+  return (evidence || []).map((e) =>
+    `<div class="cite">${esc(e.extracted_by)} · <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title || e.url.replace(/^https?:\/\//, "").slice(0, 60))}</a>${e.page_no ? " p." + e.page_no : ""}${e.locator ? " · " + esc(e.locator) : ""}${e.live ? "" : " (older version)"}</div>`).join("");
+}
+
+async function show(slug, card) {
+  document.querySelectorAll(".card").forEach((c) => c.classList.toggle("sel", c === card));
+  history.replaceState(null, "", "#" + encodeURIComponent(slug));
+  let d;
+  try { d = await get("/projects/" + encodeURIComponent(slug)); }
+  catch (e) { $("#detail").innerHTML = `<div class="empty">Could not load ${esc(slug)}.</div>`; return; }
+  const facts = d.facts.map((f) => `<tr><td>${esc(f.field)}</td><td>${esc(f.value)}
+      ${f.status === "conflicting" ? '<span class="badge warn">conflicting</span>' : ""}${cites(f.evidence)}</td></tr>`).join("");
+  const ms = d.milestones.map((m) => `<tr><td>${esc(m.date ? m.date.slice(0, m.date_precision === "year" ? 4 : 7) : "TBD")}</td>
+      <td>${esc(m.title || m.type)} <span class="badge">${esc(m.status)}</span></td></tr>`).join("");
+  const proc = d.procurement.map((s) => `<li>${esc(s.title)} <span class="badge ${s.status === "open" ? "warn" : ""}">${esc(s.status)}</span>
+      ${s.closes_at ? " closes " + esc(s.closes_at) : ""}${s.external_url ? ` · <a href="${esc(s.external_url)}" target="_blank" rel="noopener">link</a>` : ""}${cites(s.evidence)}</li>`).join("");
+  const news = d.news.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
+      <span class="cite">${esc((n.published_at || "").slice(0, 10))}</span></li>`).join("");
+  const files = d.files.map((f) => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.title)}</a></li>`).join("");
+  const kids = d.children.map((k) => `<li>${esc(k.name)} <span class="badge">${esc(k.phase_label || "")}</span></li>`).join("");
+  $("#detail").innerHTML = `
+    <h2>${esc(d.name)}</h2>
+    <div class="meta"><span class="badge">${esc(d.phase_label || "")}</span>
+      ${esc(d.initiative || "")} · <a href="${esc(d.url)}" target="_blank" rel="noopener">createto.ca</a>
+      · <a href="/projects/${encodeURIComponent(d.slug)}" target="_blank">JSON</a></div>
+    ${d.description ? `<p>${esc(d.description).slice(0, 900)}${d.description.length > 900 ? "…" : ""}</p>` : ""}
+    ${d.parent_slug ? `<div class="meta">Part of ${esc(d.parent_name)}</div>` : ""}
+    <h4>Facts (with sources)</h4><table>${facts || "<tr><td>none</td></tr>"}</table>
+    ${ms ? `<h4>Timeline</h4><table>${ms}</table>` : ""}
+    ${proc ? `<h4>Procurement</h4><ul>${proc}</ul>` : ""}
+    ${kids ? `<h4>Sub-sites</h4><ul>${kids}</ul>` : ""}
+    ${news ? `<h4>News</h4><ul>${news}</ul>` : ""}
+    ${files ? `<h4>Files (${d.files.length})</h4><ul>${files}</ul>` : ""}`;
+}
+
+$("#f").addEventListener("submit", search);
+init();
+</script>
+</body>
+</html>

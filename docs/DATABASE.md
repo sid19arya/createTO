@@ -265,11 +265,15 @@ url, page_no, tsv, updated_run`.
 Rebuilt incrementally for changed versions. The Python BM25 index is built from this table at
 API startup.
 
-### Views (convenience for API and analysts)
-- `v_project_card`: project + initiative + councillor + latest milestone + open procurement count
-- `v_project_timeline`: milestones ∪ dated news ∪ phase changes, ordered by date
-- `v_open_opportunities`: procurement signals with status in (`upcoming`, `open`), joined to project location/phase
-- `v_run_report`: `crawl_runs.stats` flattened for the deliverable table
+### Read queries
+The API's read-side SQL lives in `src/createto_info/api/queries.py` (project cards, detail with
+evidence, history, procurement, news, stats). No database views yet; add them if analysts need
+the same shapes from SQL directly.
+
+`projects.search_tsv` weights: name (A); address, intersection, ward, `type_labels` (B); summary,
+current/proposed use (C); full `description` (D). `type_labels` is the human text of `types`
+("Affordable Housing, Waterfront"), written by the materializer because an array can't feed a
+generated tsvector.
 
 ## Typical queries
 

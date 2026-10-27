@@ -295,6 +295,8 @@ class Materializer:
         row.phase = c.get("phase") or None
         row.phase_label = self._phase_label(page, row.phase)
         row.types = sorted(t for t in (c.get("type") or []) if t)
+        labels = page.props.get("projectTypes") or {}
+        row.type_labels = ", ".join(labels.get(t, t) for t in row.types) or None
         row.initiative_id = self.initiative_ids.get(initiative) if initiative else None
         row.site_area_text = (c.get("siteArea") or "").strip() or None
         row.site_area_acres = parse_site_area_acres(row.site_area_text)
@@ -632,9 +634,13 @@ class ProjectMatcher:
             if kind == "name" and len(alias) >= 6:
                 self.names.append((alias.lower(), pid))
 
-    def match(self, text: str) -> int | None:
-        hits = {pid for a in find_addresses(text) for b, pid in self.addresses
+    def address_matches(self, text: str) -> set[int]:
+        """Every project whose address (range) overlaps an address mentioned in the text."""
+        return {pid for a in find_addresses(text) for b, pid in self.addresses
                 if addresses_overlap(a, b)}
+
+    def match(self, text: str) -> int | None:
+        hits = self.address_matches(text)
         if not hits:
             low = text.lower()
             hits = {pid for name, pid in self.names if name in low}

@@ -246,6 +246,7 @@ class Project(Base):
     phase: Mapped[str | None] = mapped_column(Text, index=True)
     phase_label: Mapped[str | None] = mapped_column(Text)
     types: Mapped[list[str]] = mapped_column(default=list)
+    type_labels: Mapped[str | None] = mapped_column(Text)  # "Affordable Housing, Waterfront"
     initiative_id: Mapped[int | None] = mapped_column(ForeignKey("initiatives.id"))
     parent_project_id: Mapped[int | None] = mapped_column(ForeignKey("projects.id"))
     site_area_text: Mapped[str | None] = mapped_column(Text)
@@ -267,7 +268,9 @@ class Project(Base):
         "setweight(to_tsvector('english'::regconfig, coalesce(address, '') || ' ' || "
         "coalesce(major_intersection, '') || ' ' || coalesce(ward, '')), 'B') || "
         "setweight(to_tsvector('english'::regconfig, coalesce(summary, '') || ' ' || "
-        "coalesce(current_use, '') || ' ' || coalesce(proposed_use, '')), 'C')"
+        "coalesce(current_use, '') || ' ' || coalesce(proposed_use, '')), 'C') || "
+        "setweight(to_tsvector('english'::regconfig, coalesce(type_labels, '')), 'B') || "
+        "setweight(to_tsvector('english'::regconfig, coalesce(description, '')), 'D')"
     )
 
 

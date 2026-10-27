@@ -18,7 +18,8 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 2: crawler + raw store + fetch_log + run stats (no LLM) (2026-10-26)
 - [x] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts (2026-10-26)
 - [x] Step 4: evidence/claims reconciliation, version history, variant demo (2026-10-27)
-- [ ] Step 5: FastAPI + search endpoint
+- [x] Step 5: FastAPI + search page (2026-10-27)
+- [ ] Step 6: PDF text + vision fallback + LLM extraction (facts, milestones, procurement)
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
@@ -37,6 +38,12 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - Each replay crawl runs in a subprocess: Twisted's reactor can start only once per process.
 - Snapshots (`data/snapshots/`, gitignored) reference `data/raw/`, so they're only valid on a
   machine that has the raw store. `reports/variants.md` is the committed example output.
+
+## API notes
+- `uv run createto serve`; tests use FastAPI's TestClient against `createto_test`
+  (`tests/test_api.py` reuses the synthetic site from `tests/test_materializer.py`).
+- Search uses any-term matching plus an all-terms bonus; board-meeting news bodies are nearly
+  empty (content is in attached PDFs), so they only become searchable after step 6.
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`
