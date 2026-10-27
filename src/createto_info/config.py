@@ -37,8 +37,11 @@ class ScopeConfig(BaseModel):
     first_party_hosts: list[str]
     asset_hosts: list[str] = Field(default_factory=list)
     external_1hop_hosts: list[str] = Field(default_factory=list)
+    external_files_any_host: bool = False
     never_fetch_hosts: list[str] = Field(default_factory=list)
     skip_path_prefixes: list[str] = Field(default_factory=list)
+    file_extensions: list[str] = Field(default_factory=list)
+    media_extensions: list[str] = Field(default_factory=list)
 
 
 class CutoffConfig(BaseModel):

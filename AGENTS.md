@@ -15,7 +15,14 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 ## Status
 - [x] Planning docs (2026-10-26)
 - [x] Step 1: skeleton, docker-compose Postgres, migrations (2026-10-26)
-- [ ] Step 2: crawler + raw store + fetch_log + run stats (no LLM)
+- [x] Step 2: crawler + raw store + fetch_log + run stats (no LLM) (2026-10-26)
+- [ ] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts
+
+## Crawl notes
+- Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
+- Unchanged pages come back as 304. The spider re-reads links from the stored raw copy so
+  discovery still reaches everything below them.
+- Scope rules live in `config.yaml` → `scope` and `crawl/urls.py::classify` (unit-tested).
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`

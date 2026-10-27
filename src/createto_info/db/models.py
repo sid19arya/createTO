@@ -75,6 +75,9 @@ class Document(Base):
     first_seen_run: Mapped[int | None] = _run_fk()
     last_seen_run: Mapped[int | None] = _run_fk()
     removed_at_run: Mapped[int | None] = _run_fk()
+    # latest HTTP validators, sent as If-None-Match / If-Modified-Since on the next run
+    etag: Mapped[str | None] = mapped_column(Text)
+    last_modified: Mapped[str | None] = mapped_column(Text)
     current_version_id: Mapped[int | None] = mapped_column(
         ForeignKey("document_versions.id", use_alter=True, name="fk_documents_current_version")
     )

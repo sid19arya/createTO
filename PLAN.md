@@ -42,9 +42,14 @@ Brief: `assets/task_description/CreateTO scraper.pdf`. Related docs:
   deliveryAndConstruction, completed, leasing, strategicAcquisition, planAmendment`.
 - Linked files live on `a-us.storyblok.com/f/...` (Parkdale Hub alone links ~60 PDFs, some
   are City of Toronto council `backgroundfile-*.pdf` reports).
-- **Procurement** page only points to **MERX** (login-gated, out of scope for "public pages only").
-  Procurement data must come from public signals: `marketOffering` phase, news, board-meeting
-  documents, PDFs.
+- **Procurement** page points to **MERX**. Solicitation detail pages need a login, but the
+  public *open solicitations* search (`merx.com/public/solicitations/open?keywords=createto`) is
+  linked from createto.ca, allowed by robots.txt and lists title, organization, published and
+  closing dates (e.g. "Testing & Inspection Services at 1113-1125 Dundas St W", closing
+  2026-11-02). Other procurement signals: `marketOffering` phase, market-offering brochures
+  (Cushman & Wakefield / `f.datasrvr.com`), news, board-meeting documents, PDFs.
+- `secure.toronto.ca` blocks non-browser user agents (Akamai). Logged as `blocked`.
+- Site links to a UAT staging copy (`*-uat-*.vercel.app`). It is excluded.
 - PDF sample (12 Parkdale files): nearly all have a text layer (500–2,600 chars/page). ~10% of
   pages are low-text (display boards, site plans, renderings). One 75-page design-guideline PDF
   had 7k embedded images.
@@ -81,7 +86,10 @@ Brief: `assets/task_description/CreateTO scraper.pdf`. Related docs:
 |---|---|
 | `createto.ca` | Full crawl, unlimited depth |
 | `a-us.storyblok.com` (CMS assets) | Treated as first-party. Every linked file is downloaded |
-| Allow-listed external (`www.toronto.ca`, `secure.toronto.ca`, project microsites like `www.2444eglinton.ca`, councillor sites) | **Max 1 hop**: fetch the page/file linked *directly* from a createto.ca page, store it, never follow its links. Useful for councillor one-pagers, council agenda items/decisions, project microsites |
+| Allow-listed external (`www.toronto.ca`, `secure.toronto.ca`, project microsites like `www.2444eglinton.ca`, `www.merx.com`, `comms.cushwakedigital.com`, `www.canada.ca`) | **Max 1 hop**: fetch the page/file linked *directly* from a createto.ca page, store it, never follow its links. Useful for councillor one-pagers, council agenda items, project microsites, MERX open-solicitations listing, market-offering pages |
+| Documents (`pdf`, `docx`, ...) on **any** host | Fetched at 1 hop when linked directly from createto.ca (e.g. market-offering brochures on `f.datasrvr.com`, partner press releases) |
+| Media (images, video, fonts, `.tif`) | Not fetched; logged `media_not_fetched` / `unsupported_file_type` |
+| Press coverage (Globe, Star, UrbanToronto, CP24, ...) | Not fetched (paywalls, copyright). The link is kept as news coverage metadata |
 | Social / video / meeting (`twitter.com`, `instagram`, `linkedin`, `youtube`, `webex`, ...) | Not fetched. Recorded as a link (still useful metadata), logged `skipped: out_of_scope` |
 | Anything else | Not fetched; logged `skipped: not_allowlisted` (review the log to grow the allow-list) |
 
@@ -124,7 +132,8 @@ Idempotency: every LLM output is cached in `extractions` keyed by
 
 ## 7. Deferred (later versions)
 
-- MERX procurement scraping (login-gated; would need a licensed data source)
+- MERX solicitation *detail* pages and closed/awarded listings (detail needs login; closed
+  listing isn't linked from createto.ca, so it's 2 hops)
 - PostGIS, map UI, ward polygons
 - Embeddings / hybrid retrieval, reranking
 - MCP server wrapping the API

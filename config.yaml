@@ -20,7 +20,13 @@ scope:
     - www.toronto.ca
     - secure.toronto.ca
     - www.2444eglinton.ca
+    - www.merx.com                            # public open-solicitations listing linked from /our-work/procurement
+    - comms.cushwakedigital.com               # market-offering pages (CreateTO's land-sale broker)
+    - www.canada.ca                           # federal partnership announcements
+  # documents (file_extensions) linked directly from createto.ca are fetched from any host
+  external_files_any_host: true
   never_fetch_hosts:                          # recorded as links, logged as skipped
+    - createto-website-git-uat-create-to-by-sid-lee.vercel.app   # staging copy of the site
     - twitter.com
     - x.com
     - www.instagram.com
@@ -30,7 +36,10 @@ scope:
     - toronto.webex.com
     - fonts.googleapis.com
     - fonts.gstatic.com
-  skip_path_prefixes: [/_next/, /images/]
+  skip_path_prefixes: [/_next/, /images/, /api/]
+  # files downloaded from asset / external hosts; other extensions are recorded but not fetched
+  file_extensions: [pdf, doc, docx, xls, xlsx, ppt, pptx, csv, txt, rtf, zip]
+  media_extensions: [jpg, jpeg, png, gif, webp, svg, avif, ico, mp4, mov, webm, mp3, woff, woff2, css, js]
 
 cutoff:
   years: 5                                    # applies only to projects with phase == completed

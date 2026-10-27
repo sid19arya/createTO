@@ -58,22 +58,29 @@ One row per **URL** ever seen (page or file), independent of content.
 | column | notes |
 |---|---|
 | `id`, `url` (unique, normalized), `host` | |
-| `kind` | `page`, `pdf`, `doc`, `image`, `other` |
+| `kind` | `page`, `pdf`, `doc`, `sitemap`, `image`, `other` |
 | `scope` | `first_party` (createto.ca), `asset` (storyblok), `external_1hop` |
+| `removed_at_run` | set when a *complete* run (no `--limit`/`--skip-files`) no longer finds the URL |
 | `discovered_via` | `sitemap`, `link`, `both` |
 | `first_seen_run`, `last_seen_run`, `removed_at_run` | lifecycle; a URL missing from a run gets `removed_at_run` set |
+| `etag`, `last_modified` | latest HTTP validators, sent as `If-None-Match` / `If-Modified-Since` next run (both createto.ca and Storyblok answer 304) |
 | `current_version_id` | latest `document_versions.id` |
 
 ### `document_versions`
 One row per **distinct content** of a document, keyed by `(document_id, content_hash)`. If a
-repeat run fetches identical bytes, it adds no row and only bumps `documents.last_seen_run`.
+repeat run fetches identical content, it adds no row and only bumps `documents.last_seen_run`.
+
+`content_hash` is *semantic*: for createto.ca pages it hashes the page's own Storyblok record
+(`pageProps.page`), so Next.js rebuilds and changes to derived lists (`articles`, `similar`)
+don't count as changes. For every other document it is the sha256 of the raw bytes. The raw
+file is written to `storage_path` only when a new version is created.
 
 | column | notes |
 |---|---|
 | `id`, `document_id`, `run_id` (run that first saw this content) | |
 | `fetched_at`, `http_status`, `etag`, `last_modified`, `content_type`, `bytes` | |
 | `content_hash` (sha256), `storage_path` | raw bytes at `data/raw/ab/abcdef….html/.pdf` |
-| `cms_uuid`, `cms_updated_at`, `cms_json` (jsonb) | for createto.ca pages: the `__NEXT_DATA__` page record |
+| `cms_uuid`, `cms_updated_at`, `cms_json` (jsonb) | for createto.ca pages: `__NEXT_DATA__` `pageProps` minus site chrome (labels, header, footer, theme) |
 | `text` | main-content plain text (HTML) or joined page text (PDF) |
 | `parse_status`, `parse_error` | `ok`, `failed` (e.g. corrupt PDF; this is the "failed file" variant) |
 
@@ -98,7 +105,7 @@ skipped links are logged, as the brief requires.
 |---|---|
 | `run_id`, `url`, `referrer_url`, `ts` | |
 | `outcome` | `fetched`, `not_modified`, `skipped`, `blocked`, `failed`, `redirected` |
-| `reason` | `out_of_scope`, `not_allowlisted`, `hop_limit`, `robots`, `http_4xx`, `http_5xx`, `timeout`, `too_large`, `cutoff_completed_project` |
+| `reason` | for `fetched`: `new`, `changed`, `unchanged`. For `skipped`: `out_of_scope`, `not_allowlisted`, `hop_limit`, `media_not_fetched`, `unsupported_file_type`, `skip_path`, `skip_files_flag`. For `blocked`/`failed`: `robots`, `http_<code>`, `timeout`, `dns`, `too_large`. For `redirected`: `to <url>` |
 | `http_status`, `elapsed_ms` | |
 
 ---

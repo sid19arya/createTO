@@ -56,6 +56,35 @@ def db_check() -> None:
             typer.echo(f"  {table:24} {n}")
 
 
+@app.command()
+def crawl(
+    limit: int = typer.Option(None, help="Stop scheduling after N documents (dev runs)."),
+    skip_files: bool = typer.Option(False, help="Only fetch createto.ca pages."),
+) -> None:
+    """Crawl createto.ca and linked public files into the raw store and database."""
+    from createto_info.crawl.runner import run_crawl
+
+    run = run_crawl(get_config(), limit=limit, skip_files=skip_files)
+    typer.echo(f"run {run.id} {run.status}")
+    typer.echo(json.dumps(run.stats, indent=2))
+
+
+@app.command()
+def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
+    """Show recent crawl runs and their headline stats."""
+    from sqlalchemy import select
+
+    from createto_info.db import session_scope
+    from createto_info.db.models import CrawlRun
+
+    keys = ["duration_s", "requests", "not_modified", "pages_new", "pages_changed",
+            "pages_unchanged", "files_new", "files_changed", "files_unchanged", "llm_calls"]
+    with session_scope() as s:
+        for r in s.scalars(select(CrawlRun).order_by(CrawlRun.id.desc()).limit(n)):
+            head = " ".join(f"{k}={r.stats.get(k, 0)}" for k in keys)
+            typer.echo(f"#{r.id} {r.started_at:%Y-%m-%d %H:%M} {r.mode:11} {r.status:9} {head}")
+
+
 @config_app.command("show")
 def config_show() -> None:
     """Print the resolved configuration (no secrets)."""
