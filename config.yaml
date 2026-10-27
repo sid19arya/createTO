@@ -9,7 +9,7 @@ crawl:
   concurrent_per_domain: 2
   download_delay_s: 0.5
   autothrottle_target_concurrency: 1.0
-  max_file_mb: 50
+  max_file_mb: 100                           # largest seen: 77 MB design-guideline PDF
   timeout_s: 30
   retries: 2
 

@@ -153,7 +153,9 @@ class Recorder:
     def log(self, url: str, outcome: str, reason: str | None, referrer: str | None = None,
             http_status: int | None = None, elapsed_ms: int | None = None) -> None:
         self._log(url, outcome, reason, referrer, http_status, elapsed_ms)
-        self.counts[f"{outcome}:{reason}" if reason else outcome] += 1
+        # redirect reasons carry the target URL; count them under one key
+        key = outcome if outcome == "redirected" or not reason else f"{outcome}:{reason}"
+        self.counts[key] += 1
         self.s.commit()
 
     def _log(self, url, outcome, reason, referrer, http_status, elapsed_ms) -> None:
