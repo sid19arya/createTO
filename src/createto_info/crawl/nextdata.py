@@ -69,3 +69,15 @@ def iter_urls(obj: Any) -> Iterator[str]:
             yield from iter_urls(v)
     elif isinstance(obj, str) and _URLISH.match(obj) and len(obj) < 2048:
         yield obj
+
+
+_TAGS = re.compile(
+    rb"<(script|style|noscript|svg)\b.*?</\1\s*>|<!--.*?-->|<[^>]+>", re.S | re.I
+)
+_SPACE = re.compile(rb"\s+")
+
+
+def visible_text_hash(html: bytes) -> str:
+    """Hash of an HTML page's visible text, ignoring scripts, tokens and markup churn."""
+    text = _SPACE.sub(b" ", _TAGS.sub(b" ", html)).strip()
+    return hashlib.sha256(text).hexdigest()

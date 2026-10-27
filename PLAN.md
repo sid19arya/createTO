@@ -50,6 +50,17 @@ Brief: `assets/task_description/CreateTO scraper.pdf`. Related docs:
   (Cushman & Wakefield / `f.datasrvr.com`), news, board-meeting documents, PDFs.
 - `secure.toronto.ca` blocks non-browser user agents (Akamai). Logged as `blocked`.
 - Site links to a UAT staging copy (`*-uat-*.vercel.app`). It is excluded.
+- First full crawl (2026-10-26, crawl only): 781 documents (244 createto.ca pages, 441 Storyblok
+  PDFs, 67 external pages, 27 external PDFs), ~940 MB, 916 requests, 287 s.
+  - 109 of 232 sitemap URLs (mostly news) are **not linked** from any page (news listing is
+    client-side paginated), so the sitemap seed is essential. 12 linked pages are missing from
+    the sitemap.
+  - Blocked: 28 Toronto Council agenda items on `secure.toronto.ca` (Akamai 403); robots.txt
+    disallows the market-offering brochures on `f.datasrvr.com`, the Cushman & Wakefield page and
+    a Dropbox file. These are respected and logged.
+  - Broken links on createto.ca (404): `/leasing`, a malformed project-file link, two dead
+    toronto.ca PDFs.
+- Unchanged repeat: 639 of 784 documents answered 304; 0 false changes on createto.ca pages.
 - PDF sample (12 Parkdale files): nearly all have a text layer (500–2,600 chars/page). ~10% of
   pages are low-text (display boards, site plans, renderings). One 75-page design-guideline PDF
   had 7k embedded images.
@@ -141,5 +152,6 @@ Idempotency: every LLM output is cached in `extractions` keyed by
 - OCR on scanned PDFs (Tesseract or OpenRouter `mistral-ocr` paid engine)
 - Reading Storyblok's Content Delivery API directly instead of `__NEXT_DATA__`
 - Joining with City of Toronto open data (council decisions, building permits, ward data)
-- Deeper (>1 hop) external crawl of toronto.ca council agenda items
+- Toronto council agenda items/decisions via the City's open data (TMMIS) instead of
+  `secure.toronto.ca`, which blocks crawlers
 - Human review UI for low-confidence facts

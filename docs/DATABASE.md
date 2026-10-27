@@ -72,7 +72,8 @@ repeat run fetches identical content, it adds no row and only bumps `documents.l
 
 `content_hash` is *semantic*: for createto.ca pages it hashes the page's own Storyblok record
 (`pageProps.page`), so Next.js rebuilds and changes to derived lists (`articles`, `similar`)
-don't count as changes. For every other document it is the sha256 of the raw bytes. The raw
+don't count as changes. Other HTML pages hash their visible text (scripts, comments and
+markup removed), so session tokens don't count as changes. Files hash their raw bytes. The raw
 file is written to `storage_path` only when a new version is created.
 
 | column | notes |

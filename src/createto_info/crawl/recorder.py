@@ -12,7 +12,13 @@ from sqlalchemy import select, update
 from sqlalchemy.orm import Session
 
 from createto_info.config import REPO_ROOT, Config
-from createto_info.crawl.nextdata import cms_identity, extract_next_data, page_props, semantic_hash
+from createto_info.crawl.nextdata import (
+    cms_identity,
+    extract_next_data,
+    page_props,
+    semantic_hash,
+    visible_text_hash,
+)
 from createto_info.crawl.rawstore import RawStore, sha256
 from createto_info.crawl.urls import kind_for
 from createto_info.db.models import CrawlRun, Document, DocumentVersion, FetchLog
@@ -102,7 +108,12 @@ class Recorder:
 
         raw_hash = sha256(f.body)
         props = page_props(extract_next_data(f.body)) if kind == "page" else None
-        content_hash = semantic_hash(props) if props else raw_hash
+        if props:
+            content_hash = semantic_hash(props)
+        elif kind == "page":
+            content_hash = visible_text_hash(f.body)
+        else:
+            content_hash = raw_hash
         cms_uuid, cms_updated = cms_identity(props)
 
         existing = self.s.scalar(

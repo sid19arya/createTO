@@ -9,6 +9,7 @@ from createto_info.crawl.nextdata import (
     iter_urls,
     page_props,
     semantic_hash,
+    visible_text_hash,
 )
 from createto_info.crawl.rawstore import RawStore
 from createto_info.crawl.urls import (
@@ -90,3 +91,10 @@ def test_rawstore_is_content_addressed(tmp_path):
     h2, p2 = store.put(b"hello", "pdf")
     assert h1 == h2 and p1 == p2 and p1.suffix == ".pdf"
     assert store.get(store.relpath(p1)) == b"hello"
+
+
+def test_visible_text_hash_ignores_scripts_and_markup():
+    a = b'<html><script>var t=1</script><p class="a">Open bids</p></html>'
+    b = b'<html><script>var t=2</script><p class="b">Open   bids</p><!-- x --></html>'
+    c = b"<html><p>Closed bids</p></html>"
+    assert visible_text_hash(a) == visible_text_hash(b) != visible_text_hash(c)
