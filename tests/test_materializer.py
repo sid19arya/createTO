@@ -142,7 +142,7 @@ def test_first_parse_builds_project_graph(db_session, config):
     kinds = dict(s.execute(select(ProcurementSignal.kind, ProcurementSignal.project_id)).all())
     assert kinds == {"market_offering": parent.id, "rfp": parent.id,
                      "solicitation": parent.id}, "MERX row matched by address range"
-    assert stats["facts_new"] > 0
+    assert stats["fact_claims"] > 0 and stats["facts_current"] == 0, stats
 
 
 def test_reparse_is_idempotent_and_phase_change_is_versioned(db_session, config):

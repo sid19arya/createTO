@@ -16,10 +16,10 @@ crawl_runs ─┬─ fetch_log
                      ├─ extractions (LLM/parser outputs, cached) ── llm_calls
                      │                                              
            ┌──────── DOMAIN LAYER (what it means) ─────────────────┐
-                     ├─ facts ── fact_sources                      
+                     ├─ facts ──────────────┐
+                     ├─ milestones ─────────┼── evidence ── document_versions
+                     ├─ procurement_signals ┘
    initiatives ── projects ── project_versions                       
-                     ├─ milestones                                   
-                     ├─ procurement_signals                          
    councillors ──────┤                                                
    news_articles ────┤                                                
                      └─ links (generic edges between any entities)    
@@ -30,8 +30,10 @@ crawl_runs ─┬─ fetch_log
 Three rules hold everywhere:
 1. **Raw is immutable.** `document_versions` rows and files in `data/raw/` are never updated. A
    change on the site creates a new version.
-2. **Every domain record cites a source.** It points to a `document_version` (and a page/locator
-   plus excerpt) through `source_version_id` or `fact_sources`.
+2. **Every domain record cites a source.** Entities parsed from one page (projects, news,
+   initiatives) carry `source_version_id`. Claims (facts, milestones, procurement signals) can be
+   backed by many sources, each an `evidence` row (document version, page, locator, excerpt).
+   Sources never overwrite each other; reconciliation rules are in PLAN.md §8.
 3. **Current tables + history.** `projects`, `facts`, etc. hold the current view. History lives
    in `project_versions`, superseded facts, and `first_seen_run` / `last_seen_run` columns.
 
@@ -189,42 +191,56 @@ Meeting - November 28, 2024"), else Storyblok `first_published_at`, which kept t
 (2017+) through the 2023 migration. `sort_by_date` is unreliable and ignored.
 
 ### `facts`
-Claim-level data with provenance. CMS fields and LLM-extracted document facts live side by side.
+A value claimed for a project field. **Identity is `(project_id, field, value_key)`**: the same
+value asserted by the CMS and by a PDF is one row with two `evidence` rows.
 
 | column | notes |
 |---|---|
 | `id`, `project_id` (nullable), `project_hint` | |
 | `field` (vocabulary in EXTRACTION.md), `label` | |
-| `value_text`, `value_num`, `unit`, `as_of`, `as_of_precision` | |
-| `extracted_by` | `cms`, `rule`, `model:<id>@<prompt_version>` |
-| `confidence` | 1.0 for CMS |
-| `status` | `current`, `superseded`, `retracted` (source removed) |
+| `value_text`, `value_num`, `unit` | as first asserted |
+| `value_key` | normalized identity: lower-cased, whitespace-collapsed text, or `"<num> <unit>"` |
+| `as_of`, `as_of_precision` | latest document date asserting the value (CMS: page publish date) |
+| `extracted_by`, `confidence` | highest-ranked source among its evidence (`cms` > `rule:*` > `model:*`) |
+| `status` | `current`, `superseded`, `conflicting`, `retracted`. Recomputed every parse (PLAN.md §8) |
 | `superseded_by`, `valid_from_run`, `valid_to_run` | corrections and amendments over time |
 
-### `fact_sources`
-Many-to-many: one fact can be backed by several documents.
-`fact_id, version_id, page_no, locator (JSON path or CSS selector), excerpt (≤300 chars),
-extraction_id`.
+Status rules per `(project, field)`, among facts with **live** evidence: a CMS-backed value is
+`current`; otherwise the latest `as_of` wins and equal dates with different values are all
+`conflicting`; the rest are `superseded` (pointing at the winner). A fact with no live evidence
+and no replacement is `retracted`.
+
+### `evidence`
+One source location backing a fact, milestone or procurement signal.
+`entity_type (fact|milestone|procurement_signal), entity_id, version_id, page_no, locator (JSON
+path / row id), excerpt (≤300 chars), extracted_by, confidence, extraction_id, first_run,
+last_run`. Unique per `(entity, version, page, locator)`; re-asserting bumps `last_run`.
+Evidence is **live** while its `version_id` is its document's current version and the document
+isn't removed; that's how a re-crawl that changes a page retracts what the old page claimed.
 
 ### `milestones`
 Dated project events.
-`id, project_id, type, label, title, date, date_precision, end_date, status
-(actual|planned|cancelled|delayed), source_version_id, page_no, excerpt, extracted_by,
-confidence, first_seen_run, last_seen_run`.
-Deterministic types: `phase_period` (one per CMS timeline step; `label` = phase key, `date`/
-`date_precision` from the schedule text, `end_date` for ranges) and `phase_change` (detected when
-a re-crawl sees a new phase; dated by the run). `status` is `actual`, `current`, `planned`,
-`cancelled` or `delayed`. CMS milestones are keyed `(project_id, type, label, extracted_by)` and
-updated in place; history lives in `project_versions`.
+`id, project_id, project_hint, type, label, title, date, date_precision, end_date, status,
+extracted_by, confidence, first_seen_run, last_seen_run, retracted_run` + `evidence` rows.
+Deterministic types: `phase_period` (one per CMS timeline step; `label` = phase key, with `#2`
+when a phase repeats; dates from the schedule text) and `phase_change` (detected when a re-crawl
+sees a new phase; dated by the run; never retracted, it's history). `status` is `actual`,
+`current`, `planned`, `cancelled` or `delayed`.
+Matching (same project and type): by `label` if the claim has one (structured identity), else
+by dates overlapping at their precision, else title similarity. A lower-ranked source only fills
+empty fields. `retracted_run` is set when no evidence is live any more.
 
 ### `procurement_signals`
-Public evidence of buying, selling or partnering opportunities. **Not** MERX listings.
-`id, project_id, kind, title, reference_number, issuer, counterparty, scope, value, currency,
-opens_at, closes_at, status, external_url, source_version_id, page_no, excerpt, extracted_by,
-confidence, first_seen_run, last_seen_run`.
+Public evidence of buying, selling or partnering opportunities.
+`id, project_id, project_hint, kind, title, reference_number, issuer, counterparty, scope, value,
+currency, opens_at, closes_at, status, external_url, extracted_by, confidence, first_seen_run,
+last_seen_run, retracted_run` + `evidence` rows.
+Matching (same project and kind): reference number, else same open/close date, else title
+similarity ≥ 0.85; lower-ranked sources fill empty fields only. A retracted `open` signal becomes
+`closed` (project left the market-offering phase; tender gone from the MERX open listing).
 
 Deterministic sources (`extracted_by`):
-- `cms`: project in phase `marketOffering` → `market_offering`, `open`; `closed` once it leaves the phase
+- `cms`: project in phase `marketOffering` → `market_offering`, `open`
 - `rule:resource_title`: project file titled RFP / RFQ / REOI / market offering / ...
 - `rule:merx`: rows of MERX's public open-solicitations listing → `solicitation` with
   reference number, buyer, published/closing dates; linked to a project by street-address range
@@ -263,11 +279,11 @@ SELECT name, phase, address,
        111.0 * sqrt(power(latitude - 43.64, 2) + power((longitude + 79.43) * cos(radians(43.64)), 2)) AS km
 FROM projects WHERE phase = 'marketOffering' ORDER BY km LIMIT 10;
 
--- Every fact about a project, with citations
-SELECT f.field, f.value_text, d.url, s.page_no, s.excerpt
-FROM facts f JOIN fact_sources s ON s.fact_id = f.id
-JOIN document_versions v ON v.id = s.version_id JOIN documents d ON d.id = v.document_id
-WHERE f.project_id = 12 AND f.status = 'current';
+-- Every current fact about a project, with all its citations
+SELECT f.field, f.value_text, e.extracted_by, d.url, e.page_no, e.excerpt
+FROM facts f JOIN evidence e ON e.entity_type = 'fact' AND e.entity_id = f.id
+JOIN document_versions v ON v.id = e.version_id JOIN documents d ON d.id = v.document_id
+WHERE f.project_id = 12 AND f.status IN ('current', 'conflicting');
 
 -- What changed in the last run
 SELECT p.name, pv.diff FROM project_versions pv JOIN projects p ON p.id = pv.project_id

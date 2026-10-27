@@ -7,7 +7,7 @@ EXPECTED_TABLES = {
     "crawl_runs", "documents", "document_versions", "pdf_pages", "fetch_log",
     "llm_calls", "extractions",
     "initiatives", "councillors", "projects", "project_aliases", "project_versions",
-    "news_articles", "facts", "fact_sources", "milestones", "procurement_signals", "links",
+    "news_articles", "facts", "evidence", "milestones", "procurement_signals", "links",
     "search_chunks",
 }
 

@@ -25,8 +25,6 @@ from createto_info.db.models import (
     Councillor,
     Document,
     DocumentVersion,
-    Fact,
-    FactSource,
     Initiative,
     Link,
     Milestone,
@@ -36,6 +34,7 @@ from createto_info.db.models import (
     ProjectAlias,
     ProjectVersion,
 )
+from createto_info.parse.claims import Claims, Source, flatten
 from createto_info.parse.merx import parse_open_solicitations
 from createto_info.parse.text import (
     Address,
@@ -178,6 +177,7 @@ class Materializer:
         self.project_ids: dict[str, int] = {}  # cms uuid -> projects.id
         self.initiative_ids: dict[str, int] = {}
         self.pages: dict[str, Page] = {}  # cms uuid -> page (deduped)
+        self.claims = Claims(session, run_id)
 
     # ------------------------------------------------------------- entry
 
@@ -208,6 +208,7 @@ class Materializer:
         self._merx()
         for page in projects:
             self._version(page)
+        self._reconcile()
         self._cutoff()
         self.s.flush()
         return self.stats
@@ -433,6 +434,7 @@ class Materializer:
     # ------------------------------------------------------------- facts
 
     def _facts(self, page: Page) -> None:
+        as_of = (page.version.cms_updated_at or page.version.fetched_at).date()
         ids = [(page.record["uuid"], page.content, "content")]
         for i, b in enumerate(page.own_blocks()):
             ids.append((b["_uid"], b, f"content.blocks[{i}]"))
@@ -441,45 +443,16 @@ class Materializer:
             for key, field in FACT_FIELDS.items():
                 value = c.get(key)
                 if isinstance(value, list):
-                    value = ", ".join(sorted(v for v in value if v))
+                    value = flatten(value)
                 value = (str(value).strip() if value is not None else "") or None
-                num, unit = (None, None)
-                if field == "site_area" and value:
-                    num, unit = parse_site_area_acres(value), "acres"
-                self._upsert_fact(pid, field, value, num, unit, page.version.id,
-                                  f"{prefix}.{key}")
-
-    def _upsert_fact(self, project_id: int, field: str, value: str | None,
-                     num: float | None, unit: str | None, version_id: int,
-                     locator: str) -> None:
-        cur = self.s.scalar(select(Fact).where(
-            Fact.project_id == project_id, Fact.field == field, Fact.extracted_by == CMS,
-            Fact.status == "current"))
-        if cur is not None and cur.value_text == value:
-            self._fact_source(cur.id, version_id, locator, value)
-            return
-        if cur is not None:
-            cur.status = "superseded" if value else "retracted"
-            cur.valid_to_run = self.run_id
-            self.stats["facts_superseded" if value else "facts_retracted"] += 1
-        if not value:
-            return
-        new = Fact(project_id=project_id, field=field, value_text=value, value_num=num,
-                   unit=unit, extracted_by=CMS, confidence=1.0, status="current",
-                   valid_from_run=self.run_id)
-        self.s.add(new)
-        self.s.flush()
-        if cur is not None:
-            cur.superseded_by = new.id
-        self._fact_source(new.id, version_id, locator, value)
-        self.stats["facts_new"] += 1
-
-    def _fact_source(self, fact_id: int, version_id: int, locator: str, value: str) -> None:
-        exists = self.s.scalar(select(FactSource.id).where(
-            FactSource.fact_id == fact_id, FactSource.version_id == version_id))
-        if not exists:
-            self.s.add(FactSource(fact_id=fact_id, version_id=version_id, locator=locator,
-                                  excerpt=value[:300]))
+                if not value:
+                    continue
+                self.claims.fact(
+                    project_id=pid, field=field, value_text=value, as_of=as_of,
+                    as_of_precision="day",
+                    source=Source(page.version.id, CMS, locator=f"{prefix}.{key}",
+                                  excerpt=value))
+                self.stats["fact_claims"] += 1
 
     # -------------------------------------------------------- milestones
 
@@ -487,86 +460,38 @@ class Materializer:
         pid = self.project_ids[page.record["uuid"]]
         steps = list(_walk(page.content.get("timeline"), "projectTimelineStep"))
         active = next((i for i, s in enumerate(steps) if s.get("active")), None)
-        kept = set()
+        seen: Counter[str] = Counter()
         for i, step in enumerate(steps):
             phase = step.get("phase") or "unknown"
+            seen[phase] += 1
+            # a phase can repeat (931 Yonge: market offering in 2021 and again in 2025)
+            key = phase if seen[phase] == 1 else f"{phase}#{seen[phase]}"
             raw = (step.get("schedule") or "").strip()
             sched = parse_schedule(raw)
-            status = _step_status(i, active, sched, raw, self.today)
-            m = self._upsert_milestone(
-                pid, "phase_period", phase, self._phase_label(page, phase),
-                sched.start.date if sched and sched.start else None,
-                sched.start.precision if sched and sched.start else None,
-                sched.end.date if sched and sched.end else None, status,
-                page.version.id, f"{self._phase_label(page, phase)}: {raw or 'n/a'}")
-            kept.add(m.id)
-        # timeline steps removed from the page: history stays in project_versions
-        self.s.execute(delete(Milestone).where(
-            Milestone.project_id == pid, Milestone.extracted_by == CMS,
-            Milestone.type == "phase_period", Milestone.id.not_in(kept or {-1})))
-
-    def _upsert_milestone(self, project_id: int, type_: str, label: str, title: str | None,
-                          start: date | None, precision: str | None, end: date | None,
-                          status: str, version_id: int, excerpt: str,
-                          extracted_by: str = CMS) -> Milestone:
-        row = self.s.scalar(select(Milestone).where(
-            Milestone.project_id == project_id, Milestone.type == type_,
-            Milestone.label == label, Milestone.extracted_by == extracted_by))
-        if row is None:
-            row = Milestone(project_id=project_id, type=type_, label=label,
-                            extracted_by=extracted_by, first_seen_run=self.run_id)
-            self.s.add(row)
-            self.stats["milestones_new"] += 1
-        row.title, row.date, row.date_precision, row.end_date = title, start, precision, end
-        row.status = status
-        row.source_version_id = version_id
-        row.excerpt = excerpt[:300]
-        row.confidence = 1.0
-        row.last_seen_run = self.run_id
-        self.s.flush()
-        self.stats["milestones"] += 1
-        return row
+            label = self._phase_label(page, phase)
+            self.claims.milestone(
+                project_id=pid, type="phase_period", label=key, title=label,
+                date=sched.start.date if sched and sched.start else None,
+                date_precision=sched.start.precision if sched and sched.start else None,
+                end_date=sched.end.date if sched and sched.end else None,
+                status=_step_status(i, active, sched, raw, self.today),
+                source=Source(page.version.id, CMS, locator=f"content.timeline[{i}]",
+                              excerpt=f"{label}: {raw or 'n/a'}"))
+            self.stats["milestone_claims"] += 1
 
     # ------------------------------------------------------- procurement
 
-    def _signal(self, *, project_id: int | None, kind: str, title: str, status: str,
-                version_id: int, excerpt: str, extracted_by: str, **fields: Any) -> None:
-        row = self.s.scalar(select(ProcurementSignal).where(
-            ProcurementSignal.project_id.is_(None) if project_id is None
-            else ProcurementSignal.project_id == project_id,
-            ProcurementSignal.kind == kind, ProcurementSignal.title == title,
-            ProcurementSignal.extracted_by == extracted_by))
-        if row is None:
-            row = ProcurementSignal(project_id=project_id, kind=kind, title=title,
-                                    extracted_by=extracted_by, first_seen_run=self.run_id)
-            self.s.add(row)
-            self.stats["procurement_new"] += 1
-        row.status = status
-        row.source_version_id = version_id
-        row.excerpt = excerpt[:300]
-        row.confidence = 1.0
-        row.last_seen_run = self.run_id
-        for k, v in fields.items():
-            setattr(row, k, v)
-        self.s.flush()
-        self.stats["procurement_signals"] += 1
-
     def _market_offerings(self, projects: list[Page]) -> None:
         for page in projects:
-            c = page.content
-            pid = self.project_ids[page.record["uuid"]]
-            if c.get("phase") == "marketOffering":
-                self._signal(project_id=pid, kind="market_offering",
-                             title=f"{page.record.get('name')} market offering",
-                             status="open", issuer="CreateTO", version_id=page.version.id,
-                             excerpt="Current Phase: Market Offering", extracted_by=CMS)
-            else:
-                for row in self.s.scalars(select(ProcurementSignal).where(
-                        ProcurementSignal.project_id == pid, ProcurementSignal.extracted_by == CMS,
-                        ProcurementSignal.kind == "market_offering",
-                        ProcurementSignal.status == "open")):
-                    row.status = "closed"
-                    self.stats["procurement_closed"] += 1
+            if page.content.get("phase") != "marketOffering":
+                continue
+            self.claims.signal(
+                project_id=self.project_ids[page.record["uuid"]], kind="market_offering",
+                title=f"{page.record.get('name')} market offering", status="open",
+                issuer="CreateTO",
+                source=Source(page.version.id, CMS, locator="content.phase",
+                              excerpt="Current Phase: Market Offering"))
+            self.stats["procurement_claims"] += 1
 
     def _resource_procurement(self, page: Page) -> None:
         pid = self.project_ids[page.record["uuid"]]
@@ -576,14 +501,15 @@ class Materializer:
                 m = _PROCUREMENT.search(name)
                 if not m:
                     continue
-                kind = _PROCUREMENT_KIND.get(m.group("kind").lower().rstrip("s"),
-                                             _PROCUREMENT_KIND.get(m.group("kind").lower(),
-                                                                   "other"))
-                self._signal(project_id=pid, kind=kind, title=name, status="unknown",
-                             issuer="CreateTO", external_url=normalize_url(
-                                 d.get("filename") or "", page.url),
-                             version_id=page.version.id, excerpt=name,
-                             extracted_by="rule:resource_title")
+                word = m.group("kind").lower()
+                kind = _PROCUREMENT_KIND.get(word, _PROCUREMENT_KIND.get(word.rstrip("s"),
+                                                                         "other"))
+                self.claims.signal(
+                    project_id=pid, kind=kind, title=name, issuer="CreateTO",
+                    external_url=normalize_url(d.get("filename") or "", page.url),
+                    source=Source(page.version.id, "rule:resource_title",
+                                  locator=f"resources:{d.get('filename')}", excerpt=name))
+                self.stats["procurement_claims"] += 1
 
     def _merx(self) -> None:
         rows = self.s.execute(
@@ -597,17 +523,35 @@ class Materializer:
             for sol in parse_open_solicitations(html, url):
                 pid = matcher.match(sol.title)
                 status = "closed" if sol.closing and sol.closing < self.today else "open"
-                self._signal(
-                    project_id=pid, kind="solicitation", title=sol.title, status=status,
+                self.claims.signal(
+                    project_id=pid, project_hint=None if pid else sol.title,
+                    kind="solicitation", title=sol.title, status=status,
                     reference_number=sol.reference, issuer=sol.buyer,
                     opens_at=sol.published.isoformat() if sol.published else None,
                     closes_at=sol.closing.isoformat() if sol.closing else None,
-                    external_url=sol.url, scope=sol.location, version_id=version.id,
-                    excerpt=f"{sol.title} | {sol.buyer} | Published {sol.published} | "
-                            f"Closing {sol.closing}",
-                    extracted_by="rule:merx")
+                    external_url=sol.url, scope=sol.location,
+                    source=Source(version.id, "rule:merx", locator=f"merx:{sol.reference}",
+                                  excerpt=f"{sol.title} | {sol.buyer} | Published "
+                                          f"{sol.published} | Closing {sol.closing}"))
                 self.stats["merx_solicitations"] += 1
                 self.stats["merx_linked" if pid else "merx_unlinked"] += 1
+
+    def _reconcile(self) -> None:
+        """Resolve fact values and retract milestones/signals nobody asserts any more."""
+        for status, n in self.claims.resolve_facts().items():
+            self.stats[status] += n
+        for m in self.claims.retract_unsupported("milestone", Milestone):
+            if m.extracted_by == "cms:diff":  # a detected phase change is history, keep it
+                m.retracted_run = None
+            else:
+                self.stats["milestones_retracted"] += 1
+        for sig in self.claims.retract_unsupported("procurement_signal", ProcurementSignal):
+            # a market offering whose project left the phase, or a tender gone from the
+            # MERX open listing, is closed
+            if sig.status in ("open", "upcoming"):
+                sig.status = "closed"
+            self.stats["procurement_retracted"] += 1
+        self.s.flush()
 
     # ---------------------------------------------------------- history
 
@@ -628,11 +572,13 @@ class Materializer:
                 self.stats["projects_changed"] += 1
                 if "phase" in diff:
                     old, new = diff["phase"]
-                    self._upsert_milestone(
-                        p.id, "phase_change", f"{old}->{new}", f"{old} → {new}",
-                        self.today, "day", None, "actual", page.version.id,
-                        f"Phase changed from {old} to {new} (detected by crawl)",
-                        extracted_by="cms:diff")
+                    self.claims.milestone(
+                        project_id=p.id, type="phase_change", label=f"{old}->{new}",
+                        title=f"{old} → {new}", date=self.today, date_precision="day",
+                        status="actual",
+                        source=Source(page.version.id, "cms:diff", locator="content.phase",
+                                      excerpt=f"Phase changed from {old} to {new} "
+                                              f"(detected by crawl run {self.run_id})"))
             self.s.add(ProjectVersion(project_id=p.id, run_id=self.run_id,
                                       version_id=page.version.id, snapshot=snap, diff=diff))
             self.stats["project_versions"] += 1
@@ -746,7 +692,7 @@ def _slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-DERIVED_TABLES = ["links", "fact_sources", "facts", "milestones", "procurement_signals",
+DERIVED_TABLES = ["links", "evidence", "facts", "milestones", "procurement_signals",
                   "project_versions", "project_aliases", "news_articles", "projects",
                   "councillors", "initiatives"]
 

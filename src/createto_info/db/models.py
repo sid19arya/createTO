@@ -330,8 +330,18 @@ class NewsArticle(Base):
 
 
 class Fact(Base):
+    """A value claimed for a project field. Identity: (project, field, normalized value).
+
+    Several sources asserting the same value share one row (see `evidence`); `status` is decided
+    by the reconciliation rules in PLAN.md §8.
+    """
+
     __tablename__ = "facts"
-    __table_args__ = (Index("ix_facts_project_field", "project_id", "field"),)
+    __table_args__ = (
+        Index("ix_facts_project_field", "project_id", "field"),
+        UniqueConstraint("project_id", "field", "value_key", name="uq_facts_identity",
+                         postgresql_nulls_not_distinct=True),
+    )
 
     id: Mapped[int] = mapped_column(primary_key=True)
     project_id: Mapped[int | None] = mapped_column(ForeignKey("projects.id"))
@@ -340,39 +350,53 @@ class Fact(Base):
     label: Mapped[str | None] = mapped_column(Text)
     value_text: Mapped[str | None] = mapped_column(Text)
     value_num: Mapped[float | None] = mapped_column(Double)
+    value_key: Mapped[str] = mapped_column(Text)  # normalized value used for identity
     unit: Mapped[str | None] = mapped_column(Text)
-    as_of: Mapped[str | None] = mapped_column(Text)
+    as_of: Mapped[str | None] = mapped_column(Text)  # latest document date asserting it
     as_of_precision: Mapped[str | None] = mapped_column(Text)
-    extracted_by: Mapped[str] = mapped_column(Text)  # cms | rule | model:<id>@<prompt_version>
+    # highest-ranked source among its evidence: cms > rule:* > model:<id>@<prompt_version>
+    extracted_by: Mapped[str] = mapped_column(Text)
     confidence: Mapped[float] = mapped_column(Double, default=1.0)
-    status: Mapped[str] = mapped_column(Text, default="current")  # current|superseded|retracted
+    # current | superseded | conflicting | retracted
+    status: Mapped[str] = mapped_column(Text, default="current")
     superseded_by: Mapped[int | None] = mapped_column(ForeignKey("facts.id"))
     valid_from_run: Mapped[int | None] = _run_fk()
     valid_to_run: Mapped[int | None] = _run_fk()
 
 
-class FactSource(Base):
-    __tablename__ = "fact_sources"
+class Evidence(Base):
+    """One source location backing a fact, milestone or procurement signal."""
+
+    __tablename__ = "evidence"
+    __table_args__ = (
+        UniqueConstraint("entity_type", "entity_id", "version_id", "page_no", "locator",
+                         name="uq_evidence_location", postgresql_nulls_not_distinct=True),
+        Index("ix_evidence_entity", "entity_type", "entity_id"),
+    )
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    fact_id: Mapped[int] = mapped_column(ForeignKey("facts.id"), index=True)
+    entity_type: Mapped[str] = mapped_column(Text)  # fact | milestone | procurement_signal
+    entity_id: Mapped[int]
     version_id: Mapped[int] = mapped_column(ForeignKey("document_versions.id"), index=True)
     page_no: Mapped[int | None]
-    locator: Mapped[str | None] = mapped_column(Text)  # JSON path or CSS selector
-    excerpt: Mapped[str | None] = mapped_column(Text)
-    extraction_id: Mapped[int | None] = mapped_column(ForeignKey("extractions.id"))
-
-
-class _Sourced:
-    """Columns shared by records extracted from a single source location."""
-
-    source_version_id: Mapped[int | None] = mapped_column(ForeignKey("document_versions.id"))
-    page_no: Mapped[int | None]
+    locator: Mapped[str | None] = mapped_column(Text)  # JSON path, CSS selector, row id
     excerpt: Mapped[str | None] = mapped_column(Text)
     extracted_by: Mapped[str] = mapped_column(Text)
     confidence: Mapped[float] = mapped_column(Double, default=1.0)
+    extraction_id: Mapped[int | None] = mapped_column(ForeignKey("extractions.id"))
+    first_run: Mapped[int | None] = _run_fk()
+    last_run: Mapped[int | None] = _run_fk()
+
+
+class _Sourced:
+    """Columns shared by records backed by `evidence` rows."""
+
+    extracted_by: Mapped[str] = mapped_column(Text)  # highest-ranked source
+    confidence: Mapped[float] = mapped_column(Double, default=1.0)
     first_seen_run: Mapped[int | None] = _run_fk()
     last_seen_run: Mapped[int | None] = _run_fk()
+    # set when no evidence is live any more (source page changed or removed); cleared if re-asserted
+    retracted_run: Mapped[int | None] = _run_fk()
 
 
 class Milestone(_Sourced, Base):

@@ -134,7 +134,8 @@ Idempotency: every LLM output is cached in `extractions` keyed by
 1. Repo skeleton, docker-compose Postgres, migrations (Alembic), config, README/AGENTS
 2. Crawler + raw store + `fetch_log` + `crawl_runs` stats (no LLM)
 3. `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts
-4. Change detection + `*_versions` + variant demo (unchanged / changed / failed file)
+4. Evidence model + claim reconciliation (§8), change detection + `*_versions`, variant demo
+   (unchanged / changed / failed file) replayed from saved local copies
 5. FastAPI + search endpoint
 6. PDF text per page + vision fallback + LLM extraction (facts, milestones, procurement)
 7. Project linking for news/PDFs
@@ -155,3 +156,44 @@ Idempotency: every LLM output is cached in `extractions` keyed by
 - Toronto council agenda items/decisions via the City's open data (TMMIS) instead of
   `secure.toronto.ca`, which blocks crawlers
 - Human review UI for low-confidence facts
+- **Sophisticated fact overwriting / truth discovery.** v1 keeps reconciliation deliberately
+  simple (§8): exact match on a normalized value, the CMS wins on fields it covers, otherwise the
+  latest document date wins, and ties are flagged `conflicting`. Ideas we are consciously *not*
+  building yet:
+  - *Staleness-aware precedence*: let a 2026 staff report override a CMS field that hasn't been
+    edited since 2023 (e.g. CMS "Proposed Use: Mixed-use" vs. a newer report "residential
+    with ground-floor retail").
+  - *Unit- and approximation-aware equality*: treat "4.24 acres" and "1.72 ha", or "~800 homes"
+    and "800 residential units", or a range "750–800 units" vs "780 units" as agreeing.
+  - *Source reliability weighting*: per-source trust scores (council report > press release >
+    community pop-up board) learned or tuned, instead of fixed precedence.
+  - *LLM adjudication*: ask a model to decide which of two conflicting claims is current.
+  - *Bitemporal validity*: separate "true in the world from/to" from "known to us from/to" so
+    we can answer "what was the planned unit count as of 2022?".
+  - *Cross-entity propagation*: roll block-level facts up to the parent project (Bloor-Kipling
+    total units = sum of its blocks) and detect contradictions between them.
+  - *Fuzzy signal merging beyond fixed thresholds*: e.g. recognising that a 2024 news "RFP
+    issued for Parkdale Hub" and a 2025 "development partner selected" are stages of one
+    procurement (we keep them as separate signals).
+
+## 8. Claims, evidence and reconciliation (v1 rules)
+
+Every source (CMS, rules, LLM) **asserts claims with evidence**; nothing overwrites another
+source's record.
+
+- `evidence` rows link any fact / milestone / procurement signal to a document version, page,
+  locator and verbatim excerpt. Evidence is *live* while its document version is still the
+  document's current version. Re-crawls that change a page leave the old evidence stale.
+- **Facts** are identified by `(project, field, normalized value)`. The same value from several
+  sources is one fact with several evidence rows. Per `(project, field)`, among facts with live
+  evidence:
+  1. a CMS-backed fact is `current`, others are `superseded` by it;
+  2. otherwise the latest `as_of` (document date) wins; equal dates with different values →
+     all `conflicting`;
+  3. a fact with no live evidence is `superseded` (if another value replaced it) or `retracted`.
+- **Procurement signals** are matched (same project and kind) by reference number, else
+  overlapping dates, else title similarity ≥ 0.85. A matched claim adds evidence and **fills
+  empty fields only**, unless its source ranks at least as high as the one that set the record
+  (`cms` > `rule:*` > `model:*`).
+- **Milestones**: same project and type, matched by label (CMS timeline phase) or by dates that
+  overlap at their precision; same fill-empty rule.

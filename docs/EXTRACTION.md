@@ -165,8 +165,8 @@ TEXT:
 4. `project_id` must be in the candidate list. Otherwise it is set to null and the record goes to
    linking (§6).
 5. Dedupe: same `(project, field, value_num|value_text)` from multiple sources become
-   **one fact with multiple `fact_sources`**. A different value for the same `(project, field)`
-   creates a new fact version, and the older one becomes `superseded_by`. This is how
+   **one fact with multiple `evidence` rows**. A different value for the same `(project, field)`
+   is a separate fact; `Claims.resolve_facts()` picks the current one (PLAN.md §8). This is how
    corrections and amendments show up.
 
 ## 4. Deterministic sources of the same records (implemented: `parse/cms.py`)
