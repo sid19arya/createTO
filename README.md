@@ -5,8 +5,8 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–5 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
-> API + search page).
+> Status: steps 1–6 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
+> API + search page, LLM extraction from PDFs/news).
 > See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
 ## Docs

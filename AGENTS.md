@@ -19,7 +19,8 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts (2026-10-26)
 - [x] Step 4: evidence/claims reconciliation, version history, variant demo (2026-10-27)
 - [x] Step 5: FastAPI + search page (2026-10-27)
-- [~] Step 6: PDF pages/renders, OpenRouter client, extraction + model comparison done (2026-10-27); full extraction run pending approval of spend
+- [x] Step 6: PDF pages/renders, OpenRouter client, model comparison, full extraction ($0.90) (2026-10-27)
+- [ ] Step 7: link the 585 unlinked records to projects (Mammoth choice over candidates)
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.

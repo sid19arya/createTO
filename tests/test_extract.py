@@ -20,6 +20,7 @@ from createto_info.extract.llm_extract import (
     Unit,
     apply_outputs,
     parse_when,
+    signal_status,
     verify,
 )
 from createto_info.extract.pdf import pdf_date
@@ -132,3 +133,15 @@ def test_apply_outputs_writes_verified_claims_only(db_session):
                                          Evidence.entity_id == facts["2.86 acres"].id))
     assert (ev.page_no, ev.extraction_id) == (2, ext.id)
     assert s.scalar(select(func.count()).select_from(ProcurementSignal)) == 1
+
+
+@pytest.mark.parametrize("status,closes,doc,expected", [
+    ("open", "2026-11-02", date(2026, 10, 1), "open"),        # live, closes in future
+    ("open", "2022-06-01", date(2022, 5, 16), "closed"),      # closing date passed
+    ("open", None, date(2019, 4, 1), "unknown"),              # old doc: can't confirm
+    ("upcoming", None, date(2026, 9, 1), "upcoming"),         # recent doc
+    ("awarded", None, date(2019, 4, 1), "awarded"),           # historical facts stay
+    ("bogus", None, date(2026, 9, 1), "unknown"),
+])
+def test_signal_status_ages_out(status, closes, doc, expected):
+    assert signal_status(status, closes, doc, today=date(2026, 10, 27)) == expected

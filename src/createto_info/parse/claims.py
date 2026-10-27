@@ -31,6 +31,10 @@ from createto_info.parse.text import DatePoint, period_end
 
 TITLE_MATCH = 85  # rapidfuzz token_sort_ratio threshold for "same signal/milestone"
 
+# fields where several values are true at once; they never supersede each other
+MULTI_VALUED = {"development_partner", "non_profit_partner", "architect", "consultant",
+                "community_benefit", "heritage", "sustainability_target", "other"}
+
 
 def rank(extracted_by: str | None) -> int:
     """Source precedence: cms > rule:* > model:* (PLAN.md §8)."""
@@ -134,8 +138,17 @@ class Claims:
                     f.field)].append(f)
 
         changes: dict[str, int] = defaultdict(int)
-        for facts in groups.values():
+        for (project_id, hint, field), facts in groups.items():
             alive = [f for f in facts if f.id in live]
+            if field in MULTI_VALUED or (project_id is None and hint is None):
+                # several values can all be true (two consultants), or the facts aren't about
+                # one subject (unlinked corporate items): keep every supported value current
+                for f in facts:
+                    if f in alive:
+                        self._set_status(f, "current", None, changes)
+                    elif f.status != "superseded":
+                        self._set_status(f, "retracted", None, changes)
+                continue
             winners: list[Fact] = []
             if alive:
                 best = max(max(rank(b) for b in live[f.id]) for f in alive)

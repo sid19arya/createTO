@@ -182,3 +182,23 @@ def test_labelled_milestones_never_merge_by_date(env):
     b = c.milestone(project_id=pid, type="phase_period", label="developmentConcept",
                     date=date(2025, 1, 1), date_precision="year", source=Source(page, "cms"))
     assert a.id != b.id
+
+
+def test_multi_valued_fields_and_unlinked_facts_dont_supersede(env):
+    s, run, pid = env
+    c = Claims(s, run)
+    a = _doc(s, "https://a/2019.pdf", run)
+    b = _doc(s, "https://a/2024.pdf", run)
+    c.fact(project_id=pid, field="consultant", value_text="DTAH", as_of=date(2019, 1, 1),
+           source=Source(a, "model:x"))
+    c.fact(project_id=pid, field="consultant", value_text="Tim Welch Consulting",
+           as_of=date(2024, 1, 1), source=Source(b, "model:x"))
+    c.fact(project_id=None, field="budget", value_text="$12M", as_of=date(2019, 1, 1),
+           source=Source(a, "model:x"))
+    c.fact(project_id=None, field="budget", value_text="$40M", as_of=date(2024, 1, 1),
+           source=Source(b, "model:x"))
+    c.resolve_facts()
+    assert set(_statuses(s, pid, "consultant").values()) == {"current"}
+    unlinked = dict(s.execute(select(Fact.value_text, Fact.status)
+                              .where(Fact.project_id.is_(None))).all())
+    assert unlinked == {"$12M": "current", "$40M": "current"}

@@ -264,3 +264,24 @@ tokens per page image; output = sample mean per unit, reasoning included):
 | unchanged repeat run (cache) | 0 | $0.00 |
 
 The run stops on its own at `llm.max_cost_usd_per_run` ($5) or `max_requests_per_run` (1,500).
+
+### Full run results (2026-10-27, run 2)
+
+1,269 units (482 PDF text windows, 727 page images, 60 news) in 3.8 min at concurrency 32;
+0 errors, 0 invalid JSON. **Billed: $0.90** (Luna; estimate was $1.03), 5.4M tokens in,
+0.91M out of which 0.46M reasoning. Accepted: 2,551 facts, 1,076 milestones, 135 procurement
+signals; rejected by the quote check: 19 facts, 5 milestones. 585 records stay unlinked (no
+candidate project, no matching hint) and are left for step 7.
+
+Two rules added after looking at the results:
+- **Multi-valued fields** (partners, architect, consultant, community benefit, heritage,
+  sustainability target, `other`) and facts without a project are not reconciled against each
+  other: every supported value stays `current` (`parse/claims.py::MULTI_VALUED`).
+- **Signal status ages out**: a document says "open" only as of its own date. Model-extracted
+  signals with a past closing date become `closed`; open/upcoming ones from documents older than
+  ~6 months without a future closing date become `unknown` (`llm_extract.signal_status`). Only
+  live sources (MERX listing, CMS phase) can keep a signal `open`: 5 today.
+
+Known limits (deferred, PLAN.md §7): "latest document wins" can't tell a phase figure (Parkdale
+West Block, 175 homes) from a site total (231); unit-mix breakdowns are sometimes filed as
+`residential_units`; milestone `planned` is as of the document date.

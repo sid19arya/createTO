@@ -381,6 +381,24 @@ def parse_when(value: str | None) -> tuple[date | None, str | None]:
         return None, None
 
 
+STALE_AFTER_DAYS = 183
+
+
+def signal_status(status: str | None, closes_at: str | None, doc_date: date | None,
+                  today: date | None = None) -> str:
+    """A document says "open" only as of its own date: past closing dates mean closed, and an
+    open/upcoming claim from a document older than ~6 months can't be confirmed (unknown)."""
+    today = today or date.today()
+    status = status if status in SIGNAL_STATUS else "unknown"
+    closes, _ = parse_when(closes_at)
+    if closes and closes < today and status in ("open", "upcoming", "unknown"):
+        return "closed"
+    if status in ("open", "upcoming") and not (closes and closes >= today) and (
+            doc_date is None or (today - doc_date).days > STALE_AFTER_DAYS):
+        return "unknown"
+    return status
+
+
 def apply_outputs(s: Session, results: list[tuple[Unit, Extraction | None]], model: str,
                   run_id: int, dry_run: bool) -> Counter[str]:
     stats: Counter[str] = Counter()
@@ -458,8 +476,8 @@ def _write(claims: Claims, matcher: ProjectMatcher, unit: Unit, ext: Extraction,
         value = rec.get("value")
         claims.signal(project_id=pid, project_hint=None if pid else hint, kind=skind,
                       title=str(rec.get("title") or skind)[:300],
-                      status=rec.get("status") if rec.get("status") in SIGNAL_STATUS
-                      else "unknown",
+                      status=signal_status(rec.get("status"), rec.get("closes_at"),
+                                           unit.doc_date),
                       reference_number=rec.get("reference_number"), issuer=rec.get("issuer"),
                       counterparty=rec.get("counterparty"), scope=rec.get("scope"),
                       value=float(value) if isinstance(value, int | float) else None,

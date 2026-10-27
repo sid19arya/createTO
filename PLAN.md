@@ -193,6 +193,9 @@ source's record.
   2. otherwise the latest `as_of` (document date) wins; equal dates with different values →
      all `conflicting`;
   3. a fact with no live evidence is `superseded` (if another value replaced it) or `retracted`.
+  Exceptions: multi-valued fields (partners, architect, consultant, community benefit,
+  heritage, sustainability target, other) and facts with no project keep *every* supported
+  value `current`; they never supersede each other.
 - **Procurement signals** are matched (same project and kind) by reference number, else
   overlapping dates, else title similarity ≥ 0.85. A matched claim adds evidence and **fills
   empty fields only**, unless its source ranks at least as high as the one that set the record
