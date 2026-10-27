@@ -12,6 +12,7 @@ import asyncio
 import hashlib
 import json
 import re
+import time
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import date
@@ -287,6 +288,7 @@ async def fetch_outputs(s: Session, config: Config, units: list[Unit], model: st
         results = []
         tasks = [asyncio.create_task(_run_unit(client, s, u, model, run_id, stats))
                  for u in units]
+        _report_progress(tasks, client, stats)
         for u, t in zip(units, tasks, strict=True):
             try:
                 results.append((u, await t))
@@ -301,6 +303,28 @@ async def fetch_outputs(s: Session, config: Config, units: list[Unit], model: st
         if own:
             await client.aclose()
     return results, stats
+
+
+def _report_progress(tasks: list[asyncio.Task], client: OpenRouter, stats: Counter[str],
+                     every: int = 50) -> None:
+    """Print a progress line every `every` finished units (stdout, flushed for log files)."""
+    total, start = len(tasks), time.monotonic()
+    done = 0
+
+    def on_done(_: asyncio.Task) -> None:
+        nonlocal done
+        done += 1
+        if done % every and done != total:
+            return
+        elapsed = time.monotonic() - start
+        eta = elapsed / done * (total - done)
+        print(f"[extract] {done}/{total} units | {stats['cached']} cached | "
+              f"{stats['llm_units']} new | {stats['unit_errors']} errors | "
+              f"{stats['invalid_json']} invalid | billed ${client.spent:.4f} | "
+              f"{elapsed / 60:.1f} min elapsed, ~{eta / 60:.1f} min left", flush=True)
+
+    for t in tasks:
+        t.add_done_callback(on_done)
 
 
 # ---------------------------------------------------------------- phase 2

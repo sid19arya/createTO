@@ -65,8 +65,8 @@ llm:
   base_url: https://openrouter.ai/api
   max_requests_per_run: 1500
   max_cost_usd_per_run: 5.00                  # hard stop on OpenRouter-reported spend
-  concurrency: 6
-  requests_per_minute: {default: 120, ":free": 18}   # free models are rate limited
+  concurrency: 32                             # paid models; 429s are retried with backoff
+  requests_per_minute: {default: 900, ":free": 18}   # free models are rate limited
   max_output_tokens: 8000
   timeout_s: 180
   pdf_window_pages: 40
