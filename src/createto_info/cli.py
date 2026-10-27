@@ -221,6 +221,27 @@ def export_cmd(out: Path = typer.Option(None, help="Output dir (default data/exp
 
 
 @app.command()
+def run() -> None:
+    """Whole pipeline as one recorded run: crawl, pdfs, parse, extract, link, index."""
+    from createto_info.pipeline import run_pipeline
+
+    run_id = run_pipeline(get_config(), echo=typer.echo)
+    typer.echo(f"run {run_id} recorded; `createto report` renders the last two runs")
+
+
+@app.command()
+def report(run_ids: list[int] = typer.Argument(None, help="Runs to compare (default: last 2).")
+           ) -> None:
+    """Generate reports/run_report.md (+ .json, examples/) from the database."""
+    from createto_info.db import session_scope
+    from createto_info.report import write_report
+
+    with session_scope() as s:
+        path = write_report(s, get_config(), run_ids or None)
+    typer.echo(f"report written to {path}")
+
+
+@app.command()
 def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
     """Show recent crawl runs and their headline stats."""
     from sqlalchemy import select
