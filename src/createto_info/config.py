@@ -52,17 +52,37 @@ class ModelsConfig(BaseModel):
     gate: str
     extract: str
     vision: str
+    fallback: str | None = None
+    compare: list[str] = Field(default_factory=list)
     est_price_per_mtok: dict[str, dict[str, float]] = Field(default_factory=dict)
+
+    def estimate(self, model: str, tokens_in: int, tokens_out: int) -> float | None:
+        price = self.est_price_per_mtok.get(model)
+        if price is None:
+            return None
+        return (tokens_in * price["input"] + tokens_out * price["output"]) / 1e6
 
 
 class LLMConfig(BaseModel):
     base_url: str
     max_requests_per_run: int
-    requests_per_minute: int
+    max_cost_usd_per_run: float = 5.0
+    concurrency: int = 4
+    requests_per_minute: dict[str, int] = Field(default_factory=lambda: {"default": 60})
+    max_output_tokens: int = 8000
+    timeout_s: int = 180
     pdf_window_pages: int
     vision_min_text_chars: int
     vision_max_pages_per_doc: int
     vision_max_pages_per_run: int
+    vision_first_party_only: bool = True
+    news_min_chars: int = 200
+
+    def rpm(self, model: str) -> int:
+        for suffix, value in self.requests_per_minute.items():
+            if suffix != "default" and model.endswith(suffix):
+                return value
+        return self.requests_per_minute.get("default", 60)
 
 
 class StorageConfig(BaseModel):

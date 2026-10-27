@@ -19,7 +19,7 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts (2026-10-26)
 - [x] Step 4: evidence/claims reconciliation, version history, variant demo (2026-10-27)
 - [x] Step 5: FastAPI + search page (2026-10-27)
-- [ ] Step 6: PDF text + vision fallback + LLM extraction (facts, milestones, procurement)
+- [~] Step 6: PDF pages/renders, OpenRouter client, extraction + model comparison done (2026-10-27); full extraction run pending approval of spend
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
@@ -44,6 +44,13 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
   (`tests/test_api.py` reuses the synthetic site from `tests/test_materializer.py`).
 - Search uses any-term matching plus an all-terms bonus; board-meeting news bodies are nearly
   empty (content is in attached PDFs), so they only become searchable after step 6.
+
+## LLM notes
+- Never call models ad hoc for real runs; use `createto extract` / `compare` so every call lands
+  in `llm_calls` with billed cost and the caps apply.
+- `inkling:free` / `inkling-small:free` return 403 for non-agent apps. Luna enforces the JSON
+  schema; models without `structured_outputs` get the shape from the prompt only.
+- Reasoning tokens count as output: give `max_output_tokens` headroom (Inkling truncated at 8k).
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`

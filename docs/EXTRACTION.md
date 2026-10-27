@@ -9,7 +9,12 @@ Two kinds of extraction:
 
 The core rule: **no claim enters the database without evidence we can check by code.** The model
 must return a verbatim quote. The validator confirms the quote appears in the source text
-(whitespace/quote normalized, fuzzy ratio ≥ 0.9) and rejects the claim otherwise.
+(whitespace/quote normalized, fuzzy ratio ≥ 0.9, or every line of a multi-line quote on the same
+page for PDF tables) and rejects the claim otherwise.
+
+Implementation: `extract/pdf.py` (pages, renders, dates), `llm/openrouter.py` (client, ledger,
+caps), `extract/llm_extract.py` (units, prompt, cache, verification, claims), `extract/compare.py`
+(model comparison + cost projection). Model choice and cost: §8.
 
 ---
 
@@ -18,53 +23,34 @@ must return a verbatim quote. The validator confirms the quote appears in the so
 | Source | Chunk | Notes |
 |---|---|---|
 | News article | whole body | usually < 3k tokens |
-| PDF, text layer | the **whole document**, with `=== PAGE n ===` markers, split into windows of ≤ 40 pages | one call per window instead of per page; this keeps us inside 1,000 free requests/day. The page markers give page-level citations |
+| PDF, text layer | the **whole document**, with `=== PAGE n ===` markers, split into windows of ≤ 40 text pages | one call per window (482 for the current corpus); identical files at two URLs are processed once. The page markers give page-level citations |
 | PDF page, low text | rendered PNG of one page | see §5 |
 | External 1-hop page | main-content text | |
 
-Each chunk has `input_hash = sha256(text or png bytes)`. That hash, plus `task`, `prompt_version`
-and `model`, is the cache key in `extractions`.
+Each chunk has `input_hash = sha256(prompt version, header with candidate projects, text or
+image hash)`. That hash, plus `task`, `prompt_version` and `model`, is the cache key in
+`extractions`; only `ok` outputs are reused, so truncated/invalid answers are retried next run.
 
-## 2. Stage A: Gate (Mammoth)
+## 2. Stage A: Gate (Mammoth): dropped for extraction
 
-`baseten/mammoth-1:free` is a *decisions* model: `POST https://openrouter.ai/api/alpha/decisions`
-with a `state` (text) and typed `questions` (`choice` / `score` / `noul` / `box`). It returns
-probabilities, not prose. It costs about 250 input tokens and $0, so it is used to avoid running
-the expensive extractor on boilerplate.
+The first design sent every chunk through `baseten/mammoth-1:free` (a *decisions* model:
+`POST /api/alpha/decisions` with a `state` and typed `questions` of type `choice` / `score` /
+`noul` / `box`, returning probabilities) to skip boilerplate before extraction. Measured against
+the real corpus it doesn't pay off: Mammoth calls count against the same 1,000/day free quota,
+the median PDF is 3 pages (so a gate call per document costs about as much as the extraction it
+might save), and with a paid extractor at ~$0.001 per document the gate saves cents. It is
+**not used for extraction**; news kinds come from CMS topics (no LLM).
 
-Verified request shape:
+Mammoth stays the tool for one job it fits: picking which candidate project an unlinked record
+belongs to (§6, `choice` over the top candidates + "none"). Verified request shape:
 
 ```json
-{
-  "model": "baseten/mammoth-1:free",
-  "state": "<doc title>\n<first ~2,000 chars of chunk>",
-  "questions": {
-    "content_kind": {
-      "type": "choice",
-      "instructions": "What is this document section mainly about?",
-      "criteria": {
-        "project_specifics": "details of a specific site or development: units, uses, size, design, partners, approvals",
-        "schedule": "dates, phases, timelines, meetings, upcoming or past project events",
-        "procurement": "a tender, RFP, RFQ, RFEI, EOI, market offering, bid, award, contract or developer/partner selection",
-        "corporate": "CreateTO corporate matters: board, finances, strategy, staff",
-        "boilerplate": "cover pages, tables of contents, legal text, contact info, image credits, blank or decorative"
-      }
-    },
-    "has_dates":  {"type": "noul", "instructions": "Does the text contain specific dates or time periods for events?"},
-    "has_money":  {"type": "noul", "instructions": "Does the text mention dollar amounts, budgets or contract values?"}
-  }
-}
+{"model": "baseten/mammoth-1:free", "state": "<text>",
+ "questions": {"project": {"type": "choice", "instructions": "Which project is this about?",
+                           "criteria": {"12": "Parkdale Hub, 1313 Queen St W", "none": "none"}}}}
 ```
 
-Routing:
-- `boilerplate` ≥ 0.7 → skip (record `gate=skipped` in `extractions`)
-- otherwise → extractor, with the predicted kinds passed in as a hint
-- `procurement` ≥ 0.5 **or** `has_money` ≥ 0.6 → procurement section of the prompt marked mandatory
-
-Mammoth is also used in **linking** (§6) and to **classify news** (`news_kind`: announcement /
-event / board meeting / press coverage / procurement / report).
-
-## 3. Stage B: Extractor prompt (Inkling)
+## 3. Stage B: Extractor prompt
 
 One call returns all three record types. That is cheaper than three calls, and the model sees the
 full context once. Prompts are versioned files in `prompts/` (`extract_v1.md`), and the version is
@@ -158,7 +144,10 @@ TEXT:
 
 ### Post-validation (code, not LLM)
 
-1. Evidence check against source text (fuzzy ≥ 0.9). Fail → dropped, counted in run stats.
+1. Evidence check against source text (exact after normalization, fuzzy partial ratio ≥ 0.9,
+   or all lines of the quote on one page). Fail → dropped, counted as `*_rejected_evidence`.
+   Quotes read off an *image* can't be checked against a text layer: they're kept with
+   `locator = 'vision'` and confidence capped at 0.5.
 2. `page` must exist in the chunk, and the evidence must occur on that page. If it occurs on a
    different page, the page is corrected.
 3. Vocabulary/enums enforced. Numbers parsed again from `value_text` as a cross-check.
@@ -230,8 +219,48 @@ In order, stopping at the first that applies:
 
 Every link stores `method` and `confidence`.
 
-## 7. Cost accounting
+## 7. Cost accounting (implemented)
 
 Every request goes into `llm_calls` (model, endpoint, task, tokens in/out, latency, status,
 `cost_usd` reported by OpenRouter, and `est_cost_usd` at the non-free list price of the same
 model family, labelled as an estimate). Run stats roll these up.
+
+## 8. Model choice and cost (measured 2026-10-27)
+
+Full numbers: [reports/model_comparison.md](../reports/model_comparison.md) (`createto compare`).
+Same 21-unit stratified sample (14 PDF text windows across 6 document types, 4 page images,
+3 news articles), prompt `extract_v1`, nothing written to claims.
+
+| | `openai/gpt-6-luna` | `thinkingmachines/inkling` (paid) |
+|---|---|---|
+| Valid answers | 21/21 (JSON schema enforced) | 17/21: every failure hit the 8k output cap after 6–8k reasoning tokens |
+| Facts / milestones / signals accepted | 93 / 30 / 10 | 84 / 41 / 3 |
+| Quote check pass rate | 100% | 96% |
+| Reasoning share of output | 43% | 79% |
+| Latency p50 | 9.5 s | 64 s |
+| Billed, whole comparison incl. retries | $0.02 | $0.78 |
+| Projected full first run (840 requests) | **≈ $0.78** | ≈ $18.8 (understated: truncations) |
+
+Free tiers: `inkling:free` and `inkling-small:free` answer HTTP 403 "only available on agentic
+harnesses", so no free extractor is usable from this service.
+
+**Decision: `openai/gpt-6-luna`.** Recall is comparable: most "Inkling-only" facts are the same
+facts filed under a different field (50/80 units as `other` vs Luna's `affordable_units`) or raw
+financial-statement line items from 2011–2013 annual report images, which the prompt asks to
+skip. Inkling found a few genuine extras (a consultant name, a $27M figure). Luna is 24x cheaper,
+6x faster and never truncates.
+
+**Full-run cost estimate (Luna, measured, not assumed):** fitted from the sample's billed tokens
+(input = 1,586 + 0.241 tokens/char per text unit, least-squares over 14 units; 3,980 input
+tokens per page image; output = sample mean per unit, reasoning included):
+
+| scope | requests | cost |
+|---|---|---|
+| first run as configured (482 text windows, 298 page images, 60 news) | 840 | **$0.78** |
+| + render all 437 capped first-party image pages | +437 | +$0.25 |
+| + external decks' 384 image pages (deferred) | +384 | +$0.21 |
+| every text unit at the sample's *max* output (pessimistic) | 840 | ~$1.40 |
+| each re-run after a prompt change | 840 | +$0.78 |
+| unchanged repeat run (cache) | 0 | $0.00 |
+
+The run stops on its own at `llm.max_cost_usd_per_run` ($5) or `max_requests_per_run` (1,500).

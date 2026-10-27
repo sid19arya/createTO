@@ -1,0 +1,781 @@
+{
+  "sample": [
+    {
+      "stratum": "short pdf (<=3 text pages)",
+      "kind": "pdf_text",
+      "title": "Press Release - CreateTO and TO Live announce shortlist for STLC design competition",
+      "url": "https://a-us.storyblok.com/f/1017201/x/2e05463724/resource-press-release-createto-and-to-live-announce-shortlist-for-stlc-design-competition.pdf",
+      "pages": "1-2",
+      "chars": 5008,
+      "candidates": 1
+    },
+    {
+      "stratum": "short pdf (<=3 text pages)",
+      "kind": "pdf_text",
+      "title": "1-public-minutes-apr-24-200424-final-exe-web-copy-1.pdf",
+      "url": "https://a-us.storyblok.com/f/1017201/x/1669c7a3d8/1-public-minutes-apr-24-200424-final-exe-web-copy-1.pdf",
+      "pages": "1-3",
+      "chars": 4196,
+      "candidates": 0
+    },
+    {
+      "stratum": "short pdf (<=3 text pages)",
+      "kind": "pdf_text",
+      "title": "Housing Now - Parkdale Hub \u2013 Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications \u2013 Decision Report",
+      "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+      "pages": "45-45",
+      "chars": 391,
+      "candidates": 1
+    },
+    {
+      "stratum": "short pdf (<=3 text pages)",
+      "kind": "pdf_text",
+      "title": "corporate-bod-minutes-public-180918_web.pdf",
+      "url": "https://a-us.storyblok.com/f/1017201/x/5a36d396d3/corporate-bod-minutes-public-180918_web.pdf",
+      "pages": "1-3",
+      "chars": 5304,
+      "candidates": 0
+    },
+    {
+      "stratum": "medium pdf (4-15 pages)",
+      "kind": "pdf_text",
+      "title": "June 2021 Etobicoke Centre \u2013 Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #3 Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/3d1dd6418e/meeting_-2021-bkbi-community-meeting-3-summary-final_accessible.pdf",
+      "pages": "2-15",
+      "chars": 36054,
+      "candidates": 3
+    },
+    {
+      "stratum": "medium pdf (4-15 pages)",
+      "kind": "pdf_text",
+      "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+      "pages": "1-6",
+      "chars": 12247,
+      "candidates": 1
+    },
+    {
+      "stratum": "medium pdf (4-15 pages)",
+      "kind": "pdf_text",
+      "title": "March 2024 - 72 Amroth Avenue Information Sheet",
+      "url": "https://a-us.storyblok.com/f/1017201/x/c709b3c584/72-amroth-avenue-project-information-sheet_march-2024.pdf",
+      "pages": "1-5",
+      "chars": 7106,
+      "candidates": 1
+    },
+    {
+      "stratum": "long pdf window (40 pages)",
+      "kind": "pdf_text",
+      "title": "Allen East District Plan Urban Design Guidelines",
+      "url": "https://a-us.storyblok.com/f/1017201/x/60e1bd2dea/2021-plan-report-urban-design-guidelines.pdf",
+      "pages": "43-84",
+      "chars": 57312,
+      "candidates": 1
+    },
+    {
+      "stratum": "board / staff report",
+      "kind": "pdf_text",
+      "title": "corporate-board-notice-of-meeting-july-25-2023.pdf",
+      "url": "https://a-us.storyblok.com/f/1017201/x/2535ff39ba/corporate-board-notice-of-meeting-july-25-2023.pdf",
+      "pages": "1-1",
+      "chars": 1035,
+      "candidates": 0
+    },
+    {
+      "stratum": "board / staff report",
+      "kind": "pdf_text",
+      "title": "2020- Final Report \u2013 Housing Now 705 Warden Avenue Zoning Amendment and Draft Plan of Subdivision",
+      "url": "https://www.toronto.ca/legdocs/mmis/2020/ph/bgrd/backgroundfile-147641.pdf",
+      "pages": "45-49",
+      "chars": 12382,
+      "candidates": 4
+    },
+    {
+      "stratum": "procurement / offering",
+      "kind": "pdf_text",
+      "title": "Press Release: CreateTO initiates market offering for the ModernTO sites at 610 Bay Street & 130 Elizabeth Street",
+      "url": "https://a-us.storyblok.com/f/1017201/x/b62e41df43/resource_-2022-press-release-createto-initiates-market-offering-for-the-modernto-sites-at-610-bay-street-and-130-elizabeth-street.pdf",
+      "pages": "1-2",
+      "chars": 4079,
+      "candidates": 1
+    },
+    {
+      "stratum": "procurement / offering",
+      "kind": "pdf_text",
+      "title": "2444 Eglinton Avenue East Marketing Brochure",
+      "url": "https://a-us.storyblok.com/f/1017201/x/a92616e0c5/resource_-2021-marketing-brochure-housing-now.pdf",
+      "pages": "1-7",
+      "chars": 24284,
+      "candidates": 4
+    },
+    {
+      "stratum": "external pdf",
+      "kind": "pdf_text",
+      "title": "Central Waterfront Secondary Plan",
+      "url": "https://www.toronto.ca/wp-content/uploads/2019/02/8e22-CityPlanning_2006-OP_CWSP_Final.pdf",
+      "pages": "43-59",
+      "chars": 14587,
+      "candidates": 2
+    },
+    {
+      "stratum": "external pdf",
+      "kind": "pdf_text",
+      "title": "NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+      "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+      "pages": "1-2",
+      "chars": 7053,
+      "candidates": 1
+    },
+    {
+      "stratum": "vision page",
+      "kind": "pdf_vision",
+      "title": "Housing Now \u2013 405 Sherbourne Street \u2013 Zoning Amendment \u2013 Final Report",
+      "url": "https://a-us.storyblok.com/f/1017201/x/f36da6ec57/backgroundfile-168245-405-sherbourne.pdf",
+      "pages": "38-38",
+      "chars": 134,
+      "candidates": 1
+    },
+    {
+      "stratum": "vision page",
+      "kind": "pdf_vision",
+      "title": "February 2025 - Community Meeting Presentation",
+      "url": "https://a-us.storyblok.com/f/1017201/x/8038638f0e/bloor-kipling-block-3-community-meeting-presentation-final_feb-5.pdf",
+      "pages": "30-30",
+      "chars": 130,
+      "candidates": 2
+    },
+    {
+      "stratum": "vision page",
+      "kind": "pdf_vision",
+      "title": "build_toronto_consolidated_2013_fs.pdf",
+      "url": "https://a-us.storyblok.com/f/1017201/x/834cc5fb44/build_toronto_consolidated_2013_fs.pdf",
+      "pages": "7-7",
+      "chars": 15,
+      "candidates": 0
+    },
+    {
+      "stratum": "vision page",
+      "kind": "pdf_vision",
+      "title": "build_toronto_annual_report_2011.pdf",
+      "url": "https://a-us.storyblok.com/f/1017201/x/b0b0dbca25/build_toronto_annual_report_2011.pdf",
+      "pages": "34-34",
+      "chars": 18,
+      "candidates": 0
+    },
+    {
+      "stratum": "news article",
+      "kind": "news",
+      "title": "Housing Now Phase 3 Sites Approved at City Council",
+      "url": "https://createto.ca/news/housing-now-phase-3-sites-approved-at-city-council",
+      "pages": null,
+      "chars": 970,
+      "candidates": 4
+    },
+    {
+      "stratum": "news article",
+      "kind": "news",
+      "title": "Proposed redevelopment of two City-owned sites to create multiple city-building opportunities in the downtown core",
+      "url": "https://createto.ca/news/proposed-redevelopment-of-two-city-owned-sites-to-create-multiple-city-building-opportunities-in-the-downtown-core",
+      "pages": null,
+      "chars": 4881,
+      "candidates": 2
+    },
+    {
+      "stratum": "news article",
+      "kind": "news",
+      "title": "Build Toronto Corporate Documents Archive",
+      "url": "https://createto.ca/news/build-toronto-corporate-documents-archive",
+      "pages": null,
+      "chars": 646,
+      "candidates": 0
+    }
+  ],
+  "models": {
+    "openai/gpt-6-luna": {
+      "units": 21,
+      "ok": 21,
+      "cached": 21,
+      "fact_proposed": 93,
+      "fact_accepted": 93,
+      "milestone_proposed": 30,
+      "milestone_accepted": 30,
+      "signal_proposed": 10,
+      "signal_accepted": 10,
+      "fact_unverified_vision": 3,
+      "tokens_in": 90551,
+      "tokens_out": 24406,
+      "tokens_reasoning": 10505,
+      "cost_usd": 0.01988,
+      "latency_p50_ms": 9453,
+      "latency_max_ms": 34453,
+      "per_kind": {
+        "pdf_text": {
+          "units": [
+            [
+              5008,
+              2764,
+              1658,
+              0.001174425
+            ],
+            [
+              4196,
+              2747,
+              138,
+              0.00023037
+            ],
+            [
+              391,
+              1819,
+              261,
+              0.00017587
+            ],
+            [
+              5304,
+              2999,
+              174,
+              0.00027987
+            ],
+            [
+              36054,
+              9197,
+              3782,
+              0.00285862
+            ],
+            [
+              12247,
+              4171,
+              1978,
+              0.00132837
+            ],
+            [
+              7106,
+              3166,
+              2087,
+              0.001257245
+            ],
+            [
+              57312,
+              16026,
+              1187,
+              0.002414745
+            ],
+            [
+              1035,
+              1983,
+              232,
+              0.00018187
+            ],
+            [
+              12382,
+              4192,
+              989,
+              0.000836495
+            ],
+            [
+              4079,
+              2587,
+              1243,
+              0.00076287
+            ],
+            [
+              24284,
+              7228,
+              3911,
+              0.002676995
+            ],
+            [
+              14587,
+              6191,
+              104,
+              0.00064387
+            ],
+            [
+              7053,
+              3111,
+              1889,
+              0.00115137
+            ]
+          ]
+        },
+        "pdf_vision": {
+          "units": [
+            [
+              134,
+              4086,
+              951,
+              0.000804245
+            ],
+            [
+              130,
+              3517,
+              594,
+              0.00055462
+            ],
+            [
+              15,
+              4041,
+              194,
+              0.00042012
+            ],
+            [
+              18,
+              4278,
+              186,
+              0.000445745
+            ]
+          ]
+        },
+        "news": {
+          "units": [
+            [
+              970,
+              1949,
+              652,
+              0.00038762
+            ],
+            [
+              4881,
+              2688,
+              1968,
+              0.001137995
+            ],
+            [
+              646,
+              1811,
+              228,
+              0.00015837
+            ]
+          ]
+        }
+      }
+    },
+    "thinkingmachines/inkling": {
+      "units": 21,
+      "ok": 17,
+      "cached": 14,
+      "invalid_json": 4,
+      "llm_units": 7,
+      "milestone_proposed": 41,
+      "milestone_accepted": 41,
+      "fact_proposed": 87,
+      "fact_accepted": 84,
+      "signal_proposed": 4,
+      "signal_accepted": 3,
+      "fact_rejected_evidence": 3,
+      "signal_rejected_evidence": 1,
+      "fact_unverified_vision": 23,
+      "tokens_in": 56737,
+      "tokens_out": 82096,
+      "tokens_reasoning": 64567,
+      "cost_usd": 0.38179,
+      "latency_p50_ms": 63938,
+      "latency_max_ms": 141125,
+      "per_kind": {
+        "pdf_text": {
+          "units": [
+            [
+              4196,
+              2106,
+              5872,
+              0.0258876
+            ],
+            [
+              391,
+              1178,
+              3471,
+              0.01523555
+            ],
+            [
+              5304,
+              2358,
+              4307,
+              0.01980135
+            ],
+            [
+              12247,
+              3530,
+              6863,
+              0.03132515
+            ],
+            [
+              7106,
+              2525,
+              5760,
+              0.025853
+            ],
+            [
+              57312,
+              15385,
+              4389,
+              0.03241677
+            ],
+            [
+              1035,
+              1342,
+              1714,
+              0.00754002
+            ],
+            [
+              12382,
+              3551,
+              7756,
+              0.03421912
+            ],
+            [
+              4079,
+              1946,
+              7789,
+              0.03349145
+            ],
+            [
+              14587,
+              5550,
+              780,
+              0.00796532
+            ],
+            [
+              7053,
+              2470,
+              7405,
+              0.03171657
+            ]
+          ]
+        },
+        "pdf_vision": {
+          "units": [
+            [
+              134,
+              3186,
+              2197,
+              0.01134017
+            ],
+            [
+              130,
+              2645,
+              3867,
+              0.01756267
+            ],
+            [
+              15,
+              3141,
+              6770,
+              0.0305595
+            ],
+            [
+              18,
+              3346,
+              2151,
+              0.01131387
+            ]
+          ]
+        },
+        "news": {
+          "units": [
+            [
+              970,
+              1308,
+              5647,
+              0.02343467
+            ],
+            [
+              646,
+              1170,
+              5358,
+              0.02212622
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "agreement": {
+    "models": [
+      "openai/gpt-6-luna",
+      "thinkingmachines/inkling"
+    ],
+    "units_compared": 17,
+    "fact": {
+      "both": 33,
+      "only_openai/gpt-6-luna": 20,
+      "only_thinkingmachines/inkling": 51,
+      "examples_only_openai/gpt-6-luna": [
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "community_benefit",
+            "the project will"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "development_partner",
+            "parkdale's neighbourhood land"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "non_profit_partner",
+            "st. clare's housing"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "other",
+            "23300"
+          ]
+        ],
+        [
+          "December 2022 Parkdale Hub Phase 3 Local Advisroy ",
+          [
+            "affordable_units",
+            "50"
+          ]
+        ],
+        [
+          "December 2022 Parkdale Hub Phase 3 Local Advisroy ",
+          [
+            "affordable_units",
+            "80"
+          ]
+        ]
+      ],
+      "examples_only_thinkingmachines/inkling": [
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "budget",
+            "27"
+          ]
+        ],
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "community_benefit",
+            "streetscape improvements and"
+          ]
+        ],
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "consultant",
+            "colliers international and"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "community_benefit",
+            "culturally appropriate supports"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "development_partner",
+            "st. clare's housing"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "non_residential_gfa_sqm",
+            "23300"
+          ]
+        ]
+      ]
+    },
+    "milestone": {
+      "both": 9,
+      "only_openai/gpt-6-luna": 1,
+      "only_thinkingmachines/inkling": 18,
+      "examples_only_openai/gpt-6-luna": [
+        [
+          "corporate-board-notice-of-meeting-july-25-2023.pdf",
+          [
+            "other",
+            "2023-07"
+          ]
+        ]
+      ],
+      "examples_only_thinkingmachines/inkling": [
+        [
+          "1-public-minutes-apr-24-200424-final-exe-web-copy-",
+          [
+            "board_approval",
+            "2020-04"
+          ]
+        ],
+        [
+          "1-public-minutes-apr-24-200424-final-exe-web-copy-",
+          [
+            "land_transfer",
+            "2020"
+          ]
+        ],
+        [
+          "1-public-minutes-apr-24-200424-final-exe-web-copy-",
+          [
+            "other",
+            "2020-04"
+          ]
+        ],
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "other",
+            ""
+          ]
+        ],
+        [
+          "Housing Now - Parkdale Hub \u2013 Official Plan & Zonin",
+          [
+            "council_approval",
+            ""
+          ]
+        ],
+        [
+          "Housing Now - Parkdale Hub \u2013 Official Plan & Zonin",
+          [
+            "report_published",
+            "2023-10"
+          ]
+        ]
+      ]
+    },
+    "signal": {
+      "both": 0,
+      "only_openai/gpt-6-luna": 4,
+      "only_thinkingmachines/inkling": 3,
+      "examples_only_openai/gpt-6-luna": [
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "eoi",
+            "(reoi) 130 610 and at bay elizabeth expression for for interest modernto of request sites street street the"
+          ]
+        ],
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "rfp",
+            "(rfp) detailed for for market of offering process proposal request second stage the the"
+          ]
+        ],
+        [
+          "NLT-Parkdale-Hub-West-Block-Announcement-Press-Rel",
+          [
+            "partner_selection",
+            "- and block develop hub lease of parkdale proponent selection successful to west"
+          ]
+        ],
+        [
+          "December 2022 Parkdale Hub Phase 3 Local Advisroy ",
+          [
+            "rfp",
+            "developer for for non-profit proposal request"
+          ]
+        ]
+      ],
+      "examples_only_thinkingmachines/inkling": [
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "market_offering",
+            "& (reoi 130 610 bay elizabeth for market offering stage) street street"
+          ]
+        ],
+        [
+          "Press Release: CreateTO initiates market offering ",
+          [
+            "rfp",
+            "(rfp) - detailed for proposal request second stage"
+          ]
+        ],
+        [
+          "December 2022 Parkdale Hub Phase 3 Local Advisroy ",
+          [
+            "rfp",
+            "developer for for non-profit process proposal request"
+          ]
+        ]
+      ]
+    }
+  },
+  "projection": {
+    "units": {
+      "pdf_text": 482,
+      "pdf_vision": 298,
+      "news": 60
+    },
+    "input_chars": {
+      "pdf_text": 7619968,
+      "pdf_vision": 22679,
+      "news": 145712
+    },
+    "openai/gpt-6-luna": {
+      "tokens_in": 3916631,
+      "tokens_out": 876308,
+      "list_price_usd": 0.83,
+      "billed_to_list_ratio_on_sample": 0.935,
+      "projected_billed_usd": 0.776,
+      "requests": 840,
+      "by_kind": {
+        "pdf_text": {
+          "tokens_in": 2598336,
+          "tokens_out": 675936,
+          "sample_units": 14,
+          "out_tokens_p50": 1215,
+          "out_tokens_max": 3911
+        },
+        "pdf_vision": {
+          "tokens_in": 1186189,
+          "tokens_out": 143412,
+          "sample_units": 4,
+          "out_tokens_p50": 394,
+          "out_tokens_max": 951
+        },
+        "news": {
+          "tokens_in": 132105,
+          "tokens_out": 56960,
+          "sample_units": 3,
+          "out_tokens_p50": 652,
+          "out_tokens_max": 1968
+        }
+      }
+    },
+    "thinkingmachines/inkling": {
+      "tokens_in": 3362135,
+      "tokens_out": 3904995,
+      "list_price_usd": 19.177,
+      "billed_to_list_ratio_on_sample": 0.981,
+      "projected_billed_usd": 18.811,
+      "requests": 840,
+      "by_kind": {
+        "pdf_text": {
+          "tokens_in": 2370104,
+          "tokens_out": 2458462,
+          "sample_units": 11,
+          "out_tokens_p50": 5760,
+          "out_tokens_max": 7789
+        },
+        "pdf_vision": {
+          "tokens_in": 917691,
+          "tokens_out": 1116382,
+          "sample_units": 4,
+          "out_tokens_p50": 3032,
+          "out_tokens_max": 6770
+        },
+        "news": {
+          "tokens_in": 74340,
+          "tokens_out": 330150,
+          "sample_units": 2,
+          "out_tokens_p50": 5502,
+          "out_tokens_max": 5647
+        }
+      }
+    }
+  }
+}

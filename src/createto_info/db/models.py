@@ -105,6 +105,8 @@ class DocumentVersion(Base):
     cms_updated_at: Mapped[dt.datetime | None] = mapped_column(DateTime(timezone=True))
     cms_json: Mapped[Json | None]
     text: Mapped[str | None] = mapped_column(Text)
+    # publication date: PDF creation date, else CMS publish date; drives "latest document wins"
+    doc_date: Mapped[dt.date | None] = mapped_column(Date)
     parse_status: Mapped[str] = mapped_column(Text, default="pending")  # pending | ok | failed
     parse_error: Mapped[str | None] = mapped_column(Text)
 
@@ -154,6 +156,7 @@ class LlmCall(Base):
     task: Mapped[str] = mapped_column(Text)
     tokens_in: Mapped[int | None]
     tokens_out: Mapped[int | None]
+    tokens_reasoning: Mapped[int | None]  # hidden reasoning tokens, billed as output
     latency_ms: Mapped[int | None]
     status: Mapped[str] = mapped_column(Text)
     http_status: Mapped[int | None]

@@ -99,6 +99,74 @@ def parse(
 
 
 @app.command()
+def pdfs() -> None:
+    """Extract per-page PDF text, dates and page renders (local, no LLM)."""
+    from createto_info.db import session_scope
+    from createto_info.extract.pdf import process_pdfs
+
+    with session_scope() as s:
+        stats = process_pdfs(s, get_config())
+    typer.echo(json.dumps(dict(sorted(stats.items())), indent=2))
+
+
+def _latest_run(s):
+    from sqlalchemy import select
+
+    from createto_info.db.models import CrawlRun
+
+    run = s.scalar(select(CrawlRun).order_by(CrawlRun.id.desc()).limit(1))
+    if run is None:
+        raise typer.BadParameter("no crawl runs yet; run `createto crawl` first")
+    return run
+
+
+@app.command()
+def compare() -> None:
+    """Compare extraction models on a stratified sample (no claims written); writes
+    reports/model_comparison.md with a full-run cost projection."""
+    from createto_info.db import session_scope
+    from createto_info.extract.compare import REPORTS, markdown, run_comparison
+
+    with session_scope() as s:
+        report = run_comparison(s, get_config(), _latest_run(s).id)
+    path = REPORTS / "model_comparison.md"
+    path.write_text(markdown(report), encoding="utf-8")
+    typer.echo(f"report written to {path}")
+
+
+@app.command()
+def extract(
+    model: str = typer.Option(None, help="Override models.extract from config.yaml."),
+    kinds: str = typer.Option("pdf_text,pdf_vision,news", help="Unit kinds to process."),
+    limit: int = typer.Option(None, help="Only the first N units (dev)."),
+) -> None:
+    """LLM extraction of facts, milestones and procurement signals with verified evidence."""
+    import asyncio
+
+    from createto_info.db import session_scope
+    from createto_info.extract.llm_extract import apply_outputs, build_units, fetch_outputs
+
+    cfg = get_config()
+    model = model or cfg.models.extract
+    with session_scope() as s:
+        run = _latest_run(s)
+        units = build_units(s, cfg, set(kinds.split(",")))[: limit or None]
+        typer.echo(f"{len(units)} units with {model} (run {run.id})")
+        results, fetch_stats = asyncio.run(fetch_outputs(s, cfg, units, model, run.id))
+        stats = {**fetch_stats, **apply_outputs(s, results, model, run.id, dry_run=False)}
+        calls = s.execute(text(
+            "SELECT count(*), coalesce(sum(cost_usd), 0), coalesce(sum(est_cost_usd), 0), "
+            "coalesce(sum(tokens_in), 0), coalesce(sum(tokens_out), 0) FROM llm_calls "
+            "WHERE run_id = :r"), {"r": run.id}).one()
+        stats.update(llm_calls=calls[0], cost_usd=round(float(calls[1]), 5),
+                     est_cost_usd=round(float(calls[2]), 5), tokens_in=calls[3],
+                     tokens_out=calls[4])
+        run.stats = {**run.stats, "extract": dict(sorted(stats.items())),
+                     "llm_calls": calls[0], "cost_usd": round(float(calls[1]), 5)}
+    typer.echo(json.dumps(dict(sorted(stats.items())), indent=2, default=str))
+
+
+@app.command()
 def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
     """Show recent crawl runs and their headline stats."""
     from sqlalchemy import select

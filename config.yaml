@@ -45,22 +45,36 @@ cutoff:
   years: 5                                    # applies only to projects with phase == completed
 
 models:
-  gate: baseten/mammoth-1:free                # POST /api/alpha/decisions
-  extract: thinkingmachines/inkling:free      # chat completions, text + image input
-  vision: thinkingmachines/inkling:free
-  # paid list prices (USD per 1M tokens) used only for *estimated* cost reporting
+  gate: baseten/mammoth-1:free                # POST /api/alpha/decisions (free; project linking)
+  extract: openai/gpt-6-luna                  # chosen after reports/model_comparison.md
+  vision: openai/gpt-6-luna
+  # inkling:free / inkling-small:free answer 403 "only available on agentic harnesses" (2026-10-27),
+  # so the comparison and fallback use paid Inkling
+  fallback: thinkingmachines/inkling          # no enforced JSON schema
+  compare: [openai/gpt-6-luna, thinkingmachines/inkling]
+  # OpenRouter list prices, USD per 1M tokens (checked 2026-10-27). Used for *estimated* cost:
+  # what a call costs (or would cost on the paid tier, for :free models). Actual billed cost
+  # comes from OpenRouter's usage accounting and is logged separately.
   est_price_per_mtok:
+    openai/gpt-6-luna: {input: 0.10, output: 0.50}
+    thinkingmachines/inkling: {input: 1.00, output: 4.05}
+    thinkingmachines/inkling:free: {input: 1.00, output: 4.05}   # paid-tier equivalent
     baseten/mammoth-1:free: {input: 0.0, output: 0.0}
-    thinkingmachines/inkling:free: {input: 1.0, output: 1.0}
 
 llm:
   base_url: https://openrouter.ai/api
-  max_requests_per_run: 900                   # free-model quota is 1,000/day on the current key
-  requests_per_minute: 18
+  max_requests_per_run: 1500
+  max_cost_usd_per_run: 5.00                  # hard stop on OpenRouter-reported spend
+  concurrency: 6
+  requests_per_minute: {default: 120, ":free": 18}   # free models are rate limited
+  max_output_tokens: 8000
+  timeout_s: 180
   pdf_window_pages: 40
   vision_min_text_chars: 200
   vision_max_pages_per_doc: 15
   vision_max_pages_per_run: 300
+  vision_first_party_only: true              # skip image pages of external decks (deferred)
+  news_min_chars: 200
 
 storage:
   raw_dir: data/raw

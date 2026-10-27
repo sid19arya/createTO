@@ -37,6 +37,9 @@ uv run createto db check          # connectivity + table row counts
 | `uv run createto parse` | Build projects, news, facts, milestones, procurement signals from stored pages (no LLM) |
 | `uv run createto parse --rebuild` | Same, after wiping derived tables (drops version history; dev only) |
 | `uv run createto serve` | API + search page at http://127.0.0.1:8000 (OpenAPI docs at `/docs`) |
+| `uv run createto pdfs` | Per-page PDF text, document dates and page renders (local, no LLM) |
+| `uv run createto compare` | Model comparison on a stratified sample + full-run cost projection → `reports/model_comparison.md` (≈ $0.80, mostly the paid Inkling side) |
+| `uv run createto extract [--limit N]` | LLM extraction with verified evidence (Luna; ≈ $0.78 for a full first run, $0 when unchanged) |
 | `uv run createto demo` | Variant demo (first / unchanged / changed source / failed file) replayed offline into a separate `createto_demo` DB; writes `reports/variants.md` |
 | `uv run createto snapshot DIR` | Save the latest crawl state as a replayable snapshot (`manifest.json` referencing the raw store) |
 | `uv run createto crawl --replay DIR` | Crawl a saved snapshot instead of the network |

@@ -77,19 +77,21 @@ Brief: `assets/task_description/CreateTO scraper.pdf`. Related docs:
 | Scope | See §4: createto.ca fully, Storyblok assets as first-party, **1 hop** to allow-listed hosts |
 | 5-year cutoff | Applies **only to projects whose phase is `completed`**: drop if the latest known activity date is before `now − 5y`. Everything else (all other projects, all news, all files) is kept. If a completed project has no known date, it is kept and flagged `cutoff_unknown`. |
 | Structured extraction | Deterministic `__NEXT_DATA__` parser, $0 |
-| Gate / classifier | `baseten/mammoth-1:free` via `POST /api/alpha/decisions` (not chat completions) |
-| Extractor | `thinkingmachines/inkling:free` (1M context, accepts images). JSON is validated with pydantic and retried on failure |
-| Vision fallback | Same model on rendered PNGs of low-text PDF pages |
+| Gate / classifier | `baseten/mammoth-1:free` via `POST /api/alpha/decisions`; used for project linking only (gating extraction didn't pay off, EXTRACTION.md §2) |
+| Extractor | `openai/gpt-6-luna` (paid, $0.10/$0.50 per M tokens, JSON schema enforced, images). Chosen over paid Inkling by measured comparison (EXTRACTION.md §8); `inkling:free` is blocked for non-agent apps |
+| Vision fallback | Same model on rendered PNGs of low-text PDF pages (first-party files, capped) |
 | Search | Postgres full-text search + `pg_trgm` + lat/lng distance |
 | Chat | BM25 (`rank_bm25`) over projects + news + PDF page chunks, citations injected |
 | API | FastAPI |
 | Model IDs | in `config.yaml`, never hard-coded |
 
 ### LLM budget constraints (from `GET /api/v1/key`)
-- Free models: **1,000 requests/day** on this key. Paid budget $100 (unused by default).
+- Free models: **1,000 requests/day** on this key (Mammoth only; free Inkling tiers are blocked).
+- Paid budget $100 on the key. Measured full extraction run with Luna: **≈ $0.78**; per-run caps
+  `max_cost_usd_per_run` ($5) and `max_requests_per_run` (1,500).
 - Key expires **2026-11-02**. Final demo runs must happen before then, or with a new key.
-- Every call is logged with tokens. Reports show `$0 paid` plus an **estimated** cost at the
-  model's paid list price.
+- Every call is logged in `llm_calls` with tokens (incl. reasoning), latency, OpenRouter-billed
+  `cost_usd` and list-price `est_cost_usd`.
 
 ## 4. Crawl scope policy
 
