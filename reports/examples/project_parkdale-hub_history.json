@@ -1,0 +1,508 @@
+{
+  "slug": "parkdale-hub",
+  "versions": [
+    {
+      "run_id": 1,
+      "run_started_at": "2026-10-27 06:39:13.023640+00:00",
+      "diff": null
+    }
+  ],
+  "past_facts": [
+    {
+      "field": "affordable_units",
+      "value": "76 affordable rental units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "A minimum of one-third of all units secured as affordable rental homes",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "A minimum of one-third of all units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "Minimum 50% of the 64 rental housing units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "The current target is for 50% of all units to be affordable.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "up to 90 affordable rental homes (50%) for 99 years at the West Block",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "10% of the residential units at 40% of average market rent",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "Up to 20% of affordable units made available to households in receipt of housing benefits",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "affordable_units",
+      "value": "New affordable rental housing to be delivered through the Housing Now Initiative; no unit count stated.",
+      "status": "superseded",
+      "valid_from_run": 2,
+      "valid_to_run": 2,
+      "superseded_by_value": "88 permanently affordable homes"
+    },
+    {
+      "field": "budget",
+      "value": "The Toronto Public Library and Parks Forestry & Recreation have approved budgets for their components of the project.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "$639,400",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "Approximately $680,000",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "$970,000",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "$40,600",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "$330,600",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "budget",
+      "value": "$8.045M as of May, 2023",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "between $17,500 and $53,500"
+    },
+    {
+      "field": "height_storeys",
+      "value": "New 3-storey streetwall",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "height_storeys",
+      "value": "4-storeys",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "height_storeys",
+      "value": "6-storeys",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "height_storeys",
+      "value": "10-storeys",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "height_storeys",
+      "value": "3, 6 & 10 Storeys",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "height_storeys",
+      "value": "New 2-storey streetwall",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "16 storeys"
+    },
+    {
+      "field": "lease_term",
+      "value": "at least a 20-year period from the date of first occupancy of each replacement rental unit",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "99 years"
+    },
+    {
+      "field": "non_residential_gfa_sqm",
+      "value": "10,170 m2 Non-residential",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Non-Residential: 1,130 m²"
+    },
+    {
+      "field": "official_plan_status",
+      "value": "The City is proposing to amend the Official Plan",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "City Council adopted the Official Plan Amendment in November 2023"
+    },
+    {
+      "field": "parking_spaces",
+      "value": "No on-site parking is proposed; a single Type 'G' loading space is provided, and up to 4 car-share spaces could be located at the east end of Milky Way Lane.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "41 parking spaces will be dedicated to the Parkdale Hub, for use by staff and visitors"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Community Space",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Affordable live-work housing for local artists, an art gallery and community office space",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "The west and east block buildings will have ground-floor community space, not commercial space; the City will own and manage it.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "West and East Blocks: residential uses including affordable housing and community agency space. Centre Block: library and community recreation centre.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "FF&R Community Centre",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Toronto Public Library",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Rental Replacement Units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Mixed-use development across three blocks with residential units, a new community hub, community space, renovation to the Masaryk-Cowan Community Recreation Centre, and a new Toronto Public Library Parkdale Branch location.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Expanded Library and Community Recreation Centre programs, using adaptive reuse of the heritage buildings.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Affordable housing and community uses, including the relocated Parkdale Arts & Culture Centre program, at grade.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Community-use spaces are being considered along Milky Way Lane, with direct access to the lane.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "A single-storey addition is proposed on the south side of the existing heritage building to connect the community centre and Masaryk Park.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Community centre",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "New affordable housing and community services",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "New purpose-built rental housing, replacement rental units, a renovated and expanded recreation centre, a new library branch, and community space",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Mixed use",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Adaptive re-use for civic hub",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Rental homes and community space",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Community feedback supported maximizing social housing and integrating the library with the community centre.",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "New affordable rental housing delivered through the Housing Now Initiative",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Housing",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "proposed_use",
+      "value": "Revitalized recreation centre and library, inclusive and accessible community space, and expanded public open space for community use",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Mixed-use"
+    },
+    {
+      "field": "rental_units",
+      "value": "171 market and affordable rental homes",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "rental_units",
+      "value": "60 market and affordable rental homes",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "rental_units",
+      "value": "Estimated minimum of 231 rental homes, including rental replacement units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "rental_units",
+      "value": "a minimum of 231 rental housing units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "rental_units",
+      "value": "64 rental housing units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "rental_units",
+      "value": "at least nine replacement rental units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 purpose-built rental homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "171 Residences",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "231 housing units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "64 units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "Total: 60 units (100%)",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "Total: 171 units (100%); Includes 9 rental replacement units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "residential_units",
+      "value": "57 proposed residential units",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "175 new homes"
+    },
+    {
+      "field": "total_gfa_sqm",
+      "value": "13,926 m²",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "Site Total: 23,567 m²"
+    },
+    {
+      "field": "zoning_status",
+      "value": "The City is proposing to amend the Zoning By-Law",
+      "status": "superseded",
+      "valid_from_run": 1,
+      "valid_to_run": 1,
+      "superseded_by_value": "City Council adopted the Zoning By-Law in November 2023"
+    }
+  ]
+}

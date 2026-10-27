@@ -1,0 +1,732 @@
+[
+  {
+    "id": 1603,
+    "field": "affordable_units",
+    "label": "Affordable Rental (Income-Based)",
+    "value": "207 (30%)",
+    "value_num": 207.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "158-borough-drive",
+    "project_name": "158 Borough Drive",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 17,
+        "locator": null,
+        "excerpt": "207 (30%) Affordable Rental (Income-Based)",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1585,
+    "field": "affordable_units",
+    "label": "Affordable Co-operative Homes (AMR)",
+    "value": "306 (33%)",
+    "value_num": 306.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "2444-eglinton",
+    "project_name": "2444 Eglinton Avenue East",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 9,
+        "locator": null,
+        "excerpt": "919 Homes: 306 (33%) Affordable Co-operative Homes (AMR), 306 Co-operative Homes, 307 Condominium",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1605,
+    "field": "affordable_units",
+    "label": "Affordable Rental (Income-Based)",
+    "value": "210 (30%)",
+    "value_num": 210.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "3725-bloor-street-west-bloor-kipling-block-3-",
+    "project_name": "3725 Bloor Street West (Bloor-Kipling Block 3)",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 18,
+        "locator": null,
+        "excerpt": "210 (30%) Affordable Rental (Income-Based)",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1599,
+    "field": "affordable_units",
+    "label": "Affordable Rental (Income-Based)",
+    "value": "450 (30%)",
+    "value_num": 450.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "40-bushby-drive",
+    "project_name": "40 Bushby Drive",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 17,
+        "locator": null,
+        "excerpt": "450 (30%) Affordable Rental (Income-Based)",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1572,
+    "field": "affordable_units",
+    "label": "Affordable Rental (AMR)",
+    "value": "519 (34%)",
+    "value_num": 519.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "50-wilson-heights-boulevard",
+    "project_name": "50 Wilson Heights Boulevard",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 6,
+        "locator": null,
+        "excerpt": "1,527 Homes: 519 (34%) Affordable Rental (AMR), 519 Market Rental, 489 Market Condominium",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1568,
+    "field": "affordable_units",
+    "label": "Affordable Rental (AMR)",
+    "value": "218 (30%)",
+    "value_num": 218.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "5207-dundas-street-west-bloor-kipling-block-1-",
+    "project_name": "5207 Dundas Street West (Bloor-Kipling Block 1) ",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 5,
+        "locator": null,
+        "excerpt": "725 Homes: 218 (30%) Affordable Rental (AMR), 507 Market Rental",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://createto.ca/news/uli-toronto-and-housingnowto-transit-oriented-development-etobicoke-tour",
+        "title": null,
+        "page_no": null,
+        "locator": null,
+        "excerpt": "including 218 new affordable rental homes",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1589,
+    "field": "affordable_units",
+    "label": "Affordable Rental (Income-Based)",
+    "value": "210 (25%)",
+    "value_num": 210.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "610-bay-street",
+    "project_name": "610 Bay Street",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 10,
+        "locator": null,
+        "excerpt": "827 Homes: 210 (25%) Affordable Rental (Income-Based), 617 Market Rental",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1194,
+    "field": "affordable_units",
+    "label": null,
+    "value": "Approximately 250 affordable rental units",
+    "value_num": 250.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2020-05-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "705-warden-avenue",
+    "project_name": "705 Warden Avenue",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ph/bgrd/backgroundfile-147641.pdf",
+        "title": "2020- Final Report – Housing Now 705 Warden Avenue Zoning Amendment and Draft Plan of Subdivision",
+        "page_no": 10,
+        "locator": null,
+        "excerpt": "including approximately 250 affordable rental units",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3416821ee2/meeting_-2020-discussion-guide-705-warden-avenue-updated-development-concept.pdf",
+        "title": "2020 Discussion Guide - 705 Warden Avenue Updated Development Concept",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "Total Affordable Units: Approx. 250",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 944,
+    "field": "affordable_units",
+    "label": "Minimum affordable rental units",
+    "value": "Approximately 418 affordable rental units, a minimum of 33% of units",
+    "value_num": 418.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2022-05-16",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "770-don-mills",
+    "project_name": "770 Don Mills",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2022/ph/bgrd/backgroundfile-226048.pdf",
+        "title": "Final Report - Housing Now – 770 Don Mills Road – City Initiated Zoning By-Law Amendment and Draft Plan of Subdivision",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "of which a minimum of 33 percent (418 units) will be provided as new affordable rental through the Housing Now Initiative.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1577,
+    "field": "affordable_units",
+    "label": "Affordable Rental (AMR)",
+    "value": "256 (36%)",
+    "value_num": 256.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2026-07-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "777-victoria-park-avenue",
+    "project_name": "777 Victoria Park Avenue",
+    "evidence_count": 4,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 7,
+        "locator": null,
+        "excerpt": "705 Homes: 256 (36%) Affordable Rental (AMR), 449 Market Rental",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "including 705 new rental homes, with 256 affordable rental homes and 449 rent-controlled market homes",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/7562c7fc89/final-display-boards_777-vic-park_reduced.pdf",
+        "title": "December 2024 - Community Meeting Board Display",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "256 new affordable rental homes",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1630,
+    "field": "affordable_units",
+    "label": "Affordable rental",
+    "value": "331 affordable rental units (34% of total units)",
+    "value_num": 331.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2020-11-16",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "805-don-mills",
+    "project_name": "805 Don Mills",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "331 (34%)",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1663,
+    "field": "affordable_units",
+    "label": "Affordable rental homes",
+    "value": "520 affordable rental homes",
+    "value_num": 520.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2025-04-04",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "allan-a-lamport-stadium",
+    "project_name": "Allan A. Lamport Stadium",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "The development will deliver a total of 1,484 homes, with 520 affordable rental homes",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1624,
+    "field": "affordable_units",
+    "label": "Affordable rental units in student plan",
+    "value": "An estimated 2,323 affordable rental units",
+    "value_num": 2323.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2025-01-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "allen-east-district",
+    "project_name": "Allen East District",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://ontarioplanners.ca/OPPIAssets/Images/Council/OPPI_YMag_2025_Fall-Winter_Final.pdf",
+        "title": null,
+        "page_no": 40,
+        "locator": null,
+        "excerpt": "Across the entire 2025 AEDP area, there are an estimated 2,323 affordable rental units, which will remain affordable for a period of 99 years.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1716,
+    "field": "affordable_units",
+    "label": null,
+    "value": "900 affordable rentals",
+    "value_num": 900.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2023-04-13",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "link_method": "extractor",
+    "project_hint": null,
+    "project_slug": "etobicoke-civic-centre",
+    "project_name": "Etobicoke Civic Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/b674011774/createto-strategic-plan-2023-2027-final.pdf",
+        "title": null,
+        "page_no": 15,
+        "locator": null,
+        "excerpt": "2,700 new residential homes of which 900 will be affordable rentals.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1740,
+    "field": "affordable_units",
+    "label": "Generational Transformation Housing Strategy affordable rental target",
+    "value": "41,000 affordable rental homes",
+    "value_num": 41000.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2023-11-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "41,000 affordable rental",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1161,
+    "field": "affordable_units",
+    "label": "Target over the next ten years",
+    "value": "40,000 affordable rental homes",
+    "value_num": 40000.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2020-12-04",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/b86f2f000c/meeting-2021-discussion-guide-welcome-to-the-city-of-toronto-s-housing-now-initiative.pdf",
+        "title": "Discussion Guide - Welcome to the City of Toronto's Housing Now initiative",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "The City’s target is to approve 40,000 affordable rental homes over the next ten years.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1721,
+    "field": "affordable_units",
+    "label": "CreateTO goal",
+    "value": "10,000 units of affordable housing",
+    "value_num": 10000.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2028-01-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/b674011774/createto-strategic-plan-2023-2027-final.pdf",
+        "title": null,
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "10,000 units of affordable housing",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1739,
+    "field": "affordable_units",
+    "label": "Generational Transformation Housing Strategy rent-geared-to-income target",
+    "value": "6,500 rent-geared-to-income homes",
+    "value_num": 6500.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2023-11-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "6,500 rent-geared-to-income",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1043,
+    "field": "affordable_units",
+    "label": null,
+    "value": "Approximately 4,600 affordable rental homes estimated across 17 sites",
+    "value_num": 4600.0,
+    "unit": "homes",
+    "status": "current",
+    "as_of": "2021-01-01",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "link_method": "mammoth",
+    "project_hint": "Housing Now Initiative",
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/e4a6f31404/meeting_-2021-discussion-guide-welcome-to-the-city-of-toronto_s-housing-now-initative.pdf",
+        "title": "Summer 2021 Housing Now Discussion Guide",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "including approximately 4,600 affordable rental homes.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1163,
+    "field": "affordable_units",
+    "label": "Estimated across 17 Housing Now sites",
+    "value": "Approximately 4,600 affordable rental units",
+    "value_num": 4600.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2020-12-04",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "unresolved",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/b86f2f000c/meeting-2021-discussion-guide-welcome-to-the-city-of-toronto-s-housing-now-initiative.pdf",
+        "title": "Discussion Guide - Welcome to the City of Toronto's Housing Now initiative",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "The 17 Housing Now sites are estimated to create approximately 12,400 new residential units, including approximately 4,600 affordable rental units.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 2112,
+    "field": "affordable_units",
+    "label": null,
+    "value": "Over 3,700 affordable rental units across 11 City-owned properties.",
+    "value_num": 3700.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2020-04-02",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "link_method": "mammoth",
+    "project_hint": "Housing Now first phase",
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 3,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/dfdbfedf0c/meeting_-2020-etobicoke-centre-community-meeting-2-summary.pdf",
+        "title": "April 2020 Etobicoke Centre – Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #2 Summary",
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "which will include over 3,700 affordable rental units, with rents averaging 80 percent of Toronto’s average market rent.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/17ae2a8780/meeting_-2020-bkbi-community-meeting-1-summary_final_aoda_2020-01-13.pdf",
+        "title": "January 2020 Etobicoke Centre – Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #1 Summary",
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "which will include over 3,700 affordable rental units",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/f104da335f/2019-meeting-summary-councillor-pasternak-working-group-meeting_-parking-at-50-wilson-heights-blvd.pdf",
+        "title": "August 2019 Councillor Pasternak Working Group Meeting Summary",
+        "page_no": 11,
+        "locator": "vision",
+        "excerpt": "3,700 new affordable rental units",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1962,
+    "field": "affordable_units",
+    "label": null,
+    "value": "1,250 affordable ownership and rental units over five years",
+    "value_num": 1250.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2012-06-12",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/7dc04dcbe9/build_toronto_-annual_report_2010.pdf",
+        "title": null,
+        "page_no": 28,
+        "locator": null,
+        "excerpt": "meeting the City’s targets of providing land for the construction of 1,250 affordable ownership and rental units over five years.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/2b6cf37f50/build_toronto_annual_report_2009.pdf",
+        "title": null,
+        "page_no": 36,
+        "locator": null,
+        "excerpt": "meeting the City’s targets of providing land for the construction of 1,250 affordable ownership and rental units over 5 years.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 1992,
+    "field": "affordable_units",
+    "label": "portfolio estimate",
+    "value": "1,160 affordable housing units",
+    "value_num": 1160.0,
+    "unit": "units",
+    "status": "current",
+    "as_of": "2014-08-15",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "organization",
+    "link_method": "mammoth",
+    "project_hint": null,
+    "project_slug": null,
+    "project_name": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3b88bf0270/build_toronto_annual_report_2013.pdf",
+        "title": null,
+        "page_no": 7,
+        "locator": null,
+        "excerpt": "Affordable housing units\n 1,160",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  }
+]

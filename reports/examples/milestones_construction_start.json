@@ -1,0 +1,1569 @@
+[
+  {
+    "id": 559,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction started on Essroc relocation",
+    "date": "2013-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "project_hint": "Essroc Relocation, 575 Commissioners Street",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/56d79d267c/tplc_corpplan2014-final.pdf",
+        "title": null,
+        "page_no": 9,
+        "locator": null,
+        "excerpt": "Construction was started in 2013 with one terminal put in service in 2014.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 585,
+    "type": "construction_start",
+    "label": null,
+    "title": "Expected to break ground",
+    "date": "2013-10-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.78,
+    "link_status": "external",
+    "project_hint": "TEN YORK (10 York Street)",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/c798918824/build_toronto_annual_report_2012.pdf",
+        "title": null,
+        "page_no": 17,
+        "locator": null,
+        "excerpt": "TEN YORK is a 65-storey residential development planned for the police impound and parking lot at Harbour Street and York Street. The innovative residential development will sit on the 0.63-acre site.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 603,
+    "type": "construction_start",
+    "label": null,
+    "title": "Groundbreaking at 10 York Street",
+    "date": "2015-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "project_hint": "10 York Street",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/a8abff9319/2015_build_toronto_annual_review-finalsecured.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "Breaking ground at 10 York Street, through our first Joint Venture Partnership, with Tridel, for a 65-storey residential development with 12 affordable housing units.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 573,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction slated to begin",
+    "date": "2016-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "project_hint": "4050 Yonge Street",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/e1b7b44ca5/buildtorontoar2014.pdf",
+        "title": null,
+        "page_no": 10,
+        "locator": null,
+        "excerpt": "Construction is slated to begin in 2016 with completion scheduled for 2019.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 605,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction scheduled to commence",
+    "date": "2016-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "external",
+    "project_hint": "Fort York Pedestrian and Cycle Bridge",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/a8abff9319/2015_build_toronto_annual_review-finalsecured.pdf",
+        "title": null,
+        "page_no": 7,
+        "locator": null,
+        "excerpt": "Construction will commence in 2016 and is scheduled for completion in 2017.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction of the Cherry Street Stormwater and Lake Filling Project",
+    "date": "2017-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "external",
+    "project_hint": "Cherry Street Stormwater and Lake Filling Project",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.waterfrontoronto.ca/sites/default/files/documents/port-lands-planning-framework-aoda---reduced.pdf",
+        "title": "Port Lands Planning Framework",
+        "page_no": 425,
+        "locator": null,
+        "excerpt": "Construction is set to begin in 2017 on an initial sub project, referred to as the Cherry Street Stormwater and Lake Filling Project.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 252,
+    "type": "construction_start",
+    "label": null,
+    "title": "Anticipated construction start",
+    "date": "2021-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "705-warden-avenue",
+    "project_name": "705 Warden Avenue",
+    "project_ward": "Scarborough Southwest",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3416821ee2/meeting_-2020-discussion-guide-705-warden-avenue-updated-development-concept.pdf",
+        "title": "2020 Discussion Guide - 705 Warden Avenue Updated Development Concept",
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "Construction is anticipated to begin in 2021, with first occupancy expected in 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 358,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction phase",
+    "date": "2021-01-01",
+    "date_precision": "year",
+    "end_date": "2023-01-01",
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "wellington-destructor",
+    "project_name": "Wellington Destructor",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2018/gm/bgrd/backgroundfile-113205.pdf",
+        "title": "Wellington Destructor: Adaptive Reuse Strategy",
+        "page_no": 7,
+        "locator": null,
+        "excerpt": "Construction Phase\n2021-2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 826,
+    "type": "construction_start",
+    "label": null,
+    "title": "Site preparation and construction to follow",
+    "date": "2021-04-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.94,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "leslie-lookout-park",
+    "project_name": "Leslie Lookout Park",
+    "project_ward": "Toronto-Danforth",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/4c890192a8/meeting_-2020-record-of-discussion-indigenous-sharing-meeting-1.pdf",
+        "title": "April 2020 Leslie Slip Lookout Park Indigenous Community Sharing Meeting Summary",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "In Fall 2021, they will put out the tender drawings and start the construction process.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://createto.ca/news/createto-and-the-city-of-toronto-announce-claude-cormier-associ-s-to-design-and-construct-leslie-slip-lookout-park",
+        "title": null,
+        "page_no": null,
+        "locator": null,
+        "excerpt": "with the commencement of site preparation and construction to follow in the spring.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 257,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction expected to start",
+    "date": "2022-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.88,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "405-sherbourne-street",
+    "project_name": "405 Sherbourne Street",
+    "project_ward": "Toronto Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/c83b72d952/meeting_-2021-feedback-report-phase-one-community-feedback-report.pdf",
+        "title": "Phase 1 Community Consultation Feedback Report",
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "Final City approvals and construction are expected to start in late 2022.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 406,
+    "type": "construction_start",
+    "label": null,
+    "title": "140 Merton Street construction start",
+    "date": "2022-01-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "140-merton-street",
+    "project_name": "140 Merton Street",
+    "project_ward": "Toronto-St. Paul's",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "140 Merton Street* 150 180 180 (100%) 90 (50%) Q4 2020 Q4 2020 Q1 2022 -15",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 659,
+    "type": "construction_start",
+    "label": null,
+    "title": "Projected construction start for the new Etobicoke Civic Centre",
+    "date": "2022-07-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "etobicoke-civic-centre",
+    "project_name": "Etobicoke Civic Centre",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3d1dd6418e/meeting_-2021-bkbi-community-meeting-3-summary-final_accessible.pdf",
+        "title": "June 2021 Etobicoke Centre – Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #3 Summary",
+        "page_no": 13,
+        "locator": null,
+        "excerpt": "Subject to Council approval, construction is projected to begin in Q3 2022, with occupancy anticipated in Q3 2025.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 464,
+    "type": "construction_start",
+    "label": null,
+    "title": "Park construction commenced",
+    "date": "2022-12-01",
+    "date_precision": "month",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "leslie-lookout-park",
+    "project_name": "Leslie Lookout Park",
+    "project_ward": "Toronto-Danforth",
+    "evidence_count": 4,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+        "title": null,
+        "page_no": 6,
+        "locator": null,
+        "excerpt": "CreateTO broke ground on the $8.5M Leslie Lookout Park project in 2022 with anticipated project completion by the end of 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/e7ceb0e591/meeting_-2021-record-of-discussion-indigenous-sharing-meeting-2.pdf",
+        "title": "December 2021 Leslie Lookout Park Indigenous Community Sharing Meeting #2 Summary",
+        "page_no": 6,
+        "locator": null,
+        "excerpt": "She noted that the project is currently in the design development phase, that construction is expected to begin in 2022, and the park is expected to open in 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 409,
+    "type": "construction_start",
+    "label": null,
+    "title": "1250 Eglinton Avenue West construction start",
+    "date": "2023-01-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "1250-eglinton-avenue-west",
+    "project_name": "1250 Eglinton Avenue West",
+    "project_ward": "Eglinton-Lawrence",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "1250 Eglinton Ave W 70 70 70 (100%) 35 (50%) Q4 2021 Q4 2021 Q1 2023 -15",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 657,
+    "type": "construction_start",
+    "label": null,
+    "title": "Anticipated start of construction for Bloor-Kipling Block 1",
+    "date": "2023-01-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "bloor-kipling",
+    "project_name": "Bloor-Kipling",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3d1dd6418e/meeting_-2021-bkbi-community-meeting-3-summary-final_accessible.pdf",
+        "title": "June 2021 Etobicoke Centre – Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #3 Summary",
+        "page_no": 12,
+        "locator": null,
+        "excerpt": "At Bloor-Kipling (Six Points), the Block 1 will be brought to market in the summer of 2021 with construction anticipated to begin the Q1 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 407,
+    "type": "construction_start",
+    "label": null,
+    "title": "805 Don Mills construction start",
+    "date": "2023-04-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "805-don-mills",
+    "project_name": "805 Don Mills",
+    "project_ward": "Don Valley East",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "805 Don Mills 988 988 662 (67%) 331 (34%) Q3 2021 Q4 2021 Q2 2023 -18",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 413,
+    "type": "construction_start",
+    "label": null,
+    "title": "405 Sherbourne Street construction start",
+    "date": "2023-04-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "405-sherbourne-street",
+    "project_name": "405 Sherbourne Street",
+    "project_ward": "Toronto Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "405 Sherbourne St 200 200 (100%) 100 (50%) Q4 2021 Q2 2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 218,
+    "type": "construction_start",
+    "label": null,
+    "title": "1631 Queen Street East construction start",
+    "date": "2023-07-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "1631-queen-street-east",
+    "project_name": "1631 Queen Street East",
+    "project_ward": "Beaches-East York",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/e3bf06da37/meeting_-fact-sheet-1631-queen-st-e-fact-sheet.pdf",
+        "title": "1631 Queen Street East Fact Sheet",
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "Construction Start (2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "1631 Queen St E 200 200 (100%) 100 (50%) Q1 2022 Q3 2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 408,
+    "type": "construction_start",
+    "label": null,
+    "title": "770 Don Mills construction start",
+    "date": "2023-07-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "770-don-mills",
+    "project_name": "770 Don Mills",
+    "project_ward": "Don Valley East",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "770 Don Mills 1,389 1,389 931 (67%) 465 (33%) Q3 2021 Q4 2021 Q3 2023 -21",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 414,
+    "type": "construction_start",
+    "label": null,
+    "title": "150 Queens Wharf Road construction start",
+    "date": "2023-07-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "150-queens-wharf-road",
+    "project_name": "150 Queens Wharf Road",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "150 Queens Wharf Rd 200 200 (100%) 100 (50%) Q1 2022 Q3 2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 474,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction began on Block One of the Housing Now site at Bloor-Kipling",
+    "date": "2023-08-01",
+    "date_precision": "month",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "bloor-kipling",
+    "project_name": "Bloor-Kipling",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "CreateTO, along with our City partners, celebrated the start of construction on Block One of the Housing Now site at Bloor-Kipling in August 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 366,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction began",
+    "date": "2023-08-09",
+    "date_precision": "day",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "5207-dundas-street-west-bloor-kipling-block-1-",
+    "project_name": "5207 Dundas Street West (Bloor-Kipling Block 1) ",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "Construction began August 9, 2023.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 412,
+    "type": "construction_start",
+    "label": null,
+    "title": "2444 Eglinton Avenue East construction start",
+    "date": "2023-10-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "2444-eglinton",
+    "project_name": "2444 Eglinton Avenue East",
+    "project_ward": "Scarborough Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "2444 Eglinton Ave E 400 400 (100%) 200 (50%) Q2 2022 Q4 2023",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 411,
+    "type": "construction_start",
+    "label": null,
+    "title": "Anticipated construction start",
+    "date": "2024-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "158-borough-drive",
+    "project_name": "158 Borough Drive",
+    "project_ward": "Scarborough Centre",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "158 Borough Drive 400 400 (100%) 200 (50%) Q3 2022 Q1 2024",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/516a7e134f/meeting-2021-meeting-summary-community-meeting-2.pdf",
+        "title": "July 2021 Community Consultation Meeting #2 Meeting Summary",
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "Construction is anticipated to begin in 2024 and first occupancy to be in 2026/2027.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 424,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction began at 50 Wilson Heights Boulevard",
+    "date": "2024-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "allan-a-lamport-stadium",
+    "project_name": "Allan A. Lamport Stadium",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "Our project partners, Greenwin, KingSett Capital and Tridel broke ground at 50 Wilson Heights Boulevard in the fall of 2024",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 754,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction start was not expected before 2024",
+    "date": "2024-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.85,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "parkdale-hub",
+    "project_name": "Parkdale Hub",
+    "project_ward": "Parkdale-High Park",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+        "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "There is no exact construction date yet, but it won’t be sooner than 2024.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 284,
+    "type": "construction_start",
+    "label": null,
+    "title": "Ground-breaking ceremony for the new Etobicoke Civic Centre",
+    "date": "2024-04-10",
+    "date_precision": "day",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "etobicoke-civic-centre",
+    "project_name": "Etobicoke Civic Centre",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 3,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/f553712f49/bk-block-3-community-meeting-boards-full-set.pdf",
+        "title": "February 2025 -  Community Meeting Board Display",
+        "page_no": 8,
+        "locator": null,
+        "excerpt": "Construction commenced in April 2024 and project completion is targeted for 2028.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "The new Etobicoke Civic Centre (ECC), the cornerstone of creating a complete community across the City-owned lands at Bloor-Kipling, officially broke ground in April 2024.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 410,
+    "type": "construction_start",
+    "label": null,
+    "title": "3933 Keele Street construction start",
+    "date": "2024-10-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "3933-keele-street",
+    "project_name": "3933 Keele Street",
+    "project_ward": "York Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2020/ra/bgrd/backgroundfile-158773.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "3933 Keele Street 190 190 190 (100%) 95 (50%) Q1 2023 Q4 2022 Q4 2024 -24",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 425,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction of new PPUDO at 781 Victoria Park",
+    "date": "2024-11-01",
+    "date_precision": "month",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "777-victoria-park-avenue",
+    "project_name": "777 Victoria Park Avenue",
+    "project_ward": "Scarborough Southwest",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "In November 2024, our project partners Alterra Group of Companies and Mahogany Management started construction on the new TTC Passenger Pick-Up and Drop-Off at 777 Victoria Park Avenue",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/7562c7fc89/final-display-boards_777-vic-park_reduced.pdf",
+        "title": "December 2024 - Community Meeting Board Display",
+        "page_no": 6,
+        "locator": null,
+        "excerpt": "Construction of the new PPUDO at 781 Victoria Park began in November 2024 and is anticipated to be complete in May 2025.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 369,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction start announced at 50 Wilson Heights Boulevard",
+    "date": "2024-11-26",
+    "date_precision": "day",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "50-wilson-heights-boulevard",
+    "project_name": "50 Wilson Heights Boulevard",
+    "project_ward": "York Centre",
+    "evidence_count": 3,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "Construction began on November 26, 2024.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "the Housing Now project at 50 Wilson Heights Boulevard advanced through the Site Plan process and is on track to start construction in spring 2024.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "type": "construction_start",
+    "label": null,
+    "title": "Groundbreaking at 275 Merton Street",
+    "date": "2025-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "275-merton-street",
+    "project_name": "275 Merton Street",
+    "project_ward": "Toronto-St. Paul's",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "Construction began on September 2,\n2025,",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/2513789814/createto-2025-annual-report.pdf",
+        "title": null,
+        "page_no": 13,
+        "locator": null,
+        "excerpt": "In 2025, we moved more housing projects into the construction phase, breaking ground on fve new developments",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction expected to begin",
+    "date": "2025-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "2444-eglinton",
+    "project_name": "2444 Eglinton Avenue East",
+    "project_ward": "Scarborough Centre",
+    "evidence_count": 3,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "Construction began with a\ngroundbreaking event that was held on\nNovember 28, 2025,",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/2513789814/createto-2025-annual-report.pdf",
+        "title": null,
+        "page_no": 12,
+        "locator": null,
+        "excerpt": "Construction began on fve housing projects, including Ontario’s largest cooperative housing site in a generation at 2444 Eglinton Avenue East.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 741,
+    "type": "construction_start",
+    "label": null,
+    "title": "West Block construction is expected to start as early as 2025",
+    "date": "2025-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "parkdale-hub",
+    "project_name": "Parkdale Hub",
+    "project_ward": "Parkdale-High Park",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+        "title": "November 2023 Parkdale Hub Market Sounding Session",
+        "page_no": 13,
+        "locator": null,
+        "excerpt": "Construction of the West Block is expected to start as early as 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 839,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction of the affordable and market rental homes anticipated to begin",
+    "date": "2025-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.97,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "50-wilson-heights-boulevard",
+    "project_name": "50 Wilson Heights Boulevard",
+    "project_ward": "York Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://createto.ca/news/50-wilson-heights-boulevard:-building-a-new-transit-oriented-complete-community-in-york-centre",
+        "title": null,
+        "page_no": null,
+        "locator": null,
+        "excerpt": "construction of the affordable and market rental homes which is anticipated to begin spring 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 372,
+    "type": "construction_start",
+    "label": null,
+    "title": "Building permits and construction start",
+    "date": "2025-04-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "777-victoria-park-avenue",
+    "project_name": "777 Victoria Park Avenue",
+    "project_ward": "Scarborough Southwest",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "Construction began on June 3, 2025,",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/7562c7fc89/final-display-boards_777-vic-park_reduced.pdf",
+        "title": "December 2024 - Community Meeting Board Display",
+        "page_no": 6,
+        "locator": null,
+        "excerpt": "Building Permits and Construction Start - Anticipated Q2 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 264,
+    "type": "construction_start",
+    "label": null,
+    "title": "Shoreside infrastructure construction started",
+    "date": "2025-05-20",
+    "date_precision": "day",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "jack-layton-ferry-terminal",
+    "project_name": "Jack Layton Ferry Terminal - Shoreside Infrastructure",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3d9bdb217a/20260120_constructionupdate3_final.pdf",
+        "title": "Construction Notice - January 2026",
+        "page_no": 1,
+        "locator": null,
+        "excerpt": "Start Date: May 20, 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction start",
+    "date": "2025-10-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "260-adelaide-street-west",
+    "project_name": "260 Adelaide Street West",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/ab95d32ea3/meeting-2022-meeting-summary-community-consultation-meeting.pdf",
+        "title": "March 2022 260 Adelaide Community Consultation Meeting Summary",
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "Construction Start\nQ4 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 709,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction anticipated to commence",
+    "date": "2025-10-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "72-amroth-avenue",
+    "project_name": "72 Amroth Avenue",
+    "project_ward": "Beaches-East York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d6a1e5fea1/72-amroth_community-engagement-summary_.pdf",
+        "title": "April 2024 - Community Engagement Summary",
+        "page_no": 8,
+        "locator": null,
+        "excerpt": "At this preliminary stage, construction is anticipated to commence by Q4 2025.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 379,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction began",
+    "date": "2025-12-01",
+    "date_precision": "month",
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "610-bay-street",
+    "project_name": "610 Bay Street",
+    "project_ward": "University-Rosedale",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289593.pdf",
+        "title": null,
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "Construction began in December 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://www.toronto.ca/legdocs/mmis/2026/ra/bgrd/backgroundfile-289606.pdf",
+        "title": null,
+        "page_no": 10,
+        "locator": null,
+        "excerpt": "Construction began December 2025",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 313,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction begins",
+    "date": "2026-01-01",
+    "date_precision": "year",
+    "end_date": "2027-01-01",
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.94,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "dunn-house-phase-2",
+    "project_name": "Dunn House Phase 2",
+    "project_ward": "Parkdale-High Park",
+    "evidence_count": 4,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d669dcb035/fact-sheet-dunn-house-phase-2-tibetan.pdf",
+        "title": "Fact Sheet - Dunn House Phase 2 - Tibetan",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "སྤྱིི་ལོོ་ 2026 ལོོ་མཇུག / སྤྱིི་ལོོ་ 2027 ལོོ་འགོོ ། (སྔོོན་དཔག)\nཨར་ལས་འགོོ་འཛུགས།",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/829c26861b/dunn-house-phase-2-display-boards_final.pdf",
+        "title": "Community Meeting Display Boards",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "December 2026\n•\nBuilding permit\n•\nEstimated construction start",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 646,
+    "type": "construction_start",
+    "label": null,
+    "title": "Potential construction activity on site",
+    "date": "2026-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.95,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "805-wellington-street",
+    "project_name": "805 Wellington Street",
+    "project_ward": "Spadina-Fort York",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/06dd3ddc17/updated-frequently-asked-questions_april-14-2026.pdf",
+        "title": "FAQs - 805 Wellington Stret West",
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "If approved, we could start to see construction activity on site by the end of 2026.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 658,
+    "type": "construction_start",
+    "label": null,
+    "title": "Anticipated construction start for Bloor-Islington Phase 2",
+    "date": "2026-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "bloor-islington",
+    "project_name": "Bloor-Islington",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/3d1dd6418e/meeting_-2021-bkbi-community-meeting-3-summary-final_accessible.pdf",
+        "title": "June 2021 Etobicoke Centre – Block Context Plan Bloor-Kipling (Six Points) and Bloor-Islington Community Meeting #3 Summary",
+        "page_no": 12,
+        "locator": null,
+        "excerpt": "the second phase would begin construction in 2026 once the new TTC bus terminal is fully operational.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 897,
+    "type": "construction_start",
+    "label": null,
+    "title": "Anticipated construction start",
+    "date": "2026-01-01",
+    "date_precision": "quarter",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 1.0,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "610-bay-street",
+    "project_name": "610 Bay Street",
+    "project_ward": "University-Rosedale",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://createto.ca/news/national-housing-week:-reimagining-the-toronto-coach-terminal-site-at-610-bay-street",
+        "title": null,
+        "page_no": null,
+        "locator": null,
+        "excerpt": "610 Bay Street and 130 Elizabeth Street is anticipated to start construction beginning in Q1 2026",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 320,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction expected to begin",
+    "date": "2027-01-01",
+    "date_precision": "year",
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.99,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "flemingdon-fire-hall",
+    "project_name": "Flemingdon Fire Hall",
+    "project_ward": "Don Valley East",
+    "evidence_count": 2,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/f2e3f7b9a4/community-information-and-feedback-september-2026.pdf",
+        "title": "Community Information & Feedback - September 2026",
+        "page_no": 13,
+        "locator": null,
+        "excerpt": "The City of Toronto will complete detailed design with construction planned to begin in 2027 and completed in 2029.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6448b6d0f1/flemingdon-fire-hall-display-boards-landscape-1.pdf",
+        "title": "Public Information Meeting Display Boards - June 22, 2026",
+        "page_no": 8,
+        "locator": null,
+        "excerpt": "Construction is expected to begin in 2027",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 310,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction begins",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "dunn-house-phase-2",
+    "project_name": "Dunn House Phase 2",
+    "project_ward": "Parkdale-High Park",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/eb147cf350/fact-sheet-dunnhousephase2-march-2026aoda.pdf",
+        "title": "Fact Sheet - Dunn House Phase 2",
+        "page_no": 2,
+        "locator": null,
+        "excerpt": "Late 2026 / Early 2027 (anticipated)\nConstruction begins",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 426,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction underway at Bloor-Kipling Block 1",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.98,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "5207-dundas-street-west-bloor-kipling-block-1-",
+    "project_name": "5207 Dundas Street West (Bloor-Kipling Block 1) ",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 3,
+        "locator": null,
+        "excerpt": "construction is underway at Block 1 of the Bloor-Kipling site located at 5207 Dundas Street West.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 431,
+    "type": "construction_start",
+    "label": null,
+    "title": "Automotive dealership project under construction",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.97,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "190-cherry-street",
+    "project_name": "190 Cherry Street",
+    "project_ward": "Toronto-Danforth",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/d0e0a7caef/createto_2024_highlights_final.pdf",
+        "title": null,
+        "page_no": 5,
+        "locator": null,
+        "excerpt": "The project, now under construction, will deliver up to 100 jobs and animate the Cherry Street landscape.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 487,
+    "type": "construction_start",
+    "label": null,
+    "title": "Bloor-Kipling Block One ground breaking",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.5,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "bloor-kipling",
+    "project_name": "Bloor-Kipling",
+    "project_ward": "Etobicoke-Lakeshore",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+        "title": null,
+        "page_no": 7,
+        "locator": "vision",
+        "excerpt": "Bloor-Kipling Block One Ground Breaking",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 568,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction at the Corus Entertainment building site",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "actual",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.5,
+    "link_status": "external",
+    "project_hint": "Corus Entertainment building",
+    "project_slug": null,
+    "project_name": null,
+    "project_ward": null,
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/158f5f2742/tedco_corp_report_plan-final.pdf",
+        "title": null,
+        "page_no": 22,
+        "locator": "vision",
+        "excerpt": "Construction workers at TEDCO‘s Corus Entertainment building site",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  },
+  {
+    "id": 678,
+    "type": "construction_start",
+    "label": null,
+    "title": "Construction expected to start in 3 to 5 years",
+    "date": null,
+    "date_precision": null,
+    "end_date": null,
+    "status": "planned",
+    "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+    "confidence": 0.93,
+    "link_status": "linked",
+    "project_hint": null,
+    "project_slug": "allen-east-district",
+    "project_name": "Allen East District",
+    "project_ward": "York Centre",
+    "evidence_count": 1,
+    "evidence": [
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/71a2db96f1/meeting-2021-meeting-summary-local-advisory-committee-meeting-3.pdf",
+        "title": "April 2021 Local Advisory Committee Meeting #3 - Allen East District Plan",
+        "page_no": 4,
+        "locator": null,
+        "excerpt": "We’re likely looking at 3 to 5 years before construction starts.",
+        "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+        "live": true
+      }
+    ]
+  }
+]

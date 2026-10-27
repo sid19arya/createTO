@@ -146,6 +146,10 @@ Idempotency: every LLM output is cached in `extractions` keyed by
 
 ## 7. Deferred (later versions)
 
+- Main-content change hashing for external HTML: toronto.ca news pages carry a "latest news"
+  sidebar and the MERX homepage has live counters, so the visible-text hash flags them as
+  changed between fetches (22 pages, 33 re-extraction calls, $0.03 in run 2). Hash only
+  `<main>`/`<article>` and stop fetching the bare MERX homepage.
 - MERX solicitation *detail* pages and closed/awarded listings (detail needs login; closed
   listing isn't linked from createto.ca, so it's 2 hops)
 - PostGIS, map UI, ward polygons

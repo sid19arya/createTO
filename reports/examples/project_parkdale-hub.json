@@ -1,0 +1,3240 @@
+{
+  "slug": "parkdale-hub",
+  "kind": "project",
+  "name": "Parkdale Hub",
+  "phase": "marketOffering",
+  "phase_label": "Market Offering",
+  "types": [
+    "affordableHousing",
+    "commercial",
+    "communityRecreation",
+    "communitySpace",
+    "heritage",
+    "housing",
+    "library",
+    "mixedUse",
+    "office",
+    "residential",
+    "retail"
+  ],
+  "address": "1313 Queen Street West",
+  "ward": "Parkdale-High Park",
+  "latitude": 43.641079787578896,
+  "longitude": -79.43324180898185,
+  "site_area_text": "4.24 acres",
+  "summary": "The Parkdale Hub project, located at the intersection of Queen Street West and Cowan Avenue, is a transformational city-building initiative that will deliver wide-ranging social, cultural and economic benefits to the Parkdale community.",
+  "url": "https://createto.ca/projects/parkdale-hub",
+  "cutoff_status": null,
+  "last_activity_date": "2025-11-13",
+  "initiative_slug": "housing",
+  "initiative": "Housing",
+  "parent_slug": null,
+  "open_procurement": 1,
+  "description": "The intersection of Queen Street West and Cowan Avenue is currently home to an important cluster of City-owned facilities and community services, all of which need significant capital investment over the next ten years to maintain current service delivery levels. CreateTO, in collaboration with City divisions, agencies, the non-profit sector and broader community are reimagining this area to create spaces that will more efficiently and effectively serve the Parkdale community into the future. \nThe Parkdale Hub project includes: \nThe revitalization and expansion of the Masaryk-Cowan Community Recreation Centre; \n\nThe revitalization and expansion of the Parkdale Library Branch; \n\nThe creation of new affordable rental housing delivered through the Toronto Builds Policy Framework; \n\nThe ongoing delivery of affordable live-work housing for local artists as well as an art gallery and community office space;\n\nThe creation of new integrated hub with inclusive and accessible community space; \n\nSignificant enhancements to the public realm in the heart of the Parkdale neighbourhood, through the sensitive adaptive re-use of heritage buildings and improved connectivity with the adjacent residential neighbourhood. \n\nWest Block \nThe first phase of the project to be delivered, Parkdale Hub’s West Block, will include residential uses (approximately 171 total market and affordable rental homes) & community agency space (approximately 2,165 m²). \nA competitive request for proposals seeking partners to deliver and operate the West Block housing was launched in April 2025. In November 2025, Neighbourhood Land Trust and St. Clare’s Multifaith Housing were announced as the preferred proponents. The City will work with the Proponents to ready the West Block for groundbreaking by Q4 2026. Occupancy is targeted for 2029. \nApplications are now open for a multi-service community hub at 1337 Queen Street West in the South Parkdale neighbourhood. The City is seeking eligible organizations interested in entering a below-market lease agreement as community space tenants. \nThe tenants selected will occupy the newly built space, located in the West Block of the proposed development. \nInformation sessions will be held on: \nNovember 20, 2025 \n\nDecember 4, 2025 \n\nJanuary 15, 2026 \n\nMore details can be found on the City of Toronto’s Community Hubs website: https://www.toronto.ca/community-people/community-partners/community-hubs/ \nThe City will continue to work with existing organizations on site to be accommodated through renovated or newly constructed space.\n\nCentre Block \nParkdale Hub’s Centre Block will be the second block to be delivered. It will include a co-location of Masaryk-Cowan Community Recreation Centre and the new Toronto Public Library Parkdale branch. \nParks & Recreation and Toronto Public Library will work together on the development which will include the revitalization and expansion of the Masaryk-Cowan Community Recreation Centre with the addition of up to 30,000 square feet of space. The Parkdale Library branch will grow from its current 24,080 sq ft to 30,000 sq ft. \nConservation of significant cultural heritage resources through the sensitive adaptive re-use of heritage buildings will be an important aspect of the project. Heritage Planning Services will review the adaptive re-use plans in the Heritage Strategy to ensure alignment with City heritage policies and guidelines. There will be significant enhancements to the public realm throughout the site. \nCommunity engagement on the design and service offerings will also be an important aspect of the Centre Block Project. \nTimelines for the Centre Block will be adjusted pending progress on the West Block. The construction start for the Centre Block will not commence until the West Block reaches substantial completion and the space is occupied. More information will be shared when timelines become more clear. \nEast Block \nThe final block to be delivered, Parkdale Hub’s East Block, will include residential uses (approximately 60 total market and affordable rental homes) and community agency space. \nTimelines for the East Block will be adjusted pending progress on the West and Centre Blocks. \n\nProject History\nThe Parkdale Hub project was one of CreateTO’s first projects launched under the new city-wide model to centralize the delivery of the City’s real estate services and is a great example of CreateTO serving as a catalyst for city-building and supporting the vibrancy of the community, while contributing to the City’s broader city-building objectives. \nThis project was initiated by City Council in 2017, with a request for City staff to convene an Inter-Divisional Agency Table to determine the feasibility of a coordinated City plan for the City-owned properties located at 1303, 1313, 1325 Queen Street West and 220 Cowan Avenue. \nIn 2018, CreateTO was directed to undertake a Feasibility Study during which the agency, in collaboration with the City of Toronto Real Estate Services division, held several preliminary stakeholder and community meetings to learn what Parkdale residents, community organizations and local City agencies would like to see included in a future community hub. \nAt the direction of City Council, the Parkdale Hub project was added as a Housing Now project in April 2023. The site was subsequently zoned for mixed-use development through a City Council approval in october 2023, which included Official Plan and Zoning By-law amendments. At the time, the project was proposed to deliver 231 housing units, including 76 affordable rental units. \nIn May 2025, Parkdale Hub was added as a project under the new Toronto Builds Policy Framework (PDF) to deliver a range of new rental homes on public land.",
+  "major_intersection": "Queen Street West and Dufferin Street",
+  "site_area_acres": 4.24,
+  "current_use": "Library, housing, Community Recreation Centre, Parkdale Arts + Culture Centre",
+  "proposed_use": "Mixed-use",
+  "surrounding_use": "Retail to the north, east and west and low-rise residential to the south",
+  "cms_updated_at": "2025-11-18 17:16:26.657000+00:00",
+  "councillor": "Gord Perks",
+  "councillor_url": "https://www.toronto.ca/city-government/council/members-of-council/councillor-ward-4",
+  "parent_name": null,
+  "children": [],
+  "facts": [
+    {
+      "field": "address",
+      "value": "1313 Queen Street West",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.address",
+          "excerpt": "1313 Queen Street West",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "affordable_units",
+      "value": "88 permanently affordable homes",
+      "value_num": 88.0,
+      "unit": "homes",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "including 88 permanently affordable, nine rental replacement and 78 rent-controlled units",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "architect",
+      "value": "LGA Architectural Partners",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "The project team also includes LGA Architectural Partners (architect)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "architect",
+      "value": "DTAH Architects",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2020-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 7,
+          "locator": null,
+          "excerpt": "In spring 2020 CreateTO re-engaged DTAH Architects through a competitive procurement process to prepare a Demonstration Plan for the Parkdale Hub.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "budget",
+      "value": "between $17,500 and $53,500",
+      "value_num": null,
+      "unit": "CAD",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 7,
+          "locator": null,
+          "excerpt": "The total costs to implement the TRAP are estimated to be between $17,500 and $53,500 depending on tenant support required.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Revitalization and expansion of the Masaryk-Cowan Community Recreation Centre, with the addition of up to 30,000 square feet of space",
+      "value_num": 30000.0,
+      "unit": "square feet",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The revitalization and expansion of the Masaryk-Cowan Community Recreation Centre, to better deliver recreational programming through a more efficient design and the addition of up to 30,000 square feet of space;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "New affordable rental housing delivered through the Housing Now Initiative",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The creation of new affordable rental housing delivered through the Housing Now Initiative;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Affordable live-work housing for local artists, an art gallery and community office space",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The ongoing delivery of Artscape’s cultural hub program, which provides affordable live-work housing for local artists as well as an art gallery and community office space;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "The project aligns with objectives including an equity lens, affordable rental housing, community space and programming, and exploring construction work opportunities for equity-seeking Parkdale community members.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-04-23",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "we feel this Parkdale Hub project aligns with many of its objectives, including: applying an equity lens, supporting the creation of new affordable rental housing, and providing community space and programming.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Local communities want affordable housing options included as part of the development.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-10-05",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+          "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Local communities have been waiting for more affordable housing options and want it included as part of this development.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Gallery 1313 provides a safe space for exchanging ideas and telling stories, and accessible and affordable space for emerging artists.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-06-10",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 20,
+          "locator": "vision",
+          "excerpt": "Mr. Anderson and Gallery 1313 have provided our graduate student community and the larger Toronto Community, as safe space for the exchange of ideas and the telling of important stories often obscured in the larger media landscape.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "The letter asks that the plans enable the continuation of Gallery 1313's cultural work.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-06-15",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 21,
+          "locator": "vision",
+          "excerpt": "We trust that you will honour their significant contributions within your new plans to enable the continuation of their vital cultural work going forward.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "The letter says Gallery 1313 should continue as a venue for individual artists, arts organizations and students, giving the community access to different visual art expressions.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-07-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 22,
+          "locator": "vision",
+          "excerpt": "That’s why the Gallery 1313 must continue to work as a great venue for individual artists, Arts organizations and students, allowing the community a great access to different Visual Art expressions.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "A LAC member identified urban agriculture and beekeeping, and local training and employment opportunities during construction and operation, as community-benefit opportunities of interest.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-01-24",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+          "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "These include urban agriculture/beekeeping and local training and employment opportunities during the construction and operation of the site.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Community feedback called for expanded affordable housing options and spaces for local services, arts, and community programming.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2019-07-03",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Parkdale community members are overwhelmingly supportive of improving and expanding affordable housing options.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Affordable housing and community building through consolidation of City-owned lands and introduction of new community services",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2019-10-12",
+      "evidence": [
+        {
+          "url": "https://createto.ca/news/parkdale-community-hub-feasibility-study",
+          "title": null,
+          "page_no": null,
+          "locator": null,
+          "excerpt": "deliver new affordable housing and community building through the smart consolidation, and introduction of, new community services.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Revitalization and expansion of the Parkdale Library Branch.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The revitalization and expansion of the Parkdale Library Branch, to provide increased visibility and accessibility to the third busiest library branch in the city;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "Affordable live-work housing for local artists, an art gallery and community office space through Artscape's cultural hub program.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The ongoing delivery of Artscape’s cultural hub program, which provides affordable live-work housing for local artists as well as an art gallery and community office space;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "community_benefit",
+      "value": "New inclusive and accessible community space and design elements connecting programs, services and people.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The creation of new inclusive and accessible community space and design elements that will strategically connect programs, services and people – creating an integrated “Hub”;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "Tim Welch Consulting",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "and Tim Welch Consulting (project management)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "DTAH is leading design to the development concept.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-04-23",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "staff from the City’s Housing Secretariat, CreateTO, and DTAH (consultants leading the design to the development concept) re-introduced the Parkdale Hub project",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "DTAH & ERA",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "CreateTO, City Planning and DTAH & ERA (consultants leading the design of the demonstration plan) provided an update on the Parkdale Hub project and a recap of the demonstration plan.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "DTAH Architects",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 9,
+          "locator": null,
+          "excerpt": "DTAH Architects were asked to prepare a construction phasing strategy.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "ERA Architects",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 6,
+          "locator": null,
+          "excerpt": "Working in collaboration with DTAH Architects, ERA Architects have prepared the following heritage strategy for the Parkdale Hub project (Figures 10 – 13).",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "Altus Consulting Group",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "Altus Consulting Group was retained to provide preliminary (Class D) capital cost estimates to deliver the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "consultant",
+      "value": "WSP Canada Inc.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "A preliminary civil opinion was prepared by WSP Canada Inc. to determine existing infrastructure capacity",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "councillor",
+      "value": "Gord Perks",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.councillorName",
+          "excerpt": "Gord Perks",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "current_use",
+      "value": "Library, housing, Community Recreation Centre, Parkdale Arts + Culture Centre",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.currentUse",
+          "excerpt": "Library, housing, Community Recreation Centre, Parkdale Arts + Culture Centre",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "development_partner",
+      "value": "The Neighbourhood Land Trust",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Parkdale’s Neighbourhood Land Trust (NLT), Toronto’s first community land trust, has been selected by the City of Toronto as the successful proponent to lease and develop the Parkdale Hub – West Block",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "development_partner",
+      "value": "non-profit housing partner(s)",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "The Housing Secretariat will be initiating the selection process for the non-profit development partner in early 2024.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "height_storeys",
+      "value": "16 storeys",
+      "value_num": 16.0,
+      "unit": "storeys",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "a 16-storey development",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "54.5 m (16-storeys)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "The heritage properties at 220 Cowan Avenue and 1313 Queen Street West are proposed to be conserved and incorporated into the new building complex.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 23,
+          "locator": null,
+          "excerpt": "The heritage properties at 220 Cowan Avenue and 1313 Queen Street West are proposed to be conserved and incorporated into the new building complex.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "The subject property was included on the City of Toronto's Heritage Register on May 2, 1983.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "1983-05-02",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 45,
+          "locator": null,
+          "excerpt": "City Council included the subject property located at 1313 Queen Street West on the City of Toronto's Heritage Register on May 2, 1983.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "The strategy takes into account the Parkdale Main Street Heritage Conservation District Study and individual heritage designations for 220 Cowan Ave. and 1313 Queen St. West.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 6,
+          "locator": null,
+          "excerpt": "This strategy takes into account the Parkdale Main Street Heritage Conservation District Study, as well as the individual heritage designations for 220 Cowan Ave. and 1313 Queen St. West.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "Existing heritage buildings are to remain, with partial retention of one heritage building also indicated.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 3,
+          "locator": "vision",
+          "excerpt": "2 STOREY EXISTING HERITAGE BUILDING TO REMAIN.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "The strategy retains and reveals existing heritage elevations, reinstates large openings, and adds new sympathetic one-storey additions.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 7,
+          "locator": "vision",
+          "excerpt": "Generous set back of new construction fronting Queen St W to reveal existing west elevation of retained 2-storey",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "A retained building at 1313 Queen St W informs the streetwall design.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 8,
+          "locator": "vision",
+          "excerpt": "Introduction of a new 2-storey streetwall to respond to the retained building at 1313 Queen St W",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "An adjacent heritage building is at 1291 Queen St W.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 8,
+          "locator": "vision",
+          "excerpt": "Introduction of a new 3-storey streetwall to respond to the adjacent heritage building at 1291 Queen St W",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "Sensitive adaptive re-use of heritage buildings is included as a project opportunity.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 11,
+          "locator": null,
+          "excerpt": "Significant enhancements to the public realm in the heart of the Parkdale neighbourhood, as well as the sensitive adaptive re-use of heritage buildings",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "Feedback emphasized reflecting the community’s history and preserving historical aspects of older buildings.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2019-07-03",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "There is also hesitation to demolish or damage older buildings, with both groups preferring to preserve the historical aspects.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "Adaptive reuse of heritage buildings and key existing heritage building elements",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-28",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "through the sensitive adaptive re-use of heritage buildings",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "heritage",
+      "value": "Sensitive adaptive re-use of heritage buildings.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-13",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0d861f7f03/createto-2022-highlights-report.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "Significant enhancements to the public realm in the heart of the Parkdale neighbourhood, through the sensitive adaptive re-use of heritage buildings and improved connectivity with the adjacent residential neighbourhood.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "lease_term",
+      "value": "99 years",
+      "value_num": 99.0,
+      "unit": "years",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-12-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "up to 90 affordable rental homes (50%) for 99 years at the West Block.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 19,
+          "locator": null,
+          "excerpt": "99 years at nominal rate",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "major_intersection",
+      "value": "Queen Street West and Dufferin Street",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.majorIntersection",
+          "excerpt": "Queen Street West and Dufferin Street",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_profit_partner",
+      "value": "St. Clare’s Housing",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "In partnership with St. Clare’s Housing, a Toronto-based non-profit housing developer",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_profit_partner",
+      "value": "Housing, including affordable housing, will be led by a non-profit housing organization selected by the City",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-12-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 7,
+          "locator": null,
+          "excerpt": "Delivery of housing including affordable housing will be led by a non-profit housing organization to be selected by the City.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_profit_partner",
+      "value": "The housing component will be run by a non-profit developer; no developer is named.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Councillor Perks added that the housing component will be run by a non-profit developer",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_profit_partner",
+      "value": "Artscape",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-28",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "The ongoing delivery of Artscape’s cultural hub program",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_residential_gfa_sqm",
+      "value": "Non-Residential: 1,130 m²",
+      "value_num": 1130.0,
+      "unit": "m²",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "Residential: 12,887 m²  Non-Residential: 1,130 m²  Total: 14,017 m²",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_residential_gfa_sqm",
+      "value": "Combined CRC/Library: 7,008 m²",
+      "value_num": 7008.0,
+      "unit": "m²",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "Combined CRC/Library:  7,008 m²",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "non_residential_gfa_sqm",
+      "value": "Non-Residential: 1,261 m²",
+      "value_num": 1261.0,
+      "unit": "m²",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "Residential: 5,007 m²  Non-Residential: 1,261 m²  Total: 6,268 m²",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "official_plan_status",
+      "value": "City Council adopted the Official Plan Amendment in November 2023",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-11-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "November 2023:  City Council Adopts Zoning By-Law and Official Plan Amendment",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "23,300 sq. ft.",
+      "value_num": 23300.0,
+      "unit": "sq. ft.",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "alongside 23,300 sq. ft. of community space to support local services and programs.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "The library is intended to be 30,000 square feet spread across two floors.",
+      "value_num": 30000.0,
+      "unit": "square feet",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-28",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "Our ambition is to grow the size of the library to 30,000 square feet spread across two floors, including an open atrium that brings openness, transparency, and visual connectivity.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "to better deliver recreational programming through a more efficient design and the addition of up to 30,000 square feet of space;",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "325m2 (3,498ft2) of accessible outdoor space in the form of the 'Cowan Plaza' and the 'Dunn Courtyard'.",
+      "value_num": 325.0,
+      "unit": "m²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 9,
+          "locator": null,
+          "excerpt": "325m2 (3,498ft2) of accessible outdoor space in the form of the 'Cowan Plaza' and the 'Dunn Courtyard'.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Estimated total of $8.045M",
+      "value_num": 8045000.0,
+      "unit": "CAD",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-12-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 19,
+          "locator": null,
+          "excerpt": "the exemption of municipal and school taxation over the 99 year term, estimated at a total of $8.045M.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Approximately 1,100 m2 per floor in the demonstration plan",
+      "value_num": 1100.0,
+      "unit": "m2 per floor",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "Floors 2-4 - +/- 1,100 m2 per floor",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Approximately 850 m2 per floor in the demonstration plan",
+      "value_num": 850.0,
+      "unit": "m2 per floor",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-05-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "Floors 5,6 - +/- 850 m2 per floor.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Affordable rental units created through Housing Now will rent, on average, for 80% of Toronto’s average market rent, with some rents as low as 40%.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-01-24",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+          "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "On average, affordable rental units created through Housing Now will rent for 80 per cent of Toronto’s average market rent; with some rents being deeply affordable, renting as low as 40 per cent of the average market rent.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Approximately 3.5 years of active construction time",
+      "value_num": 3.5,
+      "unit": "years",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "The approach presented below would take approximately 3.5 years of active construction time to implement.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "5,563 m²",
+      "value_num": 5563.0,
+      "unit": "m²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-12",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+          "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+          "page_no": 2,
+          "locator": "vision",
+          "excerpt": "5,563",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "9 replacement live-work units",
+      "value_num": 9.0,
+      "unit": "units",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 7,
+          "locator": null,
+          "excerpt": "64 rental housing units (min. 50% affordable), including 9 replacement live-work units",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Approximately 8,000 ft²",
+      "value_num": 8000.0,
+      "unit": "ft²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 8,
+          "locator": null,
+          "excerpt": "Approximately 8,000ft2  of ground level community space, including 3,000 ft2 replacement space for Artscape",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "3,000 ft²",
+      "value_num": 3000.0,
+      "unit": "ft²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 8,
+          "locator": null,
+          "excerpt": "Approximately 8,000ft2  of ground level community space, including 3,000 ft2 replacement space for Artscape",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "33,000 ft²",
+      "value_num": 33000.0,
+      "unit": "ft²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 8,
+          "locator": null,
+          "excerpt": "Expanded and relocated public Library (33,000 ft2)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "49,000 ft²",
+      "value_num": 49000.0,
+      "unit": "ft²",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-01-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 8,
+          "locator": null,
+          "excerpt": "Expanded and revitalized Community Recreation Centre (49,000 ft2)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "other",
+      "value": "Conceptual design and massing study and preliminary costing analysis were underway; planning studies were ongoing.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2019-06-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "• Conceptual Design & Massing Study\no Currently underway\n• Preliminary Costing Analysis\no Currently underway\n• Planning Studies (Heritage Conservation District Plan & West Queen West Framework)\no Ongoing",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "parking_spaces",
+      "value": "41 parking spaces will be dedicated to the Parkdale Hub, for use by staff and visitors",
+      "value_num": 41.0,
+      "unit": "spaces",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 25,
+          "locator": null,
+          "excerpt": "The northernmost driveway provides access to the existing underground parking garage at 245 Dunn Avenue, where 41 parking spaces will be dedicated to the Parkdale Hub, for use by staff and visitors.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "Approximately 41 new spaces will be provided for the Parkdale Hub.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "parking_spaces",
+      "value": "five accessible at-grade parking spaces",
+      "value_num": 5.0,
+      "unit": "spaces",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 25,
+          "locator": null,
+          "excerpt": "The southernmost driveway provides a connection to five accessible at-grade parking spaces.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "phase",
+      "value": "marketOffering",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.phase",
+          "excerpt": "marketOffering",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "proposed_use",
+      "value": "Mixed-use",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.proposedUse",
+          "excerpt": "Mixed-use",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "rental_units",
+      "value": "175 purpose-built rental homes",
+      "value_num": 175.0,
+      "unit": "homes",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "The project will encompass 175 purpose-built rental homes, including 88 permanently affordable, nine rental replacement and 78 rent-controlled units",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "residential_units",
+      "value": "175 new homes",
+      "value_num": 175.0,
+      "unit": "homes",
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "a 16-storey development that will deliver an estimated 175 new homes located at 1337 Queen Street West and a portion of 1325 Queen Street West.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "site_area",
+      "value": "4.24 acres",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.siteArea",
+          "excerpt": "4.24 acres",
+          "extracted_by": "cms",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "The Parkdale Hub Study Area includes approximately 4.24 acres of City-owned lands",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "surrounding_use",
+      "value": "Retail to the north, east and west and low-rise residential to the south",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.surroundingUse",
+          "excerpt": "Retail to the north, east and west and low-rise residential to the south",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Toronto Green Standard Tier 2",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2025-11-13",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Designed to meet the Toronto Green Standard Tier 2",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Housing Now must meet Tier 3 Version 2 of the Toronto Green Standards.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-04-23",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "Housing Now must meet Tier 3 Version 2 of the Toronto Green Standards.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "CreateTO said it would strive to reach net zero carbon emission, exploring opportunities like on-site energy production and water conservation.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-04-23",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "CreateTO said that, with City staff and the developer, they will strive to reach net zero carbon emission, exploring opportunities like energy production on site, water conservation, and others.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Tier 2 Version 4 of the Toronto Green Standard",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 26,
+          "locator": null,
+          "excerpt": "The West Block and East Block will be designed to meet Tier 2 Version 4 of the Toronto Green Standard",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Net Zero Emissions",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 26,
+          "locator": null,
+          "excerpt": "the Centre Block will be designed to Net Zero Emissions.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 6,
+          "locator": null,
+          "excerpt": "The Centre Block is required to be built and designed to Net Zero Emissions as a City-owned facility.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Required to meet Tier 2 of Version 4 of the Toronto Green Standard.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-10-05",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+          "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The development partner for the Housing Now site will be required to meet Tier 2 of Version 4 of the Toronto Green Standard.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Required to meet Tier 3 of Version 4 of the Toronto Green Standard.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-10-05",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+          "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "The Community Recreation Centre and Library site will be required to meet Tier 3 of Version 4 of the Toronto Green Standard.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Minimum of Tier 2 of the Toronto Green Standards",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-04-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 6,
+          "locator": null,
+          "excerpt": "The housing sites on the East and West Blocks are required to achieve a minimum of Tier 2 of the Toronto Green Standards.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "At minimum, the project is required to meet Toronto Green Standard Tier 2 Version 4.",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-01-24",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+          "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "One of the requirements is that this project is at minimum meeting the Toronto Green Standard Tier 2 Version 4.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Toronto Green Standard Version 4, Tier 2",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "direct the Vice President, Land and Development Planning, to pursue the Toronto Green Standard Version 4, Tier 2 for the potential Housing Now site(s) within the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "sustainability_target",
+      "value": "Toronto Green Standard Version 4, Tier 3 or higher",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2021-11-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "the Centre Block (which comprises their future facilities) has been designed and costed to meet or exceed TGS Version 4 Tier 3.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "tenure",
+      "value": "rental housing",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "The mixed-use buildings are proposed to provide a minimum of 231 rental housing units",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 7,
+          "locator": null,
+          "excerpt": "64 rental housing units (min. 50% affordable), including 9 replacement live-work units",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "total_gfa_sqm",
+      "value": "Site Total: 23,567 m²",
+      "value_num": 23567.0,
+      "unit": "m²",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "Gross Floor Area  Site Total: 23,567 m²",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "total_gfa_sqm",
+      "value": "at least 682 square metres of residential Gross Floor Area",
+      "value_num": 682.0,
+      "unit": "m²",
+      "status": "conflicting",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-10-19",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 38,
+          "locator": null,
+          "excerpt": "at least nine replacement rental units, equating to at least 682 square metres of residential Gross Floor Area in the West Block building",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "types",
+      "value": "affordableHousing, commercial, communityRecreation, communitySpace, heritage, housing, library, mixedUse, office, residential, retail",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.type",
+          "excerpt": "affordableHousing, commercial, communityRecreation, communitySpace, heritage, housing, library, mixedUse, office, residential, retail",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "ward",
+      "value": "Parkdale-High Park",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "cms",
+      "as_of": "2025-11-18",
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.ward",
+          "excerpt": "Parkdale-High Park",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "field": "zoning_status",
+      "value": "City Council adopted the Zoning By-Law in November 2023",
+      "value_num": null,
+      "unit": null,
+      "status": "current",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "as_of": "2023-11-01",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "November 2023:  City Council Adopts Zoning By-Law and Official Plan Amendment",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Parkdale Hub public meeting",
+      "date": "2018-05-16",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 6,
+          "locator": "vision",
+          "excerpt": "COMMUNITY ENGAGEMENT (Public Meeting May 16, 2018)",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "label": null,
+      "title": "Inter-divisional meeting",
+      "date": "2019-04-24",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "April 24\nInter-Divisional Meeting\n27",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Community meeting",
+      "date": "2019-06-10",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "June 10\nCommunity Meeting\n~75",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "label": null,
+      "title": "Parkdale Hub report to Council",
+      "date": "2019-07-01",
+      "date_precision": "quarter",
+      "end_date": "2019-10-01",
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 6,
+          "locator": "vision",
+          "excerpt": "REPORT TO COUNCIL",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "Staff report adopted by City Council directing further feasibility work",
+      "date": "2019-12-17",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "On December 17, 2019, City Council adopted report EX11.6 \"Parkdale Hub Project - Feasibility Study\"",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://createto.ca/news/parkdale-community-hub-feasibility-study",
+          "title": null,
+          "page_no": null,
+          "locator": null,
+          "excerpt": "The recommendations included within the staff report adopted by City Council on December 17, 2019 also directed CreateTO to explore the strategic acquisition of a privately held parcel of land that would allow for additional affordable housing.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "report_published",
+      "label": null,
+      "title": "CreateTO to report back to the Executive Committee with a Phase 2 work update",
+      "date": "2020-10-01",
+      "date_precision": "quarter",
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://createto.ca/news/parkdale-community-hub-feasibility-study",
+          "title": null,
+          "page_no": null,
+          "locator": null,
+          "excerpt": "Staff will report back to the Executive Committee in the fourth quarter of 2020 with an update on the Phase 2 work.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Parkdale Hub Phase 2 Local Advisory Committee Meeting #1",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Wednesday, March 24, 2021",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Parkdale Hub community meeting",
+      "date": "2021-05-27",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Thursday, May 27, 2021",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Additional details are available in the May 27th Community Meeting presentation and meeting recording available at www.parkdalehub.ca",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Public town hall meeting",
+      "date": "2021-06-01",
+      "date_precision": "month",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "Two LAC meetings were held in 2021, in addition to a well-attended public town hall meeting in June",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Parkdale Hub Phase 2 Local Advisory Committee Meeting #2",
+      "date": "2021-09-15",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+          "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Wednesday, September 15, 2021",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "City Council approved acquisition of the Dollarama land",
+      "date": "2022-06-01",
+      "date_precision": "month",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "June 2022:  City Council approved the acquisition of the Dollarama land to best support the redevelopment and meet City objectives",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Parkdale Hub Phase 3 Local Advisory Committee meeting",
+      "date": "2022-12-06",
+      "date_precision": "day",
+      "end_date": "2022-12-06",
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+          "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "On Tuesday, December 6, 2022, CreateTO hosted a Local Advisory Committee (LAC) meeting for Phase 3 of the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "rezoning_approved",
+      "label": null,
+      "title": "Parkdale Hub received re-zoning approval",
+      "date": "2023-01-01",
+      "date_precision": "year",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "This past year, we received re-zoning approval and led a market sounding session",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "developer_selected",
+      "label": null,
+      "title": "Target selection of non-profit housing partner(s)",
+      "date": "2023-01-01",
+      "date_precision": "year",
+      "end_date": "2024-01-01",
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 27,
+          "locator": null,
+          "excerpt": "The Housing Secretariat aims to select a non-profit housing partner(s) late in 2023 or early 2024.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "label": null,
+      "title": "Rental Housing Demolition application for 1313 Queen Street West submitted",
+      "date": "2023-01-27",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 14,
+          "locator": null,
+          "excerpt": "On January 27, 2023, a Rental Housing Demolition application under Chapter 667 of the Toronto Municipal Code was submitted for 1313 Queen Street West to demolish nine (9) existing rental dwelling units.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "public_consultation",
+      "label": null,
+      "title": "Parkdale Hub Phase 3 community pop-ups",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "end_date": "2023-03-03",
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 9,
+          "locator": null,
+          "excerpt": "On Tuesday February 28 and Friday March 3, CreateTO hosted 2 community pop-ups for phase 3 of the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Public Meeting",
+      "date": "2023-03-08",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "The consultation program included two pop-up meetings (February 28, 2023, and March 3, 2023), a community consultation meeting (March 8, 2023), and a City-led Tenant Meeting (May 3, 2023).",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+          "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "On Wednesday, March 8, 2023, CreateTO hosted a Community Meeting for Phase 3 of the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/781832e756/resource-2023-parkdale-hub-development-sign.pdf",
+          "title": "Parkdale Hub Development Sign 2023",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Public Meeting\nWednesday, March 8, 2023, 6:30 p.m.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "City-led tenant meeting for affected tenants",
+      "date": "2023-05-03",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "The consultation program included two pop-up meetings (February 28, 2023, and March 3, 2023), a community consultation meeting (March 8, 2023), and a City-led Tenant Meeting (May 3, 2023).",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "City Council adopted PH3.6, moving Parkdale Hub to a Phase Three site",
+      "date": "2023-05-10",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "In May of 2023, City Council approved the site to be included as part of the Housing Now Initiative to advance the affordable rental housing component of the project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        },
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 42,
+          "locator": null,
+          "excerpt": "On May 10, 2023, City Council adopted Item PH 3.6 \"Housing Now Initiative - 2023 Progress Update\", which requested the Executive Director, Housing Secretariat to move the Parkdale Hub from being a 'pipeline' site to a Phase Three site",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "community_meeting",
+      "label": null,
+      "title": "Pop-up meeting to share updated West Block concept",
+      "date": "2023-08-23",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "City staff and CreateTO held a pop-up meeting on August 23, 2023, to share an updated development concept for the West Block",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "report_published",
+      "label": null,
+      "title": "Housing Now - Parkdale Hub decision report",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Date: October 10, 2023",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "City Council adopted the Zoning By-Law and Official Plan Amendment",
+      "date": "2023-11-01",
+      "date_precision": "month",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 10,
+          "locator": null,
+          "excerpt": "November 2023:  City Council Adopts Zoning By-Law and Official Plan Amendment",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "label": null,
+      "title": "Parkdale Hub Market Sounding Session",
+      "date": "2023-11-29",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 1,
+          "locator": "vision",
+          "excerpt": "Parkdale Hub Market Sounding Session\nNov. 29, 2023",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "construction_start",
+      "label": null,
+      "title": "Construction start was not expected before 2024",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "There is no exact construction date yet, but it won’t be sooner than 2024.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "construction_start",
+      "label": null,
+      "title": "West Block construction is expected to start as early as 2025",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "Construction of the West Block is expected to start as early as 2025",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "developer_selected",
+      "label": null,
+      "title": "The Neighbourhood Land Trust selected as successful proponent for the Parkdale Hub – West Block",
+      "date": "2025-11-13",
+      "date_precision": "day",
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Toronto, November 13, 2025 – Parkdale’s Neighbourhood Land Trust (NLT), Toronto’s first community land trust, has been selected by the City of Toronto as the successful proponent to lease and develop the Parkdale Hub – West Block",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "construction_complete",
+      "label": null,
+      "title": "Parkdale Hub completion goal",
+      "date": "2029-01-01",
+      "date_precision": "year",
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+          "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "In terms of timing, the goal is to be done by 2029.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "other",
+      "label": null,
+      "title": "Request to convene an inter-divisional agency table to assess a coordinated City plan",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://www.toronto.ca/legdocs/mmis/2017/mm/bgrd/backgroundfile-101969.pdf",
+          "title": "1313, 1303 Queen Street West and 220 Cowan Avenue -City Plan for City-owned Properties",
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "City Council request the three Deputy City Managers to convene an inter-divisional agency table, including: Parks Forestry and Recreation, the Toronto Public Library, Shelter Support and Housing Administration, City Planning, Economic Development and Culture, the Toronto Parking Authority, the Affor",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "public_consultation",
+      "label": null,
+      "title": "Upcoming Parkdale Hub Public Consultation Meeting",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "CreateTO will share the dates for the upcoming Public Consultation Meeting and second LAC meeting with participants once finalized.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "construction_complete",
+      "label": null,
+      "title": "Estimated West Block completion in 2027/28",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 13,
+          "locator": null,
+          "excerpt": "with an estimated completion of 2027/28",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "City Council directed CreateTO to advance the preferred option through Phase 2",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "actual",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+          "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+          "page_no": 3,
+          "locator": null,
+          "excerpt": "City Council then directed CreateTO to advance the preferred option through Phase 2.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "phase_change",
+      "label": null,
+      "title": "Advance the Parkdale Hub project to Phase 3",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Based on these findings, staff recommend that the project advance into Phase 3",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "rezoning_application",
+      "label": null,
+      "title": "City-led rezoning process for the Parkdale Hub",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 12,
+          "locator": null,
+          "excerpt": "Preparation of all due diligence design work to support City-initiated rezoning",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "council_approval",
+      "label": null,
+      "title": "Parkdale Hub Phase 2 council approval",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+          "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+          "page_no": 6,
+          "locator": "vision",
+          "excerpt": "PENDING COUNCIL APPROVAL...",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "type": "phase_change",
+      "label": null,
+      "title": "Developing a demonstration plan for the site",
+      "date": null,
+      "date_precision": null,
+      "end_date": null,
+      "status": "planned",
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+          "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Phase 2 includes developing a demonstration plan for the site, which is a more detailed plan informed by the preferred massing concept developed in Phase 1.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    }
+  ],
+  "procurement": [
+    {
+      "kind": "market_offering",
+      "title": "Parkdale Hub market offering",
+      "status": "open",
+      "reference_number": null,
+      "issuer": "CreateTO",
+      "counterparty": null,
+      "scope": null,
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "cms",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "content.phase",
+          "excerpt": "Current Phase: Market Offering",
+          "extracted_by": "cms",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "eoi",
+      "title": "Parkdale Hub West Block Community Space Request for Expressions of Interest (REOI)",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "CreateTO",
+      "counterparty": null,
+      "scope": null,
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": "https://www.toronto.ca/community-people/community-partners/community-hubs",
+      "extracted_by": "rule:resource_title",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://createto.ca/projects/parkdale-hub",
+          "title": null,
+          "page_no": null,
+          "locator": "resources:https://www.toronto.ca/community-people/community-partners/community-hubs/",
+          "excerpt": "Parkdale Hub West Block Community Space Request for Expressions of Interest (REOI)",
+          "extracted_by": "rule:resource_title",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "partner_selection",
+      "title": "Selection of successful proponent to lease and develop the Parkdale Hub – West Block",
+      "status": "awarded",
+      "reference_number": null,
+      "issuer": "City of Toronto",
+      "counterparty": "The Neighbourhood Land Trust",
+      "scope": "Lease and development of the Parkdale Hub – West Block",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://pnlt.ca/cms/custom/uploads/2025/11/NLT-Parkdale-Hub-West-Block-Announcement-Press-Release.pdf",
+          "title": null,
+          "page_no": 1,
+          "locator": null,
+          "excerpt": "Parkdale’s Neighbourhood Land Trust (NLT), Toronto’s first community land trust, has been selected by the City of Toronto as the successful proponent to lease and develop the Parkdale Hub – West Block",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "rfp",
+      "title": "Request for Proposals for Parkdale Hub – West Block (Block A)",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "City of Toronto",
+      "counterparty": null,
+      "scope": "Amend the RFP to remove the requirement that 10% of affordable housing units be rented at no more than 40% of average market rent",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://www.toronto.ca/legdocs/mmis/2025/ph/bgrd/backgroundfile-255126.pdf",
+          "title": null,
+          "page_no": 8,
+          "locator": null,
+          "excerpt": "City Council authorize the Executive Director, Housing Secretariat, to amend the Request for Proposals for the Parkdale Hub – West Block (Block A) to remove the requirement that 10% of the affordable housing units be rented at no more than 40% of average market rent.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "partner_selection",
+      "title": "Upcoming procurement process for a non-profit affordable rental housing development partner",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "CreateTO",
+      "counterparty": null,
+      "scope": "Non-profit affordable rental housing development partner for Parkdale Hub",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/6bcc2a7b85/createto_2023_highlights_final1.pdf",
+          "title": null,
+          "page_no": 4,
+          "locator": null,
+          "excerpt": "seek interest in the upcoming procurement process for a non-profit affordable rental housing development partner for the project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "partner_selection",
+      "title": "Competitive call for a Parkdale Hub development partner",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "Housing Secretariat",
+      "counterparty": null,
+      "scope": "Selection of a development partner for the project",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+          "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "Housing Secretariat will put out a competitive call looking for a development partner coinciding with zoning approval.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "rfp",
+      "title": "Request for Proposal for a non-profit housing partner(s) for the West and East Blocks",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "Housing Secretariat",
+      "counterparty": null,
+      "scope": "Non-profit housing partner(s) for the West and East Blocks, including terms set out in Attachment 6 and the Design Brief",
+      "value": null,
+      "currency": null,
+      "opens_at": "2024",
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 27,
+          "locator": null,
+          "excerpt": "Following City Council's considerations of the recommended Official Plan and Zoning By-law Amendments, the Housing Secretariat will advance to issuance of a Request for Proposal for a non-profit housing partner(s) for the West and East Blocks including the terms set out in Attachment 6 of this repor",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "partner_selection",
+      "title": "Selection process for the non-profit development partner",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "Housing Secretariat",
+      "counterparty": null,
+      "scope": "Non-profit development partner for Parkdale Hub",
+      "value": null,
+      "currency": null,
+      "opens_at": "2024",
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+          "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+          "page_no": 5,
+          "locator": null,
+          "excerpt": "The Housing Secretariat will be initiating the selection process for the non-profit development partner in early 2024.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "rfp",
+      "title": "Request for Proposal for a non-profit housing developer and provider for the West Block",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "The City",
+      "counterparty": "Qualified non-profit housing developer and provider",
+      "scope": "Select a housing developer and provider for the West Block of the Parkdale Hub project",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+          "title": "November 2023 Parkdale Hub Market Sounding Session",
+          "page_no": 17,
+          "locator": null,
+          "excerpt": "The City will be issuing a Request for Proposal in Q1/2 - 2024 to select a qualified non-profit housing developer and provider for the West Block of the Parkdale Hub project.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "rfp",
+      "title": "Request for Proposal process for a non-profit developer",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "City of Toronto",
+      "counterparty": null,
+      "scope": "Non-profit developer submission; the number of units and unit-type breakdown will be included in the submission.",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+          "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "The number of units in the building will be part of the non-profit developer's submission to the City as part of the Request for Proposal process.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    },
+    {
+      "kind": "partner_selection",
+      "title": "Competitive procurement of a non-profit affordable rental housing development partner",
+      "status": "unknown",
+      "reference_number": null,
+      "issuer": "Housing Secretariat",
+      "counterparty": null,
+      "scope": "Development partner for the potential Housing Now site(s) within the Parkdale Hub project",
+      "value": null,
+      "currency": null,
+      "opens_at": null,
+      "closes_at": null,
+      "external_url": null,
+      "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+      "first_seen_run": 1,
+      "retracted_run": null,
+      "project_slug": "parkdale-hub",
+      "project_name": "Parkdale Hub",
+      "project_address": "1313 Queen Street West",
+      "project_ward": "Parkdale-High Park",
+      "project_phase": "Market Offering",
+      "project_latitude": 43.641079787578896,
+      "project_longitude": -79.43324180898185,
+      "evidence": [
+        {
+          "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+          "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+          "page_no": 2,
+          "locator": null,
+          "excerpt": "the competitive procurement of a non-profit affordable rental housing development partner.",
+          "extracted_by": "model:openai/gpt-6-luna@extract_v1",
+          "live": true
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "title": "CreateTO's 2023 Highlights",
+      "published_at": "2024-04-15 16:21:00.165000+00:00",
+      "kind": "insider",
+      "url": "https://createto.ca/news/createto-s-2023-highlights",
+      "linked_by": "claims"
+    },
+    {
+      "title": "CreateTO’s 2022 Highlights Report",
+      "published_at": "2023-04-20 07:00:00+00:00",
+      "kind": "insider",
+      "url": "https://createto.ca/news/createtos-2022-highlights-report",
+      "linked_by": "claims"
+    },
+    {
+      "title": "Parkdale Community Hub – Feasibility Study",
+      "published_at": "2019-10-12 07:00:00+00:00",
+      "kind": "project_update",
+      "url": "https://createto.ca/news/parkdale-community-hub-feasibility-study",
+      "linked_by": "cms"
+    }
+  ],
+  "context_records": [],
+  "files": [
+    {
+      "title": "1313 Queen Street West Development Application",
+      "url": "https://www.toronto.ca/city-government/planning-development/application-details?id=5211163&pid=155857&title=1313+QUEEN+ST+W",
+      "kind": "page",
+      "parse_status": "ok"
+    },
+    {
+      "title": "1313, 1303 Queen Street West and 220 Cowan Avenue -City Plan for City-owned Properties",
+      "url": "https://www.toronto.ca/legdocs/mmis/2017/mm/bgrd/backgroundfile-101969.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "December 2022 Parkdale Hub Phase 3 Local Advisroy Committee Meeting Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/7d2b7b1660/meeting-2022-meeting-summary-local-advisory-committee-meeting-phase-3.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Demonstration Plan, Heritage Strategy & Phasing Strategy",
+      "url": "https://a-us.storyblok.com/f/1017201/x/6eccd855af/resource-demonstration-plan-heritage-strategy-phasing-strategy.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Housing Now - Parkdale Hub – Official Plan & Zoning By-law Amendments, and Rental Housing Demolition Applications – Decision Report",
+      "url": "https://a-us.storyblok.com/f/1017201/x/c514d0be9e/resource-2023-planning-and-housing-committee-staff-report-october-10-report.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "June 2019 Parkdale Hub Engagement Report: Feedback, Insights & Next Steps",
+      "url": "https://a-us.storyblok.com/f/1017201/x/13fa501faa/meeting-2019-engagement-report-feedback-insights-and-next-steps.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "March 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting #1 Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/d2d842c4d7/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-1.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "March 2023 Parkdale Hub Phase 3 Community Meeting Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/9e64fcd485/meeting-2023-meeting-summary-community-meeting.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "May 2021 Parkdale Hub - Phase 2 Community Meeting Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/9f8a857b64/meeting-2021-meeting-summary-community-meeting.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "November 2023 Parkdale Hub Market Sounding Session",
+      "url": "https://a-us.storyblok.com/f/1017201/x/aba088a86e/final-parkdalemarketsounding-deck.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Parkdale Hub Development Sign 2023",
+      "url": "https://a-us.storyblok.com/f/1017201/x/781832e756/resource-2023-parkdale-hub-development-sign.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Parkdale Hub West Block Community Space Request for Expressions of Interest (REOI)",
+      "url": "https://www.toronto.ca/community-people/community-partners/community-hubs",
+      "kind": "page",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Parkdale Hub, Phase 2 Information Sheet May/June 2021",
+      "url": "https://a-us.storyblok.com/f/1017201/x/0a2dd7f9f0/meeting-2021-information-sheet-phase-2.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "Report - Parkdale Hub Project – Completion of Phase 2 Feasibility Study, Advancing to Phase 3",
+      "url": "https://a-us.storyblok.com/f/1017201/x/505dcf904a/resource-2021-report-completion-of-phase-2-feasibility-study-advancing-to-phase-3.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "September 2021 Parkdale Hub Phase 2 Local Advisory Committee Meeting # 2 Summary",
+      "url": "https://a-us.storyblok.com/f/1017201/x/be9831bb2b/meeting-2021-meeting-summary-local-advisory-committee-meeting-phase-2-2.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    },
+    {
+      "title": "backgroundfile-255126.pdf",
+      "url": "https://www.toronto.ca/legdocs/mmis/2025/ph/bgrd/backgroundfile-255126.pdf",
+      "kind": "pdf",
+      "parse_status": "ok"
+    }
+  ]
+}

@@ -96,6 +96,20 @@ def build(s: Session, config: Config, ids: list[int] | None = None) -> dict[str,
             "rejected_quote": sum(ext.get(f"{k}_rejected_evidence", 0) for k in
                                   ("fact", "milestone", "signal")),
             "link_decisions": link.get("decisions", 0), "link_cached": link.get("cached", 0),
+            "link_failed": link.get("decision_errors", 0),
+            "resumed": _g(r, "resumed", default=[]),
+            "changed_by_host": [dict(c) for c in s.execute(text("""
+                SELECT regexp_replace(d.url, '^https?://([^/]+).*', '\\1') AS host,
+                       count(*) AS n
+                FROM document_versions v JOIN documents d ON d.id = v.document_id
+                WHERE v.run_id = :r AND EXISTS (SELECT 1 FROM document_versions o
+                  WHERE o.document_id = d.id AND o.run_id < :r)
+                GROUP BY 1 ORDER BY 2 DESC"""), {"r": r["id"]}).mappings()],
+            "llm_errors": [dict(e) for e in s.execute(text("""
+                SELECT model, coalesce(substring(error from '"message": "([^"]*)'), 'other')
+                         AS reason, count(*) AS n
+                FROM llm_calls WHERE run_id = :r AND status <> 'ok'
+                GROUP BY 1, 2 ORDER BY 3 DESC"""), {"r": r["id"]}).mappings()],
             "summary": summ,
         })
     latest = runs[-1]["id"]
@@ -201,8 +215,8 @@ def markdown(r: dict[str, Any], examples: list[str]) -> str:
          row("records accepted (facts / milestones / signals)",
              lambda x: " / ".join(str(v) for v in x["accepted"].values())),
          row("records rejected by the quote check", lambda x: x["rejected_quote"]),
-         row("linking decisions: new / cached",
-             lambda x: f"{x['link_decisions']} / {x['link_cached']}"),
+         row("linking decisions: new / cached / failed",
+             lambda x: f"{x['link_decisions']} / {x['link_cached']} / {x['link_failed']}"),
          row("useful records after the run", lambda x: (
              f"{x['summary'].get('projects', 0)} projects (+{x['summary'].get('project_blocks', 0)}"
              f" sub-sites), {x['summary'].get('news_articles', 0)} news, "
@@ -210,8 +224,10 @@ def markdown(r: dict[str, Any], examples: list[str]) -> str:
              f"{x['summary'].get('milestones', 0):,} milestones, "
              f"{x['summary'].get('procurement_signals', 0)} procurement signals "
              f"({x['summary'].get('open_opportunities', 0)} open)")),
-         row("LLM calls: paid / free", lambda x: f"{x['summary'].get('paid_calls', 0)} / "
-             f"{x['summary'].get('free_calls', 0)}"),
+         row("LLM calls: paid / free (of which rejected)",
+             lambda x: f"{x['summary'].get('paid_calls', 0)} / "
+             f"{x['summary'].get('free_calls', 0)} "
+             f"({sum(c['failed'] for c in x['summary'].get('llm', []))})"),
          row("**billed cost (actual)**", lambda x: f"**${x['summary'].get('billed_usd', 0):.2f}**"),
          row("list-price estimate", lambda x: f"${x['summary'].get('est_usd', 0):.2f} (est.)"),
          "", "## Costs", "",
@@ -237,6 +253,28 @@ def markdown(r: dict[str, Any], examples: list[str]) -> str:
           "outside these runs |",
           "| Chat (`POST /chat`) | ≈ $0.0005 per question, billed per use, not part of runs |",
           ""]
+    notes = []
+    for x in cols:
+        if x["resumed"]:
+            notes.append(f"- Run {x['id']} was interrupted (the process was killed for low system "
+                         f"memory) and finished with `createto run --resume`, which ran only "
+                         f"{', '.join(x['resumed'])}. Its total time is the sum of stage "
+                         "times, and model calls made before the interruption count as cached.")
+        if x["changed_by_host"]:
+            hosts = ", ".join(f"{c['host']} {c['n']}" for c in x["changed_by_host"])
+            own = any(c["host"].endswith("createto.ca") for c in x["changed_by_host"])
+            notes.append(f"- Run {x['id']}: changed pages by host: {hosts}."
+                         + ("" if own else " No createto.ca page or file changed; these are "
+                            "linked pages whose boilerplate (news sidebars, live counters) "
+                            "differs between fetches."))
+        for e in x["llm_errors"]:
+            notes.append(f"- Run {x['id']}: {e['n']} `{e['model']}` calls rejected: "
+                         f"{e['reason'].strip().rstrip('.')}.")
+        if x["link_failed"]:
+            notes.append(f"- Run {x['id']}: {x['link_failed']} linking decisions failed; their "
+                         "records keep their previous link state until `createto link` re-runs.")
+    if notes:
+        L += ["## Run notes", "", *notes, ""]
     L += ["## Coverage and quality", "",
           f"- Sitemap URLs: {r['coverage']['sitemap_urls']}; {r['coverage']['sitemap_not_linked']}"
           f" of them are not linked from any page (found only through the sitemap); "
