@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 
 import pymupdf
-from sqlalchemy import exists, select
+from sqlalchemy import exists, func, select
 from sqlalchemy.orm import Session
 
 from createto_info.config import Config
@@ -102,5 +102,37 @@ def process_pdfs(session: Session, config: Config) -> Counter[str]:
         version.text = "\n\n".join(texts)
         stats["pdfs"] += 1
         session.flush()
+    _render_skipped(session, config, store, vision_budget, stats)
     session.commit()
     return stats
+
+
+def _render_skipped(session: Session, config: Config, store: RawStore, budget: int,
+                    stats: Counter[str]) -> None:
+    """Render pages an earlier, lower cap skipped, now that the caps allow them."""
+    rows = session.execute(
+        select(PdfPage.version_id, PdfPage.page_no)
+        .join(DocumentVersion, DocumentVersion.id == PdfPage.version_id)
+        .join(Document, Document.current_version_id == DocumentVersion.id)
+        .where(PdfPage.method == "vision_skipped_cap", Document.removed_at_run.is_(None))
+        .order_by(PdfPage.version_id, PdfPage.page_no)).all()
+    by_version: dict[int, list[int]] = {}
+    for version_id, page_no in rows:
+        by_version.setdefault(version_id, []).append(page_no)
+    for version_id, page_nos in by_version.items():
+        version = session.get(DocumentVersion, version_id)
+        done = session.scalar(select(func.count()).select_from(PdfPage).where(
+            PdfPage.version_id == version_id, PdfPage.method == "vision")) or 0
+        with pymupdf.open(stream=store.get(version.storage_path), filetype="pdf") as pdf:
+            for page_no in page_nos:
+                if budget <= 0 or done >= config.llm.vision_max_pages_per_doc:
+                    break
+                page = session.get(PdfPage, (version_id, page_no))
+                page.render_hash, path = render_page(pdf[page_no - 1],
+                                                     config.storage.renders_dir)
+                page.render_path = path.relative_to(config.storage.renders_dir).as_posix()
+                page.method = "vision"
+                done += 1
+                budget -= 1
+                stats["pages_vision_rendered_late"] += 1
+        session.flush()

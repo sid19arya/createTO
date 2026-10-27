@@ -71,8 +71,8 @@ llm:
   timeout_s: 180
   pdf_window_pages: 40
   vision_min_text_chars: 200
-  vision_max_pages_per_doc: 15
-  vision_max_pages_per_run: 300
+  vision_max_pages_per_doc: 200                # effectively all first-party image pages (737)
+  vision_max_pages_per_run: 1000
   vision_first_party_only: true              # skip image pages of external decks (deferred)
   news_min_chars: 200
 
