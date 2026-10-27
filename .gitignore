@@ -19,7 +19,7 @@ data/renders/
 data/httpcache/
 data/logs/
 data/snapshots/
-data/exports/*.tmp
+data/exports/
 .scrapy/
 
 # postgres volume when bind-mounted locally

@@ -77,6 +77,7 @@ uv run createto db check          # connectivity + table row counts
 | `uv run createto demo` | Variant demo (first / unchanged / changed source / failed file) replayed offline into a separate `createto_demo` DB; writes `reports/variants.md` |
 | `uv run createto snapshot DIR` | Save the latest crawl state as a replayable snapshot (`manifest.json` referencing the raw store) |
 | `uv run createto crawl --replay DIR` | Crawl a saved snapshot instead of the network |
+| `uv run createto export` | Every entity as JSON lines with evidence embedded + `manifest.json` → `data/exports/` |
 | `uv run createto runs` | Recent runs with headline stats (`crawl_runs.stats` has the full set) |
 | `uv run createto config show` | Print resolved `config.yaml` (no secrets) |
 | `uv run createto db upgrade` / `downgrade base` | Apply / roll back migrations |
@@ -95,6 +96,13 @@ uv run createto db check          # connectivity + table row counts
 | `GET /news?q=&kind=&project=&since=` | News and board-meeting items |
 | `GET /procurement?status=open&kind=&project=` | Market offerings, procurement-titled files, MERX tenders, with evidence |
 | `GET /organization?q=` | CreateTO-level records: board decisions, budgets, policy, with evidence |
+| `GET /facts?field=&project=&min_value=&max_value=&source=&status=&link_status=&q=` | Facts across projects with evidence (e.g. `field=affordable_units&min_value=200`) |
+| `GET /facts/fields`, `GET /facts/{id}` | Field counts; one fact with all evidence, what it replaced and alternatives |
+| `GET /milestones?type=&status=&project=&from=&to=` | Dated events across projects (e.g. `type=construction_start&from=2026-01-01`) |
+| `GET /documents?project=&kind=&scope=&q=`, `/documents/{id}`, `/documents/{id}/pages/{n}` | Crawled pages and files: versions, integrity, linked projects, extracted records, page text |
+| `GET /initiatives`, `GET /councillors` | Each with its projects |
+| `GET /runs/{id}`, `GET /runs/{id}/fetch-log?outcome=blocked` | Run stats, fetch outcomes, LLM calls and billed cost; the audit of fetched/skipped/blocked URLs |
+| `GET /export/{entity}.jsonl` | Bulk JSON lines: projects, facts, milestones, procurement_signals, news, documents, initiatives, councillors, runs |
 | `GET /runs`, `/stats`, `/facets`, `/health` | Crawl metrics, dataset counts, filter values |
 
 Search ranking (`api/queries.py`): any-term full-text rank + all-terms bonus over name (A),

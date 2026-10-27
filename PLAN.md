@@ -150,6 +150,12 @@ Idempotency: every LLM output is cached in `extractions` keyed by
   listing isn't linked from createto.ca, so it's 2 hops)
 - PostGIS, map UI, ward polygons
 - Embeddings / hybrid retrieval, reranking
+- **Search bar matching over facts.** `/projects` and `/search` currently match only the
+  project's CMS columns (`projects.search_tsv`) plus trigram on name/alias; the ~2,000 current
+  extracted facts (affordable units, height, sustainability targets…) aren't searched. Later:
+  fold current fact values into the project's search text (trigger or rebuild step, since a
+  generated column can't read `facts`), and add structured filters for numeric fields
+  (e.g. `min_affordable_units=`).
 - MCP server wrapping the API
 - Scheduled re-crawls (cron / GitHub Actions) and change alerts
 - OCR on scanned PDFs (Tesseract or OpenRouter `mistral-ocr` paid engine)

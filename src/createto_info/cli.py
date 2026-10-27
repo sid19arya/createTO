@@ -179,6 +179,20 @@ def link() -> None:
     typer.echo(json.dumps(dict(sorted(stats.items())), indent=2))
 
 
+@app.command("export")
+def export_cmd(out: Path = typer.Option(None, help="Output dir (default data/exports).")) -> None:
+    """Write every entity as JSON lines (evidence embedded) plus manifest.json."""
+    from createto_info.config import REPO_ROOT
+    from createto_info.db import session_scope
+    from createto_info.export import export_all
+
+    out = out or REPO_ROOT / "data" / "exports"
+    with session_scope() as s:
+        manifest = export_all(s, out)
+    typer.echo(json.dumps(manifest["counts"], indent=2))
+    typer.echo(f"written to {out}")
+
+
 @app.command()
 def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
     """Show recent crawl runs and their headline stats."""
