@@ -179,6 +179,33 @@ def link() -> None:
     typer.echo(json.dumps(dict(sorted(stats.items())), indent=2))
 
 
+@app.command()
+def index() -> None:
+    """Rebuild the retrieval corpus (search_chunks) for search and chat."""
+    from createto_info.chat.index import rebuild_chunks
+    from createto_info.db import session_scope
+
+    with session_scope() as s:
+        counts = rebuild_chunks(s, _latest_run(s).id)
+    typer.echo(json.dumps(counts, indent=2))
+
+
+@app.command()
+def ask(question: str) -> None:
+    """Ask a question from the terminal (same pipeline as POST /chat)."""
+    import asyncio
+
+    from createto_info.chat.answer import answer
+    from createto_info.db import session_scope
+
+    with session_scope() as s:
+        out = asyncio.run(answer(s, get_config(), question))
+    typer.echo(out["answer"])
+    for c in out["citations"]:
+        page = f" p.{c['page_no']}" if c["page_no"] else ""
+        typer.echo(f"  [{c['n']}] {c['title']} {c['url']}{page}")
+
+
 @app.command("export")
 def export_cmd(out: Path = typer.Option(None, help="Output dir (default data/exports).")) -> None:
     """Write every entity as JSON lines (evidence embedded) plus manifest.json."""

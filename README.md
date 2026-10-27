@@ -5,8 +5,8 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–7 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
-> API + search page, LLM extraction from PDFs/news, record linking).
+> Status: steps 1–8 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
+> API + search page, LLM extraction from PDFs/news, record linking, cited chatbot).
 > See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
 ## How it works
@@ -77,6 +77,8 @@ uv run createto db check          # connectivity + table row counts
 | `uv run createto demo` | Variant demo (first / unchanged / changed source / failed file) replayed offline into a separate `createto_demo` DB; writes `reports/variants.md` |
 | `uv run createto snapshot DIR` | Save the latest crawl state as a replayable snapshot (`manifest.json` referencing the raw store) |
 | `uv run createto crawl --replay DIR` | Crawl a saved snapshot instead of the network |
+| `uv run createto index` | Rebuild the retrieval corpus (`search_chunks`: projects, news, PDF pages) |
+| `uv run createto ask "question"` | Cited answer from the terminal (same pipeline as `POST /chat`) |
 | `uv run createto export` | Every entity as JSON lines with evidence embedded + `manifest.json` → `data/exports/` |
 | `uv run createto runs` | Recent runs with headline stats (`crawl_runs.stats` has the full set) |
 | `uv run createto config show` | Print resolved `config.yaml` (no secrets) |
@@ -102,6 +104,7 @@ uv run createto db check          # connectivity + table row counts
 | `GET /documents?project=&kind=&scope=&q=`, `/documents/{id}`, `/documents/{id}/pages/{n}` | Crawled pages and files: versions, integrity, linked projects, extracted records, page text |
 | `GET /initiatives`, `GET /councillors` | Each with its projects |
 | `GET /runs/{id}`, `GET /runs/{id}/fetch-log?outcome=blocked` | Run stats, fetch outcomes, LLM calls and billed cost; the audit of fetched/skipped/blocked URLs |
+| `POST /chat` `{question, history}` | Answer using only retrieved sources, with `[n]` citations → URL + page; `GET /chat/search?q=` shows the retrieval |
 | `GET /export/{entity}.jsonl` | Bulk JSON lines: projects, facts, milestones, procurement_signals, news, documents, initiatives, councillors, runs |
 | `GET /runs`, `/stats`, `/facets`, `/health` | Crawl metrics, dataset counts, filter values |
 
@@ -118,6 +121,17 @@ curl "localhost:8000/projects?near=43.6532,-79.3832&radius_km=2"
 curl "localhost:8000/procurement?status=open"
 curl "localhost:8000/projects/parkdale-hub"
 ```
+
+## Chat
+
+`POST /chat` (and the Ask box on `/`) retrieves the top 8 chunks with BM25 over
+`search_chunks` (77 project profiles with their current facts, 136 news articles, ~5,000 PDF
+pages; image pages via their model-written descriptions), keeping up to 3 slots for live project
+profiles and at most 2 chunks per document. A live **dataset overview** source (projects by
+current phase, open procurement) is always included, so "which / how many" questions don't
+depend on retrieval. `openai/gpt-6-luna` answers only from those numbered sources and cites them;
+when they don't contain the answer it says so. ≈ $0.0005 per question, logged in `llm_calls`
+(task `chat`).
 
 ## Layout
 ```

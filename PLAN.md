@@ -81,7 +81,7 @@ Brief: `assets/task_description/CreateTO scraper.pdf`. Related docs:
 | Extractor | `openai/gpt-6-luna` (paid, $0.10/$0.50 per M tokens, JSON schema enforced, images). Chosen over paid Inkling by measured comparison (EXTRACTION.md §8); `inkling:free` is blocked for non-agent apps |
 | Vision fallback | Same model on rendered PNGs of low-text PDF pages (first-party files, capped) |
 | Search | Postgres full-text search + `pg_trgm` + lat/lng distance |
-| Chat | BM25 (`rank_bm25`) over projects + news + PDF page chunks, citations injected |
+| Chat | BM25 (`rank_bm25`) over projects + news + PDF page chunks (project-profile slots, ≤2 chunks/document) + an always-included live dataset overview; Luna answers with `[n]` citations |
 | API | FastAPI |
 | Model IDs | in `config.yaml`, never hard-coded |
 

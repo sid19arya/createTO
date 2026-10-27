@@ -8,6 +8,7 @@ from typing import Annotated, Any
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from createto_info import __version__
@@ -276,6 +277,32 @@ def fetch_log(
 ) -> list[dict[str, Any]]:
     return catalog.fetch_log(s, run_id, outcome=outcome, reason=reason, host=host,
                              limit=limit, offset=offset)
+
+
+class ChatTurn(BaseModel):
+    role: str
+    content: str
+
+
+class ChatRequest(BaseModel):
+    question: str = Field(min_length=2, max_length=1000)
+    history: list[ChatTurn] = Field(default_factory=list, max_length=8)
+
+
+@app.post("/chat", summary="Ask a question; answered only from cited sources")
+async def chat(req: ChatRequest, s: DB) -> dict[str, Any]:
+    from createto_info.chat.answer import answer
+    from createto_info.config import get_config
+
+    return await answer(s, get_config(), req.question,
+                        [t.model_dump() for t in req.history])
+
+
+@app.get("/chat/search", summary="Retrieval only: the BM25 hits a question would use")
+def chat_search(s: DB, q: str, k: Annotated[int, Query(ge=1, le=50)] = 8) -> list[dict]:
+    from createto_info.chat.index import get_index
+
+    return [h.as_dict() | {"text": h.text[:400]} for h in get_index(s).search(q, k=k)]
 
 
 @app.get("/runs", summary="Crawl runs with metrics (requests, changes, LLM calls, cost)")
