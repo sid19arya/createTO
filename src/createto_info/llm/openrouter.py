@@ -166,15 +166,55 @@ class OpenRouter:
                               cost_usd=call.cost_usd, latency_ms=latency)
         raise LLMError(f"{model} failed after {attempts} attempts: {last}")
 
+    async def decide(self, *, model: str, state: str, questions: dict[str, Any], task: str,
+                     attempts: int = 4) -> dict[str, Any]:
+        """Decisions endpoint (Mammoth): typed questions in, probabilities out."""
+        body = {"model": model, "state": state, "questions": questions}
+        last: Exception | None = None
+        for attempt in range(attempts):
+            self._check_budget()
+            await self._limiter(model).wait()
+            async with self.sem:
+                self.requests += 1
+                t0 = time.monotonic()
+                try:
+                    resp = await self.client.post("/alpha/decisions", json=body)
+                    data = resp.json() if resp.content else {}
+                except (httpx.HTTPError, json.JSONDecodeError) as exc:
+                    self._log(model, task, None, int((time.monotonic() - t0) * 1000), "error",
+                              None, {}, repr(exc), endpoint="decisions")
+                    last = exc
+                    await asyncio.sleep(2 * 4 ** attempt)
+                    continue
+            latency = int((time.monotonic() - t0) * 1000)
+            usage = data.get("usage") or {}
+            usage = {"prompt_tokens": usage.get("input_tokens"),
+                     "completion_tokens": usage.get("output_tokens"), "cost": usage.get("cost")}
+            if resp.status_code != 200 or "answers" not in data:
+                err = json.dumps(data.get("error") or data)[:500]
+                self._log(model, task, data.get("id"), latency, "error", resp.status_code, usage,
+                          err, endpoint="decisions")
+                last = LLMError(f"{resp.status_code}: {err}")
+                if resp.status_code in RETRY_STATUS:
+                    wait = float(resp.headers.get("retry-after") or 2 * 4 ** attempt)
+                    await asyncio.sleep(min(wait, 60))
+                    continue
+                raise last
+            call = self._log(model, task, data.get("id"), latency, "ok", 200, usage, None,
+                             endpoint="decisions")
+            return {"answers": data["answers"], "call_id": call.id}
+        raise LLMError(f"{model} failed after {attempts} attempts: {last}")
+
     def _log(self, model: str, task: str, request_id: str | None, latency: int, status: str,
-             http_status: int | None, usage: dict[str, Any], error: str | None) -> LlmCall:
+             http_status: int | None, usage: dict[str, Any], error: str | None,
+             endpoint: str = "chat") -> LlmCall:
         tin = usage.get("prompt_tokens")
         tout = usage.get("completion_tokens")
         reasoning = (usage.get("completion_tokens_details") or {}).get("reasoning_tokens")
         cost = usage.get("cost")
         if cost is not None:
             self.spent += float(cost)
-        call = LlmCall(run_id=self.run_id, model=model, endpoint="chat", task=task,
+        call = LlmCall(run_id=self.run_id, model=model, endpoint=endpoint, task=task,
                        tokens_in=tin, tokens_out=tout, tokens_reasoning=reasoning,
                        latency_ms=latency, status=status, http_status=http_status,
                        cost_usd=cost, est_cost_usd=self.config.models.estimate(

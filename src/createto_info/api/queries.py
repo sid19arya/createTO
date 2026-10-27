@@ -174,11 +174,19 @@ def project_detail(s: Session, slug: str) -> dict[str, Any] | None:
     detail["milestones"] = milestones
 
     detail["procurement"] = _signals(s, "s.project_id = :p", {"p": pid})
+    # CMS relations, plus news whose text or attached minutes yielded claims about the project
     detail["news"] = [dict(r) for r in s.execute(text("""
-        SELECT n.title, n.published_at, n.kind, n.url
+        SELECT n.title, n.published_at, n.kind, n.url,
+               string_agg(DISTINCT l.method, ',') AS linked_by
         FROM links l JOIN news_articles n ON n.id = l.from_id
         WHERE l.from_type = 'news' AND l.to_type = 'project' AND l.to_id = :p
-        ORDER BY n.published_at DESC NULLS LAST"""), {"p": pid}).mappings()]
+        GROUP BY n.id ORDER BY n.published_at DESC NULLS LAST"""), {"p": pid}).mappings()]
+    detail["context_records"] = _claims_view(s, """
+        c.project_id IS DISTINCT FROM :p AND c.link_status IN ('external', 'unresolved')
+        AND EXISTS (SELECT 1 FROM evidence e2 JOIN document_versions v2 ON v2.id = e2.version_id
+                    JOIN links l ON l.rel = 'has_file' AND l.from_type = 'project'
+                                AND l.from_id = :p AND l.to_id = v2.document_id
+                    WHERE e2.entity_type = c.t AND e2.entity_id = c.id)""", {"p": pid}, 30)
     detail["files"] = [dict(r) for r in s.execute(text("""
         SELECT coalesce(d.title, regexp_replace(d.url, '^.*/', '')) AS title, d.url, d.kind,
                v.parse_status
@@ -276,6 +284,43 @@ def news(s: Session, q: str | None, kind: str | None, project: str | None,
         ORDER BY score DESC, n.published_at DESC NULLS LAST
         LIMIT :limit OFFSET :offset"""), params).mappings()
     return [{**dict(r), "score": round(float(r["score"]), 4)} for r in rows]
+
+
+_CLAIMS = """
+    SELECT 'fact' t, id, project_id, project_hint, link_status, link_confidence,
+           field AS kind, coalesce(value_text, '') AS what, as_of AS date
+      FROM facts WHERE status IN ('current', 'conflicting')
+    UNION ALL SELECT 'milestone', id, project_id, project_hint, link_status, link_confidence,
+           type, coalesce(title, ''), date::text FROM milestones WHERE retracted_run IS NULL
+    UNION ALL SELECT 'procurement_signal', id, project_id, project_hint, link_status,
+           link_confidence, kind, title, coalesce(closes_at, opens_at)
+      FROM procurement_signals WHERE retracted_run IS NULL"""
+
+
+def _claims_view(s: Session, where: str, params: dict[str, Any],
+                 limit: int) -> list[dict[str, Any]]:
+    rows = [dict(r) for r in s.execute(text(f"""
+        SELECT c.t AS record_type, c.id, c.kind, c.what, c.date, c.project_hint,
+               c.link_status, c.link_confidence
+        FROM ({_CLAIMS}) c WHERE {where}
+        ORDER BY c.date DESC NULLS LAST, c.id LIMIT :limit"""),
+        {**params, "limit": limit}).mappings()]
+    by_type: dict[str, list[int]] = {}
+    for r in rows:
+        by_type.setdefault(r["record_type"], []).append(r["id"])
+    ev = {t: _evidence(s, t, ids) for t, ids in by_type.items()}
+    for r in rows:
+        r["evidence"] = ev[r["record_type"]].get(r.pop("id"), [])
+    return rows
+
+
+def organization(s: Session, q: str | None, limit: int) -> list[dict[str, Any]]:
+    """CreateTO / Build Toronto as an organization: board decisions, budgets, policy."""
+    where, params = "c.link_status = 'organization'", {}
+    if q:
+        where += " AND (c.what ILIKE :q OR c.kind ILIKE :q)"
+        params["q"] = f"%{q}%"
+    return _claims_view(s, where, params, limit)
 
 
 def runs(s: Session, limit: int) -> list[dict[str, Any]]:

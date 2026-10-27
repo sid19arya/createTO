@@ -142,6 +142,12 @@ def procurement(
     return queries.procurement(s, status or None, kind, project)
 
 
+@app.get("/organization", summary="CreateTO-level records: board decisions, budgets, policy")
+def organization(s: DB, q: str | None = None,
+                 limit: Annotated[int, Query(ge=1, le=500)] = 100) -> list[dict[str, Any]]:
+    return queries.organization(s, q, limit)
+
+
 @app.get("/runs", summary="Crawl runs with metrics (requests, changes, LLM calls, cost)")
 def runs(s: DB, limit: Annotated[int, Query(ge=1, le=100)] = 10) -> list[dict[str, Any]]:
     return queries.runs(s, limit)

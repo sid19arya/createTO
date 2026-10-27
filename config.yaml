@@ -66,7 +66,9 @@ llm:
   max_requests_per_run: 1500
   max_cost_usd_per_run: 5.00                  # hard stop on OpenRouter-reported spend
   concurrency: 32                             # paid models; 429s are retried with backoff
-  requests_per_minute: {default: 900, ":free": 18}   # free models are rate limited
+  # first matching suffix wins; free models are rate limited (429s are retried with backoff)
+  # OpenRouter free models: 20/min per key (X-RateLimit-Limit), so stay just under it
+  requests_per_minute: {default: 900, ":free": 18}
   max_output_tokens: 8000
   timeout_s: 180
   pdf_window_pages: 40
@@ -75,6 +77,14 @@ llm:
   vision_max_pages_per_run: 1000
   vision_first_party_only: true              # skip image pages of external decks (deferred)
   news_min_chars: 200
+
+# Former or local names that never appear in a project's own CMS text; used by linking
+# (step 7). Keep entries reviewable: one line per name, with where it was seen.
+curated_aliases:
+  bloor-kipling:
+    - Westwood Theatre Lands          # "Westwood Theatre Lands Final Report" (Six Points)
+    - Former Westwood Theatre site
+    - Six Points
 
 storage:
   raw_dir: data/raw

@@ -103,6 +103,8 @@ class Config(BaseModel):
     models: ModelsConfig
     llm: LLMConfig
     storage: StorageConfig
+    # project slug -> extra names (former names, district names) used for linking
+    curated_aliases: dict[str, list[str]] = Field(default_factory=dict)
 
     def snapshot(self) -> dict[str, Any]:
         """JSON-safe dump stored on crawl_runs.config (contains no secrets)."""

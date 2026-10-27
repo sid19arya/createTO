@@ -20,7 +20,8 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 4: evidence/claims reconciliation, version history, variant demo (2026-10-27)
 - [x] Step 5: FastAPI + search page (2026-10-27)
 - [x] Step 6: PDF pages/renders, OpenRouter client, model comparison, full extraction ($0.90) (2026-10-27)
-- [ ] Step 7: link the 585 unlinked records to projects (Mammoth choice over candidates)
+- [x] Step 7: record linking (Mammoth, aliases, organization/external states) (2026-10-27)
+- [ ] Step 8: BM25 chatbot
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
@@ -52,6 +53,11 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - `inkling:free` / `inkling-small:free` return 403 for non-agent apps. Luna enforces the JSON
   schema; models without `structured_outputs` get the shape from the prompt only.
 - Reasoning tokens count as output: give `max_output_tokens` headroom (Inkling truncated at 8k).
+
+## Linking notes
+- `createto link` is safe to re-run: decisions are cached; only changed questions call Mammoth.
+- Free models allow 20 requests/min per key; keep `":free": 18`.
+- Add former names to `config.yaml` → `curated_aliases` (then `createto parse` + `link`).
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`

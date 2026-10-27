@@ -5,8 +5,8 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–6 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
-> API + search page, LLM extraction from PDFs/news).
+> Status: steps 1–7 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
+> API + search page, LLM extraction from PDFs/news, record linking).
 > See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
 ## Docs
@@ -40,6 +40,7 @@ uv run createto db check          # connectivity + table row counts
 | `uv run createto pdfs` | Per-page PDF text, document dates and page renders (local, no LLM) |
 | `uv run createto compare` | Model comparison on a stratified sample + full-run cost projection → `reports/model_comparison.md` (≈ $0.80, mostly the paid Inkling side) |
 | `uv run createto extract [--limit N]` | LLM extraction with verified evidence (Luna; ≈ $0.78 for a full first run, $0 when unchanged) |
+| `uv run createto link` | Link extracted records without a project (free Mammoth decisions; organization / external / unresolved otherwise) |
 | `uv run createto demo` | Variant demo (first / unchanged / changed source / failed file) replayed offline into a separate `createto_demo` DB; writes `reports/variants.md` |
 | `uv run createto snapshot DIR` | Save the latest crawl state as a replayable snapshot (`manifest.json` referencing the raw store) |
 | `uv run createto crawl --replay DIR` | Crawl a saved snapshot instead of the network |
@@ -60,6 +61,7 @@ uv run createto db check          # connectivity + table row counts
 | `GET /search?q=&near=` | Search bar: projects + news in one call |
 | `GET /news?q=&kind=&project=&since=` | News and board-meeting items |
 | `GET /procurement?status=open&kind=&project=` | Market offerings, procurement-titled files, MERX tenders, with evidence |
+| `GET /organization?q=` | CreateTO-level records: board decisions, budgets, policy, with evidence |
 | `GET /runs`, `/stats`, `/facets`, `/health` | Crawl metrics, dataset counts, filter values |
 
 Search ranking (`api/queries.py`): any-term full-text rank + all-terms bonus over name (A),

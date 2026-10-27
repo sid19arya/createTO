@@ -207,17 +207,45 @@ way. Rendering pages ourselves keeps it free, gives exact page numbers for prove
 send only the pages that need vision, and lets us cache per page. `mistral-ocr` or a paid
 native-PDF model stays available as a config switch for scanned documents (deferred).
 
-## 6. Linking records to projects
+## 6. Linking records to projects (implemented: `link/linker.py`, `createto link`)
 
-In order, stopping at the first that applies:
-1. CMS relation (news `relatedProjects`, PDF found in a project page's blocks/resources) → that project
-2. The extractor returned a valid `project_id`
-3. Exact or trigram match of `project_hint` against project names, aliases (slug, address,
-   major intersection)
-4. Mammoth `choice` question over the top-5 BM25 candidates plus `"none"`; accepted if p ≥ 0.7
-5. Otherwise unlinked (kept, with `project_hint`, visible in `/unlinked` for review)
+Every claim carries `link_status` (`linked` / `organization` / `external` / `unresolved`),
+`link_method` (`cms`, `extractor`, `alias_match`, `mammoth`) and `link_confidence`.
 
-Every link stores `method` and `confidence`.
+1. **At extraction:** the extractor gets up to 15 candidate projects (projects whose page lists
+   the file, their parents, address and name matches in the text) and may only answer with one of
+   their ids (`extractor`); otherwise its `project_hint` is matched deterministically against
+   project names/addresses/aliases (`alias_match`).
+2. **`createto link`** handles what's left. Records are grouped by (source document, hint);
+   hint-less records are decided one by one. Candidates: projects linking the document (also via
+   the news page it's attached to) and their parents, plus the top trigram/full-text matches on
+   names and aliases (≤ 8). Mammoth answers a `choice` over the candidates plus `organization`
+   (CreateTO itself: board, budget, policy) and `external` (a site/district/program that isn't a
+   CreateTO project). Candidate labels include curated/learned aliases ("also known as").
+3. **Acceptance:** a project at p ≥ 0.7, `organization`/`external` at p ≥ 0.5, else
+   `unresolved`. 0.7 is calibrated on the first real pass: links at 0.6–0.7 were mostly wrong
+   (the citywide "Housing Now" program → Bloor-Islington at 0.60).
+4. **Re-keying:** a linked record is moved to the project, or merged into an identical existing
+   claim (same fact value; matching milestone/signal) with its evidence moved over.
+5. **Aliases:** hints linked at p ≥ 0.85 become `learned` aliases, except hints naming a
+   program/plan/area (`NOT_AN_ALIAS`), which cover more than one project. Former names that no
+   CMS text contains are listed in `config.yaml` → `curated_aliases` (e.g. Bloor-Kipling:
+   "Westwood Theatre Lands", "Six Points").
+6. **Re-runs:** decisions below 0.7 are reopened each run; unchanged questions are answered from
+   the `extractions` cache (task `link`), so a stable run makes no calls.
+7. **Derived links:** every claim linked by the extractor or Mammoth adds `document → project`
+   and `news → project` (`mentions`, method `claims`) for its source, so board meetings and
+   articles without CMS relations show up under the projects their minutes discuss.
+
+Results (2026-10-27, 4 passes, ~520 free Mammoth requests, $0): of 3,081 model-extracted
+records, 2,402 linked by the extractor, 83 by Mammoth, 140 `organization`, 387 `external`
+(mostly legacy Build Toronto sites from 2010s annual reports and board minutes: 4050 Yonge,
+Garrison Crossing, 10 York St, Corus Quay; and district-plan sites in the Port Lands framework),
+69 `unresolved`. The API shows `external`/`unresolved` records from a project's own files as
+`context_records` and organization records at `/organization`.
+
+Free-model rate limit: 20 requests/min per key (OpenRouter `X-RateLimit-Limit`); 429s don't count
+against the daily quota. `requests_per_minute` for `:free` models is 18.
 
 ## 7. Cost accounting (implemented)
 

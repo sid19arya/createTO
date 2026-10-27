@@ -368,6 +368,12 @@ class Fact(Base):
     superseded_by: Mapped[int | None] = mapped_column(ForeignKey("facts.id"))
     valid_from_run: Mapped[int | None] = _run_fk()
     valid_to_run: Mapped[int | None] = _run_fk()
+    # how the record was tied to a project (PLAN.md step 7):
+    # link_status: linked | organization (CreateTO itself) | external (not a CreateTO site)
+    #              | unresolved; link_method: cms | extractor | alias_match | mammoth
+    link_status: Mapped[str | None] = mapped_column(Text, index=True)
+    link_method: Mapped[str | None] = mapped_column(Text)
+    link_confidence: Mapped[float | None] = mapped_column(Double)
 
 
 class Evidence(Base):
@@ -403,6 +409,12 @@ class _Sourced:
     last_seen_run: Mapped[int | None] = _run_fk()
     # set when no evidence is live any more (source page changed or removed); cleared if re-asserted
     retracted_run: Mapped[int | None] = _run_fk()
+    # how the record was tied to a project (PLAN.md step 7):
+    # link_status: linked | organization (CreateTO itself) | external (not a CreateTO site)
+    #              | unresolved; link_method: cms | extractor | alias_match | mammoth
+    link_status: Mapped[str | None] = mapped_column(Text, index=True)
+    link_method: Mapped[str | None] = mapped_column(Text)
+    link_confidence: Mapped[float | None] = mapped_column(Double)
 
 
 class Milestone(_Sourced, Base):

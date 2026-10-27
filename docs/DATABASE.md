@@ -166,8 +166,9 @@ in `facts`.
 Indexes: `slug`, `phase`, `ward`, GIN(`search_tsv`), GIN trigram(`name`, `address`).
 
 ### `project_aliases`
-`project_id, alias, kind (slug|address|intersection|former_name|microsite)`. Used for linking
-news and PDFs to projects.
+`project_id, alias, kind`. `kind` is `name`, `slug`, `address`, `intersection` (rebuilt from the
+CMS each parse), `curated` (from `config.yaml` → `curated_aliases`, also rebuilt) or `learned`
+(hints Mammoth linked at p ≥ 0.85; persist across parses). Used for linking and search.
 
 ### `project_versions`
 Snapshot of a project's normalized fields every time they change.
@@ -204,6 +205,10 @@ value asserted by the CMS and by a PDF is one row with two `evidence` rows.
 | `extracted_by`, `confidence` | highest-ranked source among its evidence (`cms` > `rule:*` > `model:*`) |
 | `status` | `current`, `superseded`, `conflicting`, `retracted`. Recomputed every parse (PLAN.md §8) |
 | `superseded_by`, `valid_from_run`, `valid_to_run` | corrections and amendments over time |
+
+Link bookkeeping (facts, milestones, procurement signals): `link_status` (`linked`,
+`organization`, `external`, `unresolved`), `link_method` (`cms`, `extractor`, `alias_match`,
+`mammoth`), `link_confidence`. See EXTRACTION.md §6.
 
 Status rules per `(project, field)`, among facts with **live** evidence: a CMS-backed value is
 `current`; otherwise the latest `as_of` wins and equal dates with different values are all

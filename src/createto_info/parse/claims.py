@@ -48,6 +48,15 @@ def rank(extracted_by: str | None) -> int:
     return 0
 
 
+def default_link(project_id: int | None, extracted_by: str) -> dict[str, Any]:
+    """Link bookkeeping for a newly asserted claim (step 7 may change it later)."""
+    if project_id is None:
+        return {"link_status": "unresolved", "link_method": None, "link_confidence": None}
+    method = "extractor" if extracted_by.startswith("model:") else (
+        "alias_match" if extracted_by == "rule:merx" else "cms")
+    return {"link_status": "linked", "link_method": method, "link_confidence": 1.0}
+
+
 def value_key(value_text: str | None, value_num: float | None, unit: str | None) -> str:
     """Normalized identity of a fact value. Deliberately simple: no unit conversion or
     approximation handling (deferred, PLAN.md §7)."""
@@ -119,7 +128,8 @@ class Claims:
                        label=label, value_text=value_text, value_num=value_num, unit=unit,
                        value_key=key, extracted_by=source.extracted_by,
                        confidence=source.confidence, status="current",
-                       valid_from_run=self.run_id)
+                       valid_from_run=self.run_id,
+                       **default_link(project_id, source.extracted_by))
             self.s.add(row)
             self.s.flush()
         if rank(source.extracted_by) > rank(row.extracted_by):
@@ -196,7 +206,8 @@ class Claims:
         if row is None:
             row = Milestone(project_id=project_id, project_hint=project_hint, type=type,
                             extracted_by=source.extracted_by, confidence=source.confidence,
-                            first_seen_run=self.run_id, **fields)
+                            first_seen_run=self.run_id, **fields,
+                            **default_link(project_id, source.extracted_by))
             self.s.add(row)
             self.s.flush()
         else:
@@ -238,7 +249,7 @@ class Claims:
             row = ProcurementSignal(project_id=project_id, project_hint=project_hint, kind=kind,
                                     extracted_by=source.extracted_by,
                                     confidence=source.confidence, first_seen_run=self.run_id,
-                                    **fields)
+                                    **fields, **default_link(project_id, source.extracted_by))
             self.s.add(row)
             self.s.flush()
         else:

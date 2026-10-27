@@ -70,3 +70,21 @@ def test_procurement_news_search_and_stats(client):
     assert stats["projects"] == 2 and stats["project_blocks"] == 1 and stats["latest_run"]
     assert client.get("/").status_code == 200
     assert PARENT  # fixture data used above
+
+
+def test_organization_and_context_records(client, db_session):
+    from sqlalchemy import select
+
+    from createto_info.db.models import Fact, Project
+
+    parent = db_session.scalar(select(Project).where(Project.slug == "big-site"))
+    org, ctx = db_session.scalars(
+        select(Fact).where(Fact.project_id == parent.id).order_by(Fact.id).limit(2)).all()
+    org.project_id, org.link_status = None, "organization"
+    ctx.project_id, ctx.link_status, ctx.project_hint = None, "external", "Another site"
+    db_session.commit()
+    got = client.get("/organization").json()
+    assert [r["what"] for r in got] == [org.value_text] and got[0]["evidence"]
+    d = client.get("/projects/big-site").json()
+    assert "news" in d and all("linked_by" in n for n in d["news"])
+    assert d["context_records"] == [] or d["context_records"][0]["project_hint"]

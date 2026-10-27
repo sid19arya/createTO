@@ -50,6 +50,7 @@ from createto_info.parse.text import (
 )
 
 SITE = "https://createto.ca/"
+CMS_ALIAS_KINDS = ("name", "slug", "address", "intersection", "curated")
 CMS = "cms"
 
 # news topic slug -> news_articles.kind
@@ -354,8 +355,11 @@ class Materializer:
         ids += [self.project_ids[b["_uid"]] for b in page.own_blocks()]
         for pid in ids:
             p = self.s.get(Project, pid)
-            self.s.execute(delete(ProjectAlias).where(ProjectAlias.project_id == pid))
+            # rebuild only the aliases derived from the CMS; `learned` ones (step 7) persist
+            self.s.execute(delete(ProjectAlias).where(ProjectAlias.project_id == pid,
+                                                      ProjectAlias.kind.in_(CMS_ALIAS_KINDS)))
             aliases = {(p.name, "name"), (p.slug.split("#")[0].replace("-", " "), "slug")}
+            aliases |= {(a, "curated") for a in self.config.curated_aliases.get(p.slug, [])}
             if p.address:
                 aliases.add((p.address, "address"))
             if p.major_intersection:

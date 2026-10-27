@@ -167,6 +167,19 @@ def extract(
 
 
 @app.command()
+def link() -> None:
+    """Link unresolved extracted records to projects (Mammoth choice over candidates)."""
+    from createto_info.db import session_scope
+    from createto_info.link.linker import run_linking
+
+    with session_scope() as s:
+        run = _latest_run(s)
+        stats = run_linking(s, get_config(), run.id)
+        run.stats = {**run.stats, "link": dict(sorted(stats.items()))}
+    typer.echo(json.dumps(dict(sorted(stats.items())), indent=2))
+
+
+@app.command()
 def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
     """Show recent crawl runs and their headline stats."""
     from sqlalchemy import select
