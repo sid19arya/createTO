@@ -34,3 +34,14 @@ def session_scope() -> Iterator[Session]:
         raise
     finally:
         session.close()
+
+
+def use_database(url: str) -> None:
+    """Point this process at another database (demo / tests)."""
+    import os
+
+    from createto_info.config import get_env
+
+    os.environ["DATABASE_URL"] = url
+    get_env.cache_clear()
+    get_engine.cache_clear()

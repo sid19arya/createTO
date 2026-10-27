@@ -1,0 +1,274 @@
+{
+  "notes": {
+    "base": [
+      "831 URLs from crawl run 2"
+    ],
+    "changed": [
+      "https://createto.ca/projects/parkdale-hub: phase marketOffering -> preConstruction, siteArea '4.24 acres' -> '4.5 acres'",
+      "https://www.merx.com/public/solicitations/open?keywords=createto: all open solicitations removed (tender closed)"
+    ],
+    "failed": [
+      "https://a-us.storyblok.com/f/1015016/x/9a1242e6a7/createto-strategic-plan-2023-2027-final.pdf: truncated to 168103 of 8405177 bytes",
+      "https://a-us.storyblok.com/f/1017201/x/00b9663133/backgroundfile-109169.pdf: HTTP 500"
+    ]
+  },
+  "runs": [
+    {
+      "scenario": "first",
+      "run_id": 1,
+      "status": "succeeded",
+      "duration_s": 56.2,
+      "requests": 828,
+      "not_modified": 0,
+      "pages_new": 313,
+      "pages_changed": 0,
+      "pages_unchanged": 1,
+      "files_new": 471,
+      "files_changed": 0,
+      "files_unchanged": 0,
+      "files_failed_parse": 0,
+      "files_failed_integrity": 0,
+      "failed:http_500": 0,
+      "documents_removed": 0,
+      "llm_calls": 0,
+      "cost_usd": 0.0,
+      "parse.fact_claims": 737,
+      "parse.facts_superseded": 0,
+      "parse.facts_retracted": 0,
+      "parse.milestones_retracted": 0,
+      "parse.procurement_retracted": 0,
+      "parse.projects_changed": 0,
+      "parse.project_versions": 77
+    },
+    {
+      "scenario": "unchanged",
+      "run_id": 2,
+      "status": "succeeded",
+      "duration_s": 25.1,
+      "requests": 828,
+      "not_modified": 713,
+      "pages_new": 0,
+      "pages_changed": 0,
+      "pages_unchanged": 314,
+      "files_new": 0,
+      "files_changed": 0,
+      "files_unchanged": 471,
+      "files_failed_parse": 0,
+      "files_failed_integrity": 0,
+      "failed:http_500": 0,
+      "documents_removed": 0,
+      "llm_calls": 0,
+      "cost_usd": 0.0,
+      "parse.fact_claims": 737,
+      "parse.facts_superseded": 0,
+      "parse.facts_retracted": 0,
+      "parse.milestones_retracted": 0,
+      "parse.procurement_retracted": 0,
+      "parse.projects_changed": 0,
+      "parse.project_versions": 0
+    },
+    {
+      "scenario": "changed",
+      "run_id": 3,
+      "status": "succeeded",
+      "duration_s": 26.1,
+      "requests": 828,
+      "not_modified": 712,
+      "pages_new": 0,
+      "pages_changed": 2,
+      "pages_unchanged": 312,
+      "files_new": 0,
+      "files_changed": 0,
+      "files_unchanged": 471,
+      "files_failed_parse": 0,
+      "files_failed_integrity": 0,
+      "failed:http_500": 0,
+      "documents_removed": 0,
+      "llm_calls": 0,
+      "cost_usd": 0.0,
+      "parse.fact_claims": 737,
+      "parse.facts_superseded": 2,
+      "parse.facts_retracted": 0,
+      "parse.milestones_retracted": 0,
+      "parse.procurement_retracted": 2,
+      "parse.projects_changed": 1,
+      "parse.project_versions": 1
+    },
+    {
+      "scenario": "failed",
+      "run_id": 4,
+      "status": "succeeded",
+      "duration_s": 28.4,
+      "requests": 828,
+      "not_modified": 712,
+      "pages_new": 0,
+      "pages_changed": 0,
+      "pages_unchanged": 314,
+      "files_new": 0,
+      "files_changed": 0,
+      "files_unchanged": 469,
+      "files_failed_parse": 1,
+      "files_failed_integrity": 1,
+      "failed:http_500": 1,
+      "documents_removed": 0,
+      "llm_calls": 0,
+      "cost_usd": 0.0,
+      "parse.fact_claims": 737,
+      "parse.facts_superseded": 0,
+      "parse.facts_retracted": 0,
+      "parse.milestones_retracted": 0,
+      "parse.procurement_retracted": 0,
+      "parse.projects_changed": 0,
+      "parse.project_versions": 0
+    }
+  ],
+  "changed": {
+    "project": "parkdale-hub",
+    "versions": [
+      {
+        "run_id": 1,
+        "diff": null
+      },
+      {
+        "run_id": 3,
+        "diff": {
+          "phase": [
+            "marketOffering",
+            "preConstruction"
+          ],
+          "site_area": [
+            "4.24 acres",
+            "4.5 acres"
+          ]
+        }
+      }
+    ],
+    "facts": [
+      {
+        "field": "phase",
+        "value": "marketOffering",
+        "status": "superseded",
+        "valid_from_run": 1,
+        "valid_to_run": 3
+      },
+      {
+        "field": "phase",
+        "value": "preConstruction",
+        "status": "current",
+        "valid_from_run": 3,
+        "valid_to_run": null
+      },
+      {
+        "field": "site_area",
+        "value": "4.24 acres",
+        "status": "superseded",
+        "valid_from_run": 1,
+        "valid_to_run": 3
+      },
+      {
+        "field": "site_area",
+        "value": "4.5 acres",
+        "status": "current",
+        "valid_from_run": 3,
+        "valid_to_run": null
+      }
+    ],
+    "phase_change_milestones": [
+      {
+        "type": "phase_change",
+        "title": "marketOffering \u2192 preConstruction",
+        "date": "2026-10-27",
+        "status": "actual"
+      }
+    ],
+    "procurement_signals": [
+      {
+        "kind": "market_offering",
+        "title": "Press Release: CreateTO initiates market offering for the ModernTO sites at 610 Bay Street & 130 Elizabeth Street",
+        "status": "unknown",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Press Release: CreateTO initiates market offering for the ModernTO sites at 610 Bay Street & 130 Elizabeth Street"
+      },
+      {
+        "kind": "market_offering",
+        "title": "Market Offering (PDF)",
+        "status": "unknown",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Market Offering (PDF)"
+      },
+      {
+        "kind": "eoi",
+        "title": "Parkdale Hub West Block Community Space Request for Expressions of Interest (REOI)",
+        "status": "unknown",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Parkdale Hub West Block Community Space Request for Expressions of Interest (REOI)"
+      },
+      {
+        "kind": "market_offering",
+        "title": "140 Merton Street market offering",
+        "status": "open",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Current Phase: Market Offering"
+      },
+      {
+        "kind": "market_offering",
+        "title": "72 Amroth Avenue market offering",
+        "status": "open",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Current Phase: Market Offering"
+      },
+      {
+        "kind": "market_offering",
+        "title": "931 Yonge Street market offering",
+        "status": "open",
+        "first_seen_run": 1,
+        "retracted_run": null,
+        "evidence": "Current Phase: Market Offering"
+      },
+      {
+        "kind": "market_offering",
+        "title": "Parkdale Hub market offering",
+        "status": "closed",
+        "first_seen_run": 1,
+        "retracted_run": 3,
+        "evidence": "Current Phase: Market Offering"
+      },
+      {
+        "kind": "solicitation",
+        "title": "Testing & Inspection Services at 1113-1125 Dundas St W",
+        "status": "closed",
+        "first_seen_run": 1,
+        "retracted_run": 3,
+        "evidence": "Testing & Inspection Services at 1113-1125 Dundas St W | CreateTO (Build Toronto, TPLC) | Published 2026-10-05 | Closing 2026-11-02"
+      }
+    ]
+  },
+  "failed": {
+    "fetch_log": [
+      {
+        "url": "https://a-us.storyblok.com/f/1015016/x/9a1242e6a7/createto-strategic-plan-2023-2027-final.pdf",
+        "outcome": "fetched",
+        "reason": "failed_integrity"
+      },
+      {
+        "url": "https://a-us.storyblok.com/f/1017201/x/00b9663133/backgroundfile-109169.pdf",
+        "outcome": "failed",
+        "reason": "http_500"
+      }
+    ],
+    "failed_parses": [
+      {
+        "url": "https://a-us.storyblok.com/f/1015016/x/9a1242e6a7/createto-strategic-plan-2023-2027-final.pdf",
+        "parse_status": "failed",
+        "parse_error": "pdf has no pages"
+      }
+    ],
+    "error_doc_removed_at_run": null,
+    "corrupt_current_version_ok": "ok"
+  }
+}

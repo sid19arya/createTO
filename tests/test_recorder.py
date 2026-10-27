@@ -87,3 +87,35 @@ def test_skips_are_logged_with_reason(db_session, config):
     r.log("https://twitter.com/x", "skipped", "out_of_scope", URL)
     row = db_session.scalar(select(FetchLog))
     assert (row.outcome, row.reason, row.referrer_url) == ("skipped", "out_of_scope", URL)
+
+
+def test_failed_fetch_does_not_mark_document_removed(db_session, config):
+    pdf = "https://a-us.storyblok.com/f/1/x/a/r.pdf"
+    r1 = Recorder(db_session, config)
+    r1.record_fetch(_fetched(b"%PDF-1.4 a", pdf, "application/pdf"))
+    r1.record_fetch(_fetched(_html("leasing", "b1")))
+    r1.finish(complete=True, sitemap_urls=set(), linked_urls=set(), scrapy_stats={})
+
+    r2 = Recorder(db_session, config)
+    r2.log(pdf, "failed", "http_500", URL, 500)
+    r2.log(URL, "failed", "http_404", None, 404)
+    run = r2.finish(complete=True, sitemap_urls=set(), linked_urls=set(), scrapy_stats={})
+    removed = dict(db_session.execute(select(Document.url, Document.removed_at_run)).all())
+    assert removed == {pdf: None, URL: run.id}
+
+
+def test_damaged_file_does_not_replace_last_good_version(db_session, config):
+    import pymupdf
+
+    doc = pymupdf.open()
+    doc.new_page()
+    good = doc.tobytes()
+    pdf = "https://a-us.storyblok.com/f/1/x/a/plan.pdf"
+    r1 = Recorder(db_session, config)
+    assert r1.record_fetch(_fetched(good, pdf, "application/pdf")) == "new"
+    r2 = Recorder(db_session, config)
+    assert r2.record_fetch(_fetched(b"<html>error</html>", pdf, "application/pdf")) == \
+        "failed_integrity"
+    d = db_session.scalar(select(Document).where(Document.url == pdf))
+    current = db_session.get(DocumentVersion, d.current_version_id)
+    assert current.parse_status == "ok" and _versions(db_session) == 2

@@ -98,3 +98,18 @@ def test_visible_text_hash_ignores_scripts_and_markup():
     b = b'<html><script>var t=2</script><p class="b">Open   bids</p><!-- x --></html>'
     c = b"<html><p>Closed bids</p></html>"
     assert visible_text_hash(a) == visible_text_hash(b) != visible_text_hash(c)
+
+
+def test_validate_pdf_detects_damage():
+    import pymupdf
+
+    from createto_info.crawl.recorder import _validate
+
+    doc = pymupdf.open()
+    for _ in range(3):
+        doc.new_page()
+    pdf = doc.tobytes()
+    assert _validate("pdf", pdf, None) == ("ok", None)
+    assert _validate("pdf", pdf[: len(pdf) // 3], None)[0] == "failed"
+    assert _validate("pdf", b"<html>Server error</html>", None) == (
+        "failed", "not a pdf: missing %PDF- header")

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from scrapy.crawler import CrawlerProcess
 
 from createto_info.config import Config
@@ -33,11 +35,29 @@ def scrapy_settings(config: Config) -> dict:
     }
 
 
+def replay_settings(config: Config, snapshot: Path) -> dict:
+    """Serve a saved snapshot offline: no network, no politeness delay."""
+    return {
+        **scrapy_settings(config),
+        "DOWNLOADER_MIDDLEWARES": {"createto_info.crawl.replay.ReplayMiddleware": 50},
+        "REPLAY_SNAPSHOT": str(snapshot),
+        "REPLAY_RAW_DIR": str(config.storage.raw_dir),
+        "DOWNLOAD_DELAY": 0,
+        "AUTOTHROTTLE_ENABLED": False,
+        "CONCURRENT_REQUESTS": 16,
+        "CONCURRENT_REQUESTS_PER_DOMAIN": 16,
+    }
+
+
 def run_crawl(config: Config, *, limit: int | None = None, skip_files: bool = False,
-              mode: str = "full") -> CrawlRun:
+              replay: Path | None = None) -> CrawlRun:
+    mode = "replay" if replay else "full"
+    settings = replay_settings(config, replay) if replay else scrapy_settings(config)
     with session_scope() as session:
         recorder = Recorder(session, config, mode=mode)
-        process = CrawlerProcess(scrapy_settings(config), install_root_handler=True)
+        if replay:
+            recorder.run.notes = f"replay of {replay}"
+        process = CrawlerProcess(settings, install_root_handler=True)
         crawler = process.create_crawler(CreateToSpider)
         process.crawl(crawler, config=config, recorder=recorder, limit=limit,
                       skip_files=skip_files)

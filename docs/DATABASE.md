@@ -86,7 +86,7 @@ file is written to `storage_path` only when a new version is created.
 | `content_hash` (sha256), `storage_path` | raw bytes at `data/raw/ab/abcdef….html/.pdf` |
 | `cms_uuid`, `cms_updated_at`, `cms_json` (jsonb) | for createto.ca pages: `__NEXT_DATA__` `pageProps` minus site chrome (labels, header, footer, theme) |
 | `text` | main-content plain text (HTML) or joined page text (PDF) |
-| `parse_status`, `parse_error` | `ok`, `failed` (e.g. corrupt PDF; this is the "failed file" variant) |
+| `parse_status`, `parse_error` | integrity check at fetch time: PDFs must carry a `%PDF-` header and open without repair (all 471 real PDFs do); pages are `ok`; other files `pending`. A `failed` version is kept for audit but **never replaces** the document's last good current version |
 
 Used by: everything downstream; "show me the page as it was on date X".
 
@@ -109,7 +109,7 @@ skipped links are logged, as the brief requires.
 |---|---|
 | `run_id`, `url`, `referrer_url`, `ts` | |
 | `outcome` | `fetched`, `not_modified`, `skipped`, `blocked`, `failed`, `redirected` |
-| `reason` | for `fetched`: `new`, `changed`, `unchanged`. For `skipped`: `out_of_scope`, `not_allowlisted`, `hop_limit`, `media_not_fetched`, `unsupported_file_type`, `skip_path`, `skip_files_flag`. For `blocked`/`failed`: `robots`, `http_<code>`, `timeout`, `dns`, `too_large`. For `redirected`: `to <url>` |
+| `reason` | for `fetched`: `new`, `changed`, `unchanged`, `failed_integrity` (stored for audit, not made current). For `skipped`: `out_of_scope`, `not_allowlisted`, `hop_limit`, `media_not_fetched`, `unsupported_file_type`, `skip_path`, `skip_files_flag`. For `blocked`/`failed`: `robots`, `http_<code>`, `timeout`, `dns`, `too_large`. For `redirected`: `to <url>` |
 | `http_status`, `elapsed_ms` | |
 
 ---

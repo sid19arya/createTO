@@ -17,7 +17,8 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 1: skeleton, docker-compose Postgres, migrations (2026-10-26)
 - [x] Step 2: crawler + raw store + fetch_log + run stats (no LLM) (2026-10-26)
 - [x] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts (2026-10-26)
-- [ ] Step 4: change detection + version history + variant demo (unchanged / changed / failed file)
+- [x] Step 4: evidence/claims reconciliation, version history, variant demo (2026-10-27)
+- [ ] Step 5: FastAPI + search endpoint
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
@@ -30,6 +31,12 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - Storyblok relation fields embed full copies of other stories. Never walk into them
   (`_is_story`), or a project inherits its parent's files and blocks.
 - Child project pages repeat sibling blocks; only parentless pages own embedded blocks.
+
+## Demo / replay notes
+- `createto demo` drops and recreates the `createto_demo` database; the main DB is untouched.
+- Each replay crawl runs in a subprocess: Twisted's reactor can start only once per process.
+- Snapshots (`data/snapshots/`, gitignored) reference `data/raw/`, so they're only valid on a
+  machine that has the raw store. `reports/variants.md` is the committed example output.
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`

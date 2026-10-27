@@ -18,6 +18,7 @@ data/raw/
 data/renders/
 data/httpcache/
 data/logs/
+data/snapshots/
 data/exports/*.tmp
 .scrapy/
 

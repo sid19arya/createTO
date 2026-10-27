@@ -5,7 +5,8 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–3 of 9 done (schema, crawler, CMS parsing). See [PLAN.md](PLAN.md) §6.
+> Status: steps 1–4 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo).
+> See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
 ## Docs
 - [PLAN.md](PLAN.md): goals, site findings, crawl scope, pipeline, roadmap, deferred work
@@ -34,6 +35,9 @@ uv run createto db check          # connectivity + table row counts
 | `uv run createto crawl --limit 25` | Dev crawl; partial runs never mark documents as removed |
 | `uv run createto parse` | Build projects, news, facts, milestones, procurement signals from stored pages (no LLM) |
 | `uv run createto parse --rebuild` | Same, after wiping derived tables (drops version history; dev only) |
+| `uv run createto demo` | Variant demo (first / unchanged / changed source / failed file) replayed offline into a separate `createto_demo` DB; writes `reports/variants.md` |
+| `uv run createto snapshot DIR` | Save the latest crawl state as a replayable snapshot (`manifest.json` referencing the raw store) |
+| `uv run createto crawl --replay DIR` | Crawl a saved snapshot instead of the network |
 | `uv run createto runs` | Recent runs with headline stats (`crawl_runs.stats` has the full set) |
 | `uv run createto config show` | Print resolved `config.yaml` (no secrets) |
 | `uv run createto db upgrade` / `downgrade base` | Apply / roll back migrations |
@@ -45,7 +49,9 @@ uv run createto db check          # connectivity + table row counts
 config.yaml               crawl scope, models, limits (stored on every run for reproducibility)
 src/createto_info/        package: config, db models/session, CLI
   crawl/                  scope policy (urls), Next.js data reader, raw store, recorder, Scrapy spider
-  parse/                  CMS materializer, MERX listing parser, text/date/address helpers
+  parse/                  CMS materializer, claims/evidence reconciliation, MERX parser, helpers
+  demo.py                 variant demo orchestration
+reports/                  generated example outputs (committed)
 migrations/               Alembic migrations (schema guide: docs/DATABASE.md)
 tests/
 data/                     raw pages/files and renders (gitignored)

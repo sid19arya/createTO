@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import typer
 from sqlalchemy import inspect, text
@@ -60,11 +61,12 @@ def db_check() -> None:
 def crawl(
     limit: int = typer.Option(None, help="Stop scheduling after N documents (dev runs)."),
     skip_files: bool = typer.Option(False, help="Only fetch createto.ca pages."),
+    replay: Path = typer.Option(None, help="Serve a saved snapshot dir instead of the network."),
 ) -> None:
     """Crawl createto.ca and linked public files into the raw store and database."""
     from createto_info.crawl.runner import run_crawl
 
-    run = run_crawl(get_config(), limit=limit, skip_files=skip_files)
+    run = run_crawl(get_config(), limit=limit, skip_files=skip_files, replay=replay)
     typer.echo(f"run {run.id} {run.status}")
     typer.echo(json.dumps(run.stats, indent=2))
 
@@ -110,6 +112,27 @@ def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None
         for r in s.scalars(select(CrawlRun).order_by(CrawlRun.id.desc()).limit(n)):
             head = " ".join(f"{k}={r.stats.get(k, 0)}" for k in keys)
             typer.echo(f"#{r.id} {r.started_at:%Y-%m-%d %H:%M} {r.mode:11} {r.status:9} {head}")
+
+
+@app.command()
+def snapshot(out: Path = typer.Argument(..., help="Directory to write manifest.json to.")) -> None:
+    """Save the latest crawl state as a replayable snapshot (references the raw store)."""
+    from createto_info.crawl.replay import export_snapshot
+    from createto_info.db import session_scope
+
+    with session_scope() as s:
+        manifest = export_snapshot(s, out)
+    typer.echo(f"{len(manifest['entries'])} URLs from run {manifest['created_from_run']} -> {out}")
+
+
+@app.command()
+def demo() -> None:
+    """Variant demo: first / unchanged / changed source / failed file, replayed offline into a
+    separate `createto_demo` database. Writes reports/variants.md."""
+    from createto_info.demo import run_variants
+
+    path = run_variants(get_config())
+    typer.echo(f"report written to {path}")
 
 
 @config_app.command("show")

@@ -134,9 +134,17 @@ class Recorder:
                 storage_path=self.store.relpath(path),
                 cms_uuid=cms_uuid, cms_updated_at=cms_updated, cms_json=props,
             )
+            version.parse_status, version.parse_error = _validate(kind, f.body, props)
             self.s.add(version)
             self.s.flush()
-            doc.current_version_id = version.id
+            if version.parse_status == "failed" and doc.current_version_id is not None:
+                # keep serving the last good version; the broken one is kept for audit
+                change = "failed_integrity"
+                self.counts["files_failed_parse"] += 1
+            else:
+                if version.parse_status == "failed":
+                    self.counts["files_failed_parse"] += 1
+                doc.current_version_id = version.id
 
         self._log(f.url, "fetched", change, f.referrer, f.status, f.elapsed_ms)
         self.counts[f"{_bucket(kind)}_{change}"] += 1
@@ -167,6 +175,12 @@ class Recorder:
         # redirect reasons carry the target URL; count them under one key
         key = outcome if outcome == "redirected" or not reason else f"{outcome}:{reason}"
         self.counts[key] += 1
+        if outcome in ("failed", "blocked") and reason not in _GONE:
+            # a known document that errored this run still exists; don't let a complete run
+            # mark it removed (only 404/410 mean gone)
+            doc = self.s.scalar(select(Document).where(Document.url == url))
+            if doc is not None:
+                doc.last_seen_run = self.run_id
         self.s.commit()
 
     def _log(self, url, outcome, reason, referrer, http_status, elapsed_ms) -> None:
@@ -206,8 +220,11 @@ class Recorder:
         self.run.status = status or ("succeeded" if complete else "partial")
         self.run.stats = {
             "duration_s": round((finished - started).total_seconds(), 1),
-            "requests": scrapy_stats.get("downloader/request_count", 0),
-            "responses": scrapy_stats.get("downloader/response_count", 0),
+            # replays answer in a downloader middleware, before the downloader's own counters
+            "requests": scrapy_stats.get("downloader/request_count")
+            or scrapy_stats.get("response_received_count", 0),
+            "responses": scrapy_stats.get("downloader/response_count")
+            or scrapy_stats.get("response_received_count", 0),
             "bytes": scrapy_stats.get("downloader/response_bytes", 0),
             "status_counts": {
                 k.rsplit("/", 1)[1]: v for k, v in scrapy_stats.items()
@@ -226,6 +243,33 @@ class Recorder:
         }
         self.s.commit()
         return self.run
+
+
+_GONE = {"http_404", "http_410"}
+
+
+def _validate(kind: str, body: bytes, props: dict | None) -> tuple[str, str | None]:
+    """Cheap integrity check at fetch time; full text extraction happens later (step 6)."""
+    if kind == "pdf":
+        import pymupdf
+
+        if b"%PDF-" not in body[:1024]:  # e.g. an HTML error page served as a PDF
+            return "failed", "not a pdf: missing %PDF- header"
+        try:
+            with pymupdf.open(stream=body, filetype="pdf") as doc:
+                if doc.page_count == 0:
+                    return "failed", "pdf has no pages"
+                # all 471 PDFs from the live crawl open without repair; a repaired file is
+                # damaged (e.g. truncated) and only partially recoverable
+                if doc.is_repaired:
+                    return "failed", f"damaged pdf: repaired on open, {doc.page_count} page(s)"
+                doc.load_page(doc.page_count - 1).get_text()
+        except Exception as exc:  # pymupdf raises several error types for broken files
+            return "failed", f"{type(exc).__name__}: {exc}"[:500]
+        return "ok", None
+    if kind == "page":
+        return "ok", None
+    return "pending", None
 
 
 def _bucket(kind: str) -> str:
