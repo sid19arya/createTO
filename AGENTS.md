@@ -22,7 +22,7 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Step 6: PDF pages/renders, OpenRouter client, model comparison, full extraction ($0.90) (2026-10-27)
 - [x] Step 7: record linking (Mammoth, aliases, organization/external states) (2026-10-27)
 - [x] Step 8: BM25 chatbot with citations + Ask panel (2026-10-27)
-- [ ] Step 9: `createto run`, two clean runs, generated run report + examples
+- [x] Step 9: `createto run`, two clean runs, generated run report + examples (2026-10-27)
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.

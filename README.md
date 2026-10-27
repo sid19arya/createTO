@@ -5,7 +5,7 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–8 of 9 done (schema, crawler, CMS parsing, evidence/history + variant demo,
+> Status: all 9 planned steps done (schema, crawler, CMS parsing, evidence/history + variant demo,
 > API + search page, LLM extraction from PDFs/news, record linking, cited chatbot).
 > See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
@@ -27,7 +27,9 @@ only spend LLM calls on changed inputs.
 
 | Step | Command(s) | Output |
 |---|---|---|
-| 1. Crawl | `uv run createto crawl` | `data/raw/`, `documents`, `fetch_log`, `crawl_runs` |
+| 1. Crawl | `uv run createto run` | The whole pipeline as one recorded run (per-stage time and stats on the run) |
+| `uv run createto report [RUN_IDS]` | Run report for the last two pipeline runs → `reports/run_report.md`, `.json`, `examples/` |
+| `uv run createto crawl` | `data/raw/`, `documents`, `fetch_log`, `crawl_runs` |
 | 2. CMS parse | `uv run createto parse` | projects, news, initiatives, facts with evidence and version history |
 | 3. LLM extraction | `uv run createto pdfs` → `uv run createto extract` → `uv run createto link` | PDF page text/renders, LLM facts, records linked to projects (needs `OPENROUTER_API_KEY`) |
 | 4. Serve | `uv run createto serve` | http://127.0.0.1:8000 |
@@ -62,9 +64,22 @@ uv run createto db upgrade        # apply migrations
 uv run createto db check          # connectivity + table row counts
 ```
 
+## Run everything
+```bash
+uv run createto run               # crawl -> pdfs -> parse -> extract -> link -> index (one run)
+uv run createto run               # unchanged repeat: 304s, cached extraction/linking, $0
+uv run createto report            # reports/run_report.md from the database + reports/examples/
+uv run createto serve             # API, search page and chat on http://127.0.0.1:8000
+```
+Results of the two deliverable runs: [reports/run_report.md](reports/run_report.md).
+Variants (unchanged / changed source / failed file): [reports/variants.md](reports/variants.md).
+Model choice and cost projection: [reports/model_comparison.md](reports/model_comparison.md).
+
 ## Commands
 | Command | What it does |
 |---|---|
+| `uv run createto run` | The whole pipeline as one recorded run (per-stage time and stats on the run) |
+| `uv run createto report [RUN_IDS]` | Run report for the last two pipeline runs → `reports/run_report.md`, `.json`, `examples/` |
 | `uv run createto crawl` | Full polite crawl: sitemap + links, raw files to `data/raw/`, metadata to Postgres |
 | `uv run createto crawl --limit 25` | Dev crawl; partial runs never mark documents as removed |
 | `uv run createto parse` | Build projects, news, facts, milestones, procurement signals from stored pages (no LLM) |
