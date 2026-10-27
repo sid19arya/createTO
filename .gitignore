@@ -1,0 +1,30 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# crawl output (raw pages, files, rendered PDF pages, scrapy cache)
+data/raw/
+data/renders/
+data/httpcache/
+data/exports/*.tmp
+.scrapy/
+
+# postgres volume when bind-mounted locally
+pgdata/
+
+# editors / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
