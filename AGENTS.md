@@ -14,7 +14,16 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 
 ## Status
 - [x] Planning docs (2026-10-26)
-- [ ] Step 1: skeleton, docker-compose Postgres, migrations
+- [x] Step 1: skeleton, docker-compose Postgres, migrations (2026-10-26)
+- [ ] Step 2: crawler + raw store + fetch_log + run stats (no LLM)
+
+## Dev loop
+- `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`
+- Before committing: `uv run ruff check src tests` and `uv run pytest`
+- Schema changes: edit `db/models.py` → `alembic revision --autogenerate` → review → `alembic check`
+  must report no drift. Alembic drops `use_alter` FKs from `create_table`, so add circular FKs
+  with an explicit `op.create_foreign_key` (see the initial migration).
+- Windows: Docker Desktop sometimes reports "unable to start"; `docker desktop restart` fixes it.
 
 Update this checklist as steps land (build order in `PLAN.md` §6).
 

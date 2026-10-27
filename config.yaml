@@ -1,0 +1,58 @@
+# Pipeline configuration. Secrets (API keys, DB URL) come from .env, not this file.
+# The full resolved config is stored on every crawl_runs row for reproducibility.
+
+crawl:
+  start_urls:
+    - https://createto.ca/
+  sitemap_url: https://createto.ca/sitemap.xml
+  user_agent: "createto-info/0.1 (+research crawler; contact: see repo README)"
+  concurrent_per_domain: 2
+  download_delay_s: 0.5
+  autothrottle_target_concurrency: 1.0
+  max_file_mb: 50
+  timeout_s: 30
+  retries: 2
+
+scope:
+  first_party_hosts: [createto.ca, www.createto.ca]
+  asset_hosts: [a-us.storyblok.com]          # CMS file store, treated as first-party
+  external_1hop_hosts:                        # fetched only when linked directly from first party
+    - www.toronto.ca
+    - secure.toronto.ca
+    - www.2444eglinton.ca
+  never_fetch_hosts:                          # recorded as links, logged as skipped
+    - twitter.com
+    - x.com
+    - www.instagram.com
+    - www.linkedin.com
+    - www.youtube.com
+    - youtu.be
+    - toronto.webex.com
+    - fonts.googleapis.com
+    - fonts.gstatic.com
+  skip_path_prefixes: [/_next/, /images/]
+
+cutoff:
+  years: 5                                    # applies only to projects with phase == completed
+
+models:
+  gate: baseten/mammoth-1:free                # POST /api/alpha/decisions
+  extract: thinkingmachines/inkling:free      # chat completions, text + image input
+  vision: thinkingmachines/inkling:free
+  # paid list prices (USD per 1M tokens) used only for *estimated* cost reporting
+  est_price_per_mtok:
+    baseten/mammoth-1:free: {input: 0.0, output: 0.0}
+    thinkingmachines/inkling:free: {input: 1.0, output: 1.0}
+
+llm:
+  base_url: https://openrouter.ai/api
+  max_requests_per_run: 900                   # free-model quota is 1,000/day on the current key
+  requests_per_minute: 18
+  pdf_window_pages: 40
+  vision_min_text_chars: 200
+  vision_max_pages_per_doc: 15
+  vision_max_pages_per_run: 300
+
+storage:
+  raw_dir: data/raw
+  renders_dir: data/renders

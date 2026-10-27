@@ -5,7 +5,7 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: planning. See [PLAN.md](PLAN.md) for design, decisions and build order.
+> Status: step 1 of 9 done (skeleton, Postgres, schema). See [PLAN.md](PLAN.md) §6.
 
 ## Docs
 - [PLAN.md](PLAN.md): goals, site findings, crawl scope, pipeline, roadmap, deferred work
@@ -13,9 +13,42 @@ retrieval-backed chatbot.
 - [docs/EXTRACTION.md](docs/EXTRACTION.md): LLM prompts, PDF handling, project linking
 - [AGENTS.md](AGENTS.md): notes for coding agents and contributors
 
-## Setup (planned)
+## Requirements
+- Python 3.12+ and [uv](https://docs.astral.sh/uv/)
+- Docker (for Postgres 16)
+- An [OpenRouter](https://openrouter.ai) API key (LLM steps only)
+
+## Setup
 ```bash
-cp .env.example .env          # add OPENROUTER_API_KEY
-docker compose up -d db
-# install + run commands will be added as the pipeline lands
+cp .env.example .env              # add OPENROUTER_API_KEY
+uv sync --all-extras              # install deps into .venv
+docker compose up -d --wait db    # Postgres on localhost:5432
+uv run createto db upgrade        # apply migrations
+uv run createto db check          # connectivity + table row counts
 ```
+
+## Commands
+| Command | What it does |
+|---|---|
+| `uv run createto config show` | Print resolved `config.yaml` (no secrets) |
+| `uv run createto db upgrade` / `downgrade base` | Apply / roll back migrations |
+| `uv run createto db check` | Postgres version and row count per table |
+| `uv run pytest` | Tests (DB tests are skipped if Postgres is down) |
+
+## Layout
+```
+config.yaml               crawl scope, models, limits (stored on every run for reproducibility)
+src/createto_info/        package: config, db models/session, CLI
+migrations/               Alembic migrations (schema guide: docs/DATABASE.md)
+tests/
+data/                     raw pages/files and renders (gitignored)
+```
+
+## Changing the schema
+Edit `src/createto_info/db/models.py`, then:
+```bash
+uv run alembic revision --autogenerate -m "describe change"   # review the generated file
+uv run createto db upgrade
+uv run alembic check                                          # must report no drift
+```
+Update `docs/DATABASE.md` in the same commit.
