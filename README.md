@@ -7,7 +7,23 @@ retrieval-backed chatbot.
 
 > Status: all 9 planned steps done (schema, crawler, CMS parsing, evidence/history + variant demo,
 > API + search page, LLM extraction from PDFs/news, record linking, cited chatbot).
-> See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
+> See [PLAN.md](PLAN.md) §6.
+
+## Deliverables
+
+| Brief asks for | Where | Headline |
+|---|---|---|
+| Repo, run instructions | this README → [Setup](#setup), [Run everything](#run-everything) | `createto run` twice, then `createto demo` and `createto report` |
+| Example output | [reports/examples/](reports/examples/) | project detail + history, facts, milestones, open procurement, search, JSONL export sample |
+| Two runs (first + unchanged repeat) | [reports/run_report.md](reports/run_report.md) (`.json` alongside) | run 1: 916 requests, 784 documents, 1,269 model calls, **$0.89**, 28 min · run 2: 710 of 916 requests 304, 0 createto.ca changes, 33 model calls, **$0.03** |
+| Variants: unchanged, changed source, failed file | [reports/variants.md](reports/variants.md) | offline replays of saved copies: phase/site-area change supersedes facts with history; a closed tender is retracted; a truncated PDF and an HTTP 500 lose no data |
+| Estimated costs (model, hosting, other) | [run_report.md → Costs](reports/run_report.md#costs), [model_comparison.md](reports/model_comparison.md) | model: ~$0.90 per full run, ~$0 per unchanged run; hosting: $0 locally; linking model: free tier |
+
+The run report's "Run notes" section records what differed from a clean run: both runs were
+interrupted by the host killing processes for low memory and finished with
+`createto run --resume`; the repeat saw 22 changed pages, all off-site boilerplate (toronto.ca
+news sidebars, MERX homepage counters); and the free linking model's daily quota ran out,
+leaving 34 linking decisions for the next `createto link`.
 
 ## How it works
 ```
