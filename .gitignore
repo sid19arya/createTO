@@ -17,6 +17,7 @@ venv/
 data/raw/
 data/renders/
 data/httpcache/
+data/logs/
 data/exports/*.tmp
 .scrapy/
 

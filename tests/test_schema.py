@@ -17,16 +17,10 @@ def test_metadata_matches_database_guide():
 
 
 @pytest.fixture
-def engine():
+def engine(test_db_url):
     from createto_info.db import get_engine
 
-    eng = get_engine()
-    try:
-        with eng.connect():
-            pass
-    except Exception:
-        pytest.skip("Postgres not reachable; run `docker compose up -d db`")
-    return eng
+    return get_engine()
 
 
 @pytest.mark.db
