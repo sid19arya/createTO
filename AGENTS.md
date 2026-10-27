@@ -16,13 +16,20 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
 - [x] Planning docs (2026-10-26)
 - [x] Step 1: skeleton, docker-compose Postgres, migrations (2026-10-26)
 - [x] Step 2: crawler + raw store + fetch_log + run stats (no LLM) (2026-10-26)
-- [ ] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts
+- [x] Step 3: `__NEXT_DATA__` parsers → projects, news, initiatives, links, CMS facts (2026-10-26)
+- [ ] Step 4: change detection + version history + variant demo (unchanged / changed / failed file)
 
 ## Crawl notes
 - Use `createto crawl --limit N` while developing. Only complete runs mark missing docs removed.
 - Unchanged pages come back as 304. The spider re-reads links from the stored raw copy so
   discovery still reaches everything below them.
 - Scope rules live in `config.yaml` → `scope` and `crawl/urls.py::classify` (unit-tested).
+
+## Parse notes
+- `createto parse` is an idempotent upsert keyed on CMS uuids; a second run must report no `*_new`.
+- Storyblok relation fields embed full copies of other stories. Never walk into them
+  (`_is_story`), or a project inherits its parent's files and blocks.
+- Child project pages repeat sibling blocks; only parentless pages own embedded blocks.
 
 ## Dev loop
 - `uv sync --all-extras`, `docker compose up -d --wait db`, `uv run createto db upgrade`

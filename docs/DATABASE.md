@@ -59,6 +59,7 @@ One row per **URL** ever seen (page or file), independent of content.
 |---|---|
 | `id`, `url` (unique, normalized), `host` | |
 | `kind` | `page`, `pdf`, `doc`, `sitemap`, `image`, `other` |
+| `title` | human title from a CMS resource list (e.g. "2023 - Planning and Housing Committee Staff Report") |
 | `scope` | `first_party` (createto.ca), `asset` (storyblok), `external_1hop` |
 | `removed_at_run` | set when a *complete* run (no `--limit`/`--skip-files`) no longer finds the URL |
 | `discovered_via` | `sitemap`, `link`, `both` |
@@ -147,14 +148,15 @@ in `facts`.
 
 | column | notes |
 |---|---|
-| `id`, `cms_uuid` (unique), `slug`, `url`, `name`, `summary` | |
+| `id`, `cms_uuid` (unique), `slug`, `url`, `name`, `summary`, `description` (full body text) | |
+| `kind` | `project` (has its own page) or `block` (sub-site embedded on a parent page, e.g. "Bloor-Kipling – Block 2"; `cms_uuid` is the block's `_uid`, slug `parent#block-2`) |
 | `address`, `major_intersection`, `latitude`, `longitude` | indexed (btree on lat/lng; PostGIS deferred) |
 | `ward`, `councillor_id` | |
 | `phase` (enum), `phase_label`, `types` (text[]), `initiative_id`, `parent_project_id` | GIN index on `types` |
 | `site_area_text`, `site_area_acres` (parsed) | |
 | `current_use`, `proposed_use`, `surrounding_use`, `delivery` | |
 | `cms_created_at`, `cms_published_at`, `cms_updated_at` | CMS metadata, *not* project dates |
-| `last_activity_date` | max(milestone dates, linked news dates); used by the 5-year rule |
+| `last_activity_date` | max(milestone dates, linked news dates) not in the future; used by the 5-year rule |
 | `cutoff_status` | `in_window`, `excluded_completed_old`, `cutoff_unknown` (only meaningful when `phase='completed'`) |
 | `source_version_id`, `first_seen_run`, `last_seen_run` | |
 | `search_tsv` | generated tsvector over name, summary, address, ward, uses, types |
@@ -177,10 +179,14 @@ From the CMS `councillorName`/`councillorLink` plus the 1-hop toronto.ca profile
 
 ### `news_articles`
 `id, cms_uuid, slug, url, title, published_at, author, topics (text[]), initiative_ids,
-kind (announcement|event|board_meeting|press_coverage|procurement|report; from Mammoth),
+kind (board_meeting|project_update|news_release|insider|community_engagement|media_coverage;
+from the CMS topic, no LLM),
 importance, event_starts_at, event_ends_at, external_url, external_source, body_text,
 source_version_id, search_tsv`.
-Links to projects go through `links` (`rel='mentions'` or `'related'`).
+Links to projects go through `links` (`rel='mentions'`).
+`published_at` is the full date in the title when there is one (board meetings: "Corporate Board
+Meeting - November 28, 2024"), else Storyblok `first_published_at`, which kept the original dates
+(2017+) through the 2023 migration. `sort_by_date` is unreliable and ignored.
 
 ### `facts`
 Claim-level data with provenance. CMS fields and LLM-extracted document facts live side by side.
@@ -205,14 +211,24 @@ Dated project events.
 `id, project_id, type, label, title, date, date_precision, end_date, status
 (actual|planned|cancelled|delayed), source_version_id, page_no, excerpt, extracted_by,
 confidence, first_seen_run, last_seen_run`.
-Deduped on `(project_id, type, date)`. A planned milestone that later appears as actual is
-updated in place, with the change recorded in `project_versions.diff`.
+Deterministic types: `phase_period` (one per CMS timeline step; `label` = phase key, `date`/
+`date_precision` from the schedule text, `end_date` for ranges) and `phase_change` (detected when
+a re-crawl sees a new phase; dated by the run). `status` is `actual`, `current`, `planned`,
+`cancelled` or `delayed`. CMS milestones are keyed `(project_id, type, label, extracted_by)` and
+updated in place; history lives in `project_versions`.
 
 ### `procurement_signals`
 Public evidence of buying, selling or partnering opportunities. **Not** MERX listings.
 `id, project_id, kind, title, reference_number, issuer, counterparty, scope, value, currency,
 opens_at, closes_at, status, external_url, source_version_id, page_no, excerpt, extracted_by,
 confidence, first_seen_run, last_seen_run`.
+
+Deterministic sources (`extracted_by`):
+- `cms`: project in phase `marketOffering` → `market_offering`, `open`; `closed` once it leaves the phase
+- `rule:resource_title`: project file titled RFP / RFQ / REOI / market offering / ...
+- `rule:merx`: rows of MERX's public open-solicitations listing → `solicitation` with
+  reference number, buyer, published/closing dates; linked to a project by street-address range
+  overlap ("1113-1125 Dundas St W" ↔ "1113-1117 Dundas Street West")
 
 ### `links`
 Generic graph edges, so the data forms a connected web.

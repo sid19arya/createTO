@@ -5,7 +5,7 @@ source-cited, versioned Postgres dataset of Toronto real-estate projects, with t
 news and procurement signals. The data is served through an API, a search bar and a small
 retrieval-backed chatbot.
 
-> Status: steps 1–2 of 9 done (schema, crawler). See [PLAN.md](PLAN.md) §6.
+> Status: steps 1–3 of 9 done (schema, crawler, CMS parsing). See [PLAN.md](PLAN.md) §6.
 
 ## Docs
 - [PLAN.md](PLAN.md): goals, site findings, crawl scope, pipeline, roadmap, deferred work
@@ -32,6 +32,8 @@ uv run createto db check          # connectivity + table row counts
 |---|---|
 | `uv run createto crawl` | Full polite crawl: sitemap + links, raw files to `data/raw/`, metadata to Postgres |
 | `uv run createto crawl --limit 25` | Dev crawl; partial runs never mark documents as removed |
+| `uv run createto parse` | Build projects, news, facts, milestones, procurement signals from stored pages (no LLM) |
+| `uv run createto parse --rebuild` | Same, after wiping derived tables (drops version history; dev only) |
 | `uv run createto runs` | Recent runs with headline stats (`crawl_runs.stats` has the full set) |
 | `uv run createto config show` | Print resolved `config.yaml` (no secrets) |
 | `uv run createto db upgrade` / `downgrade base` | Apply / roll back migrations |
@@ -43,6 +45,7 @@ uv run createto db check          # connectivity + table row counts
 config.yaml               crawl scope, models, limits (stored on every run for reproducibility)
 src/createto_info/        package: config, db models/session, CLI
   crawl/                  scope policy (urls), Next.js data reader, raw store, recorder, Scrapy spider
+  parse/                  CMS materializer, MERX listing parser, text/date/address helpers
 migrations/               Alembic migrations (schema guide: docs/DATABASE.md)
 tests/
 data/                     raw pages/files and renders (gitignored)

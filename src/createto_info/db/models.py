@@ -69,7 +69,8 @@ class Document(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     url: Mapped[str] = mapped_column(Text, unique=True)
     host: Mapped[str] = mapped_column(Text, index=True)
-    kind: Mapped[str] = mapped_column(Text)  # page | pdf | doc | image | other
+    kind: Mapped[str] = mapped_column(Text)  # page | pdf | doc | sitemap | image | other
+    title: Mapped[str | None] = mapped_column(Text)  # human title from the CMS resource list
     scope: Mapped[str] = mapped_column(Text)  # first_party | asset | external_1hop
     discovered_via: Mapped[str | None] = mapped_column(Text)  # sitemap | link | both
     first_seen_run: Mapped[int | None] = _run_fk()
@@ -231,9 +232,11 @@ class Project(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     cms_uuid: Mapped[str] = mapped_column(Text, unique=True)
     slug: Mapped[str] = mapped_column(Text, index=True)
+    kind: Mapped[str] = mapped_column(Text, server_default="project")  # project | block (sub-site)
     url: Mapped[str] = mapped_column(Text)
     name: Mapped[str] = mapped_column(Text)
     summary: Mapped[str | None] = mapped_column(Text)
+    description: Mapped[str | None] = mapped_column(Text)  # full body text
     address: Mapped[str | None] = mapped_column(Text)
     major_intersection: Mapped[str | None] = mapped_column(Text)
     latitude: Mapped[float | None] = mapped_column(Double)

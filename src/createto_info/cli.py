@@ -70,6 +70,33 @@ def crawl(
 
 
 @app.command()
+def parse(
+    run_id: int = typer.Option(None, help="Crawl run to attribute records to (default: latest)."),
+    rebuild: bool = typer.Option(False, help="Wipe derived tables first (drops history; dev)."),
+) -> None:
+    """Build projects, news, facts, milestones and procurement signals from stored pages."""
+    from sqlalchemy import select
+
+    from createto_info.db import session_scope
+    from createto_info.db.models import CrawlRun
+    from createto_info.parse.cms import Materializer
+
+    with session_scope() as s:
+        run = s.get(CrawlRun, run_id) if run_id else s.scalar(
+            select(CrawlRun).order_by(CrawlRun.id.desc()).limit(1))
+        if run is None:
+            raise typer.BadParameter("no crawl runs yet; run `createto crawl` first")
+        if rebuild:
+            from createto_info.parse.cms import truncate_derived
+
+            truncate_derived(s)
+        stats = Materializer(s, get_config(), run.id).run()
+        run.stats = {**run.stats, "parse": dict(sorted(stats.items()))}
+    typer.echo(f"parsed into run {run.id}")
+    typer.echo(json.dumps(dict(sorted(stats.items())), indent=2))
+
+
+@app.command()
 def runs(n: int = typer.Option(5, help="How many recent runs to show.")) -> None:
     """Show recent crawl runs and their headline stats."""
     from sqlalchemy import select

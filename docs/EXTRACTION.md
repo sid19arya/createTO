@@ -169,15 +169,25 @@ TEXT:
    creates a new fact version, and the older one becomes `superseded_by`. This is how
    corrections and amendments show up.
 
-## 4. Deterministic sources of the same records
+## 4. Deterministic sources of the same records (implemented: `parse/cms.py`)
 
 These come for free and are preferred over LLM output:
 - CMS project fields → `facts` (`extracted_by='cms'`, locator = JSON path such as `content.siteArea`)
+- CMS `timeline` steps (43 projects) → `phase_period` milestones with parsed schedules
+  ("2019 - 2021", "July 2026 - Q2 2028", "2024 - present"; placeholders kept undated)
 - CMS `phase` → `phase_change` milestone when the phase differs from the previous run (dated by run)
-- CMS `timeline` blocks (when populated) → milestones
-- News `eventStartsAt/EndsAt` → milestone `community_meeting`/`other`
-- Project `phase = marketOffering` → procurement signal `market_offering`, status `open`/`unknown`
-- News with `relatedProjects` → `links` (no LLM linking needed)
+- Project `phase = marketOffering` → procurement signal `market_offering`
+- Project file titles naming an RFP/RFQ/REOI/market offering → procurement signal
+- MERX public open-solicitations listing → `solicitation` signals, linked by address range
+- News `relatedProject(s)` → `links` (51 of 136 articles), news topic → `news_articles.kind`
+- Resource lists → `documents.title` + `has_file` links (so PDFs inherit their project
+  deterministically; the LLM linker only handles what's left)
+
+CMS gotchas handled in code:
+- Relation fields embed whole copies of other stories, so walks never descend into embedded
+  stories (`_is_story`).
+- Child pages repeat their siblings' embedded blocks, so only pages without a `parentProject`
+  own embedded blocks (`Page.own_blocks`).
 
 ## 5. PDFs
 
