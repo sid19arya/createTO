@@ -9,6 +9,39 @@ retrieval-backed chatbot.
 > API + search page, LLM extraction from PDFs/news, record linking).
 > See [PLAN.md](PLAN.md) §6 and the example output in [reports/variants.md](reports/variants.md).
 
+## How it works
+```
+ createto.ca + linked PDFs / MERX
+              │
+   1. crawl   │  Scrapy, polite; raw copies → data/raw/, fetch metadata → Postgres
+              ▼
+   2. parse   │  CMS (__NEXT_DATA__) → projects, news, facts, milestones, procurement (no LLM)
+              ▼
+   3. extract │  PDF pages → LLM facts with verified evidence → link records to projects
+              ▼
+   4. serve   │  FastAPI: JSON API + search page (+ BM25 chatbot, step 8, not built yet)
+```
+Each step reads what the previous one stored, so any step can be re-run on its own. Re-runs are
+incremental: unchanged pages return 304, parse is an idempotent upsert, and extraction/linking
+only spend LLM calls on changed inputs.
+
+| Step | Command(s) | Output |
+|---|---|---|
+| 1. Crawl | `uv run createto crawl` | `data/raw/`, `documents`, `fetch_log`, `crawl_runs` |
+| 2. CMS parse | `uv run createto parse` | projects, news, initiatives, facts with evidence and version history |
+| 3. LLM extraction | `uv run createto pdfs` → `uv run createto extract` → `uv run createto link` | PDF page text/renders, LLM facts, records linked to projects (needs `OPENROUTER_API_KEY`) |
+| 4. Serve | `uv run createto serve` | http://127.0.0.1:8000 |
+
+Once `serve` is running, you can reach the data at:
+- **Search page:** http://127.0.0.1:8000/ (free text, phase filter, near a point)
+- **JSON API:** for example `curl "localhost:8000/projects?q=affordable%20housing"`. All endpoints
+  are listed under [API](#api).
+- **Interactive API docs:** http://127.0.0.1:8000/docs
+- **Postgres directly:** `localhost:5432` (see [docs/DATABASE.md](docs/DATABASE.md))
+
+Do the [Setup](#setup) first. [Commands](#commands) lists every option (dev crawls, rebuilds,
+model comparison, replay/demo).
+
 ## Docs
 - [PLAN.md](PLAN.md): goals, site findings, crawl scope, pipeline, roadmap, deferred work
 - [docs/DATABASE.md](docs/DATABASE.md): what each table is for
