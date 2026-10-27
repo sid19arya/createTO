@@ -79,6 +79,7 @@ Model choice and cost projection: [reports/model_comparison.md](reports/model_co
 | Command | What it does |
 |---|---|
 | `uv run createto run` | The whole pipeline as one recorded run (per-stage time and stats on the run) |
+| `uv run createto run --resume` | Finish an interrupted run: only its unrecorded stages run; completed stages keep their stats |
 | `uv run createto report [RUN_IDS]` | Run report for the last two pipeline runs → `reports/run_report.md`, `.json`, `examples/` |
 | `uv run createto crawl` | Full polite crawl: sitemap + links, raw files to `data/raw/`, metadata to Postgres |
 | `uv run createto crawl --limit 25` | Dev crawl; partial runs never mark documents as removed |

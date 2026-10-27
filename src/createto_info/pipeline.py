@@ -76,9 +76,13 @@ def summary_counts(s: Session, run_id: int) -> dict[str, Any]:
 
 
 def run_pipeline(config: Config, echo: Callable[[str], None] = print,
-                 crawl: bool = True) -> int:
-    """`crawl=False` processes the latest crawl again (tests, or re-processing after a fix)."""
+                 crawl: bool = True, resume: bool = False) -> int:
+    """`crawl=False` processes the latest crawl again (tests, or re-processing after a fix).
+    `resume=True` finishes an interrupted run: only stages it hasn't recorded yet run, so the
+    stats of completed stages (e.g. a paid extraction) are kept as they were."""
     started = time.monotonic()
+    if resume:
+        crawl = False
     if crawl:
         log = REPO_ROOT / "data" / "logs" / f"run_{datetime.now(UTC):%Y%m%dT%H%M%S}_crawl.log"
         log.parent.mkdir(parents=True, exist_ok=True)
@@ -99,13 +103,23 @@ def run_pipeline(config: Config, echo: Callable[[str], None] = print,
     with session_scope() as s:
         run = s.scalar(select(CrawlRun).order_by(CrawlRun.id.desc()).limit(1))
         crawl_stats = run.stats or {}
-        stages = {"crawl": {"seconds": crawl_stats.get("duration_s"),
-                            **{k: v for k, v in crawl_stats.items() if k != "stages"}}}
-        run.stats = {**crawl_stats, "pipeline": True, "stages": stages}
+        if resume:
+            done = set(crawl_stats.get("stages") or {})
+            run.stats = {**crawl_stats, "resumed": sorted(set(STAGES + ["summary"]) - done)}
+            echo(f"[run {run.id}] resuming; already recorded: {', '.join(sorted(done))}")
+        else:
+            done = {"crawl"}
+            stages = {"crawl": {"seconds": crawl_stats.get("duration_s"),
+                                **{k: v for k, v in crawl_stats.items() if k != "stages"}}}
+            run.stats = {**crawl_stats, "pipeline": True, "stages": stages}
         s.commit()
 
-        _record(s, run, "pdfs", lambda: process_pdfs(s, config), echo)
-        _record(s, run, "parse", lambda: Materializer(s, config, run.id).run(), echo)
+        def record(name: str, fn: Callable[[], dict[str, Any]]) -> None:
+            if name not in done:
+                _record(s, run, name, fn, echo)
+
+        record("pdfs", lambda: process_pdfs(s, config))
+        record("parse", lambda: Materializer(s, config, run.id).run())
 
         def extract() -> dict[str, Any]:
             units = build_units(s, config)
@@ -114,11 +128,15 @@ def run_pipeline(config: Config, echo: Callable[[str], None] = print,
             return {"units": len(units), **fstats,
                     **apply_outputs(s, results, config.models.extract, run.id, dry_run=False)}
 
-        _record(s, run, "extract", extract, echo)
-        _record(s, run, "link", lambda: run_linking(s, config, run.id), echo)
-        _record(s, run, "index", lambda: rebuild_chunks(s, run.id), echo)
-        _record(s, run, "summary", lambda: summary_counts(s, run.id), echo)
-        run.stats = {**run.stats, "pipeline_seconds": round(time.monotonic() - started, 1)}
+        record("extract", extract)
+        record("link", lambda: run_linking(s, config, run.id))
+        record("index", lambda: rebuild_chunks(s, run.id))
+        record("summary", lambda: summary_counts(s, run.id))
+        if resume:  # wall time spans the interruption; report the stages' own time instead
+            seconds = sum(v.get("seconds") or 0 for v in run.stats["stages"].values())
+        else:
+            seconds = time.monotonic() - started
+        run.stats = {**run.stats, "pipeline_seconds": round(seconds, 1)}
         s.commit()
         echo(f"run {run.id} finished in {run.stats['pipeline_seconds']}s")
         return run.id

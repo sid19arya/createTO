@@ -55,6 +55,10 @@ provenance and history into Postgres, and serves it via API, search and a BM25 c
   schema; models without `structured_outputs` get the shape from the prompt only.
 - Reasoning tokens count as output: give `max_output_tokens` headroom (Inkling truncated at 8k).
 
+## Pipeline notes
+- If `createto run` is interrupted (e.g. a killed process), `createto run --resume` finishes the
+  latest run without redoing stages it already recorded; LLM calls already made are cached.
+
 ## Linking notes
 - `createto link` is safe to re-run: decisions are cached; only changed questions call Mammoth.
 - Free models allow 20 requests/min per key; keep `":free": 18`.

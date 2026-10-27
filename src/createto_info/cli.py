@@ -221,11 +221,12 @@ def export_cmd(out: Path = typer.Option(None, help="Output dir (default data/exp
 
 
 @app.command()
-def run() -> None:
+def run(resume: bool = typer.Option(
+        False, "--resume", help="Finish the latest run: only stages it hasn't recorded.")) -> None:
     """Whole pipeline as one recorded run: crawl, pdfs, parse, extract, link, index."""
     from createto_info.pipeline import run_pipeline
 
-    run_id = run_pipeline(get_config(), echo=typer.echo)
+    run_id = run_pipeline(get_config(), echo=typer.echo, resume=resume)
     typer.echo(f"run {run_id} recorded; `createto report` renders the last two runs")
 
 

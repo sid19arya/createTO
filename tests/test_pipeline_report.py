@@ -29,6 +29,17 @@ def test_pipeline_stages_and_report(db_session, tmp_path, monkeypatch):
     assert stages["extract"]["units"] == 0 and stages["link"]["items"] == 0
     assert stages["index"]["project"] == 3
 
+    # an interrupted run resumes from its missing stages; completed stages keep their stats
+    run.stats = {**run.stats, "stages": {k: v for k, v in stages.items()
+                                         if k not in ("link", "index", "summary")}}
+    run.stats["stages"]["extract"]["marker"] = 1
+    db_session.commit()
+    assert run_pipeline(cfg, echo=lambda _: None, resume=True) == run_id
+    db_session.refresh(run)
+    assert run.stats["stages"]["extract"]["marker"] == 1
+    assert run.stats["resumed"] == ["index", "link", "summary"]
+    assert set(run.stats["stages"]) == set(stages)
+
     monkeypatch.setattr(report_mod, "REPORTS", tmp_path / "reports")
     monkeypatch.setattr(report_mod, "EXAMPLES", tmp_path / "reports" / "examples")
     monkeypatch.setattr(report_mod, "EXAMPLE_PROJECT", "big-site")
